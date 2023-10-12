@@ -12,6 +12,8 @@ var app = new Vue({
   el: '#app',
   data: {
     works: Works,
+    showContrast: false,
+    showArticle: false,
     year: new Date().getFullYear(),
     selectedWork: null,
     showOnionskin: false,
@@ -36,9 +38,33 @@ var app = new Vue({
       }
       this.selectedWork = _work;
     },
+
+    EmailMe() {
+      document.location.href = 'mailto:wilvoss@me.com';
+    },
+
+    LoadPage() {
+      this.GetContrastSetting();
+      window.setTimeout(function () {
+        app.showArticle = true;
+      }, 10);
+    },
+
+    ToggleContrast() {
+      this.showContrast = !this.showContrast;
+      localStorage.setItem('contrastmode', JSON.stringify(this.showContrast));
+    },
+
+    GetContrastSetting() {
+      if (localStorage.getItem('contrastmode') !== null && localStorage.getItem('contrastmode') === 'true') {
+        this.showContrast = true;
+      }
+    },
   },
 
-  mounted() {},
+  mounted() {
+    this.LoadPage();
+  },
 
   computed: {},
 });

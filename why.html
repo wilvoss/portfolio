@@ -3,9 +3,7 @@
   <head>
     <title>Why (endorsements) - Wil Voss</title>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="keywords" content="Why, endorsements, Wil Voss, Will Voss, Seattle UX Developer, Designer, and Integrator" />
     <meta
       name="description"
@@ -16,7 +14,8 @@
   </head>
 
   <body>
-    <app id="app">
+    <app id="app" v-cloak>
+      <link rel="stylesheet" :href="showContrast ? 'styles/accessibility.css' : ''" media="screen" />
       <header>
         <hgroup>
           <h1><a href="/" title="Home Page">Wil Voss</a></h1>
@@ -29,7 +28,7 @@
           <li><a href="about.html" title="Read more about Wil Voss.">About</a></li>
         </ul>
       </nav>
-      <article>
+      <article :style="{opacity: showArticle ? 1 : 0}">
         <section class="intro">
           <p>During my career, I've worked with some amazing people on an array of fabulous projects. Here is a sampling of what some of those people say about my skills and professionalism:</p>
         </section>
@@ -72,8 +71,10 @@
         </section>
         <span class="clearBoth"></span>
       </article>
-      <footer><button class="email" onclick="emailMe();" title="Email">Email</button><button class="linkedIn" onclick="window.open('http://www.linkedin.com/in/wilvoss')" title="LinkedIn">LinkedIn</button><button class="accessibility" onclick=" toggleContrast();" title="Contrast">Contrast</button></footer>
+      <footer><button class="email" @click="EmailMe" title="Email">Email</button><button class="linkedIn" onclick="window.open('http://www.linkedin.com/in/wilvoss')" title="LinkedIn">LinkedIn</button><button class="accessibility" @click="ToggleContrast" title="Contrast">Contrast</button></footer>
     </app>
-    <script src="scripts/main.js"></script>
+    <script src="models/WorkObject.js" type="text/javascript"></script>
+    <script src="helpers/vue.min.js" type="text/javascript"></script>
+    <script src="scripts/work.js" type="text/javascript"></script>
   </body>
 </html>
