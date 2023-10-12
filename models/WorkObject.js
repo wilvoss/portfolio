@@ -1,0 +1,88 @@
+class WorkObject {
+  constructor(spec) {
+    this.name = spec.name === undefined ? 'name' : spec.name;
+    this.description = spec.description == undefined ? '' : spec.description;
+    this.url = spec.url == undefined ? '' : spec.url;
+    this.alt = spec.alt == undefined ? '' : spec.alt;
+    this.type = spec.type === undefined ? 'product' : spec.type;
+    this.backgroundImage = spec.backgroundImage === undefined ? '' : spec.backgroundImage;
+    this.zoomImages = spec.zoomImages === undefined ? [] : spec.zoomImages;
+    this.isSelected = spec.isSelected === undefined ? false : spec.isSelected;
+  }
+}
+
+var Works = [
+  new WorkObject({
+    name: 'Like Me?',
+    description: 'Like Me? is a casual video game that I conceived, designed, coded, produced, and marketed.',
+    url: 'https://apps.apple.com/us/app/like-me/id6466331042',
+    alt: 'Learn about Like Me?',
+    backgroundImage: 'work/likeme_thumbnail.jpg',
+    // zoomImages: ['work/likeme_zoom.jpg', 'work/likeme_zoom.jpg'],
+  }),
+
+  new WorkObject({
+    name: 'Impira',
+    url: 'https://www.youtube.com/channel/UCDCBj9hI8mUphp-7Twc6_nA/videos',
+    alt: "Watch videos about Impira 's product.",
+    backgroundImage: 'work/impira_thumbnail.jpg',
+  }),
+  new WorkObject({
+    name: 'Microsoft Band 2',
+    url: 'https://www.techradar.com/reviews/wearables/microsoft-band-2-1306006/review',
+    alt: 'Read a review of the Microsoft Band 2.',
+    backgroundImage: 'work/msband_thumbnail.jpg',
+  }),
+  new WorkObject({
+    name: 'Suplari',
+    url: 'https://suplari.com',
+    alt: 'Visit the Suplari site.',
+    backgroundImage: 'work/suplari_thumbnail.jpg',
+  }),
+  new WorkObject({
+    name: 'The Fight Is In Us',
+    url: 'https://www.geekwire.com/2020/fight-us-blood-plasma-campaign-deploys-microsoft-bot-search-covid-19-antibodies/',
+    alt: 'Read an article about The Fight Is In Us Covid Plasma Donation campaign.',
+    backgroundImage: 'work/tfiiu3_thumbnail.jpg',
+    type: 'website',
+  }),
+  new WorkObject({
+    name: 'Fred Hutch Cancer Center',
+    url: 'https://www.fredhutch.org/en.html',
+    alt: 'isit the Fred Hutch site.',
+    backgroundImage: 'work/fredhutch_thumbnail.jpg',
+  }),
+  new WorkObject({
+    name: 'Microsoft Health',
+    url: 'https://www.microsoft.com/microsoft-health/en-us',
+    alt: 'Visit the Microsoft Health site.',
+    backgroundImage: 'work/nextstart_thumbnail.jpg',
+    zoomImage: 'work/nextstart_zoom.png',
+  }),
+  new WorkObject({
+    name: 'Surface Remix Project',
+    url: 'https://www.theverge.com/2013/9/23/4762256/surface-remix-project-hands-on-dj-setup',
+    alt: 'Read a review of the Microsoft Surface Remix Project.',
+    backgroundImage: 'work/remix_thumbnail.jpg',
+  }),
+  new WorkObject({
+    name: 'Big Tent Games',
+    url: 'https://bigtentgames.com',
+    alt: 'Visit the Big Tent Games site.',
+    backgroundImage: 'work/btg_thumbnail.jpg',
+    type: 'website',
+  }),
+  new WorkObject({
+    name: 'Mouse & Keyboard Center 2.0',
+    url: 'https://www.microsoft.com/hardware/en-us/downloads/mouse-keyboard-center',
+    alt: 'Download Mouse & Keyboard Center 2.0',
+    backgroundImage: 'work/mkcenter_thumbnail.jpg',
+  }),
+  new WorkObject({
+    name: 'HTML5 Particle Engine',
+    url: 'https://wilvoss.com/particles/?showsettings',
+    alt: 'A simple particle generator.',
+    backgroundImage: 'work/magicParticles_thumbnail.jpg',
+    type: 'website',
+  }),
+];

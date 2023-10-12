@@ -1,0 +1,79 @@
+body {
+    color: black;
+    background: white;
+}
+
+article, section, header, nav, h1 {
+    background: transparent;
+    border-color: white;
+}
+
+p, h1, h2, h3, h4, h5, h6, b, i, strong, span {
+    background: transparent;
+    color: black;
+}
+
+a {
+    border-bottom: 1px solid transparent;
+    color: blue;
+    border-color: transparent;
+    background: none;
+    text-indent: 0px;
+    background: none;
+    width: auto;
+    height: auto;
+}
+
+a:hover {
+    border-bottom: 1px solid blue;
+    color: blue;
+    border-color: blue;
+}
+
+a.on {
+    border-color: black;
+}
+
+a:active {
+    color: purple;
+    border-color: Purple;
+}
+
+a:focus {
+    color: blue;
+    border-color: blue;
+}
+
+footer {
+    background: white;
+    border-top: 1px solid black;
+    padding-top: 3px;
+}
+
+footer button {
+    outline: none;
+    background-color: white;
+    border: 1px solid black;
+    background-position: -1px -1px;
+    width: 87px;
+}
+
+footer button:hover, footer button:focus {
+    outline: none;
+    background-color: blue;
+    background-position: -27px -1px;
+    border-color: blue;
+}
+
+section.work button:hover span, section.work button:focus span, section.work button:hover span i, section.work button:focus span i {
+    -webkit-transition: none;
+    transition: none;
+    opacity: 1;
+    background: blue;
+    color: #fff;
+}
+
+article, section, header, hgroup, nav, canvas, a, aside, h2, button, span {
+    -webkit-transition: none;
+    transition: none;
+}
