@@ -244,6 +244,7 @@ onionskin.show {
 onionskin img, onionskin video, onionskin iframe {
     width: 100%;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+    border: none;
     border-radius: var(--borderRadius);
     margin-top: 10px;
     margin-bottom: 50px;
@@ -275,6 +276,7 @@ a {
     color: #333;
     text-decoration: none;
     border-bottom: 1px solid #bbb;
+    cursor: pointer;
 }
 
 a:hover,
@@ -646,6 +648,14 @@ footer button:active {
 @media screen and (max-width:640px) {
     body {
         font-size: 1.5em;
+        overflow: auto;
+        overflow-y: auto;
+        height: auto;
+    }
+
+    article {
+        overflow: initial;
+        margin-bottom: 40px;
     }
 
     section.work a {
