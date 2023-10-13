@@ -38,13 +38,20 @@ body {
 
 app {
     overflow: hidden;
-    font-family: 'Abel', 'Segoe UI', 'Helvetica Neue';
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
     height: 100%;
     display: flex;
     flex-direction: column;
 }
+
+/* 
+wrapper {
+    overflow: hidden;
+    height: 100%;
+    max-width: 1124px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+} */
 
 [v-cloak] {
     transition: 0ms ease-out opacity;
@@ -80,17 +87,16 @@ onionskin {
 onionskin close {
     width: 40px;
     height: 40px;
-    border-radius: var(--borderRadius) 0 0 var(--borderRadius);
+    border-radius: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: start;
     align-items: center;
-    background: hsla(var(--appBackgroundDarkestHSL), 1);
+    background: hsla(var(--linkColorHSL), 1);
     color: white;
     position: fixed;
     top: 10px;
-    right: 0px;
     box-shadow: 0px 1px 4px hsla(var(--appBackgroundDarkestHSL), .4);
     cursor: pointer;
     overflow: hidden;
@@ -135,10 +141,14 @@ onionskin h1, onionskin h2, onionskin h3, onionskin h4, onionskin p, onionskin i
     text-align: left;
 }
 
+onionskin h1, onionskin h2 {
+    margin: 20px 0;
+
+}
 
 onionskin ul, onionskin ol {
     font-size: 75%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     user-select: none;
     -webkit-user-select: none;
     cursor: default;
@@ -169,10 +179,12 @@ onionskin intro ul li span {
     padding: 6px 12px;
     display: inline-block;
     border-radius: 0 4px 4px 0;
+    /* font-family: monospace; */
     /* border-right: 1px solid rgba(0, 0, 0, .1); */
 }
 
 onionskin ul li span:first-of-type {
+    /* font-family: 'Abel', 'Segoe UI', 'Helvetica Neue'; */
     border-radius: 4px 0 0 4px;
     background: hsla(var(--appBackgroundDarkestHSL), 1);
     border-color: hsla(var(--appBackgroundDarkestHSL), .3);
@@ -225,15 +237,19 @@ onionskin button {
 
 }
 
-onionskin intro, onionskin container {
+onionskin intro, onionskin container, onionskin chrome {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: left;
-    width: 90%;
+    width: 100%;
     max-width: 1024px;
     font-size: 100%;
+}
+
+onionskin chrome {
+    align-items: end;
 }
 
 onionskin container lead {
@@ -252,8 +268,13 @@ onionskin img, onionskin video, onionskin iframe {
     border: none;
     border-radius: var(--borderRadius);
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     overflow: hidden;
+}
+
+
+onionskin iframe {
+    margin-bottom: 40px;
 }
 
 h1,
@@ -726,6 +747,12 @@ footer button:active {
     onionskin intro, onionskin container {
         width: calc(100%);
         margin: 0;
+    }
+
+    onionskin close {
+        top: 10px;
+        right: 10px;
+        font-size: 90%;
     }
 }
 

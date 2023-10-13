@@ -13,7 +13,9 @@
     <app id="app" v-cloak>
       <link rel="stylesheet" :href="showContrast ? 'styles/accessibility.css' : ''" media="screen" />
       <onionskin v-if="selectedWork !== null" :class="{show: showOnionskin}">
-        <close @click="ToggleShowOnionSkin"></close>
+        <chrome>
+          <close @click="ToggleShowOnionSkin"></close>
+        </chrome>
         <intro>
           <!-- <h1>{{selectedWork.name}}</h1> -->
           <ul>
@@ -24,44 +26,50 @@
             </li>
             <li v-if="selectedWork.whyText !== ''"><span>Why</span> <span>{{selectedWork.whyText}}</span></li>
             <li v-if="selectedWork.roleText !== ''"><span>What</span> <span>{{selectedWork.roleText}}</span></li>
+            <li><span>Read time</span> <span>7 to 10 minutes</span></li>
           </ul>
         </intro>
         <container v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
           <lead v-if="object.html !== ''" v-html="object.html"></lead>
-          <img :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1" :src="object.image" />
+          <img :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" />
           <!-- <video :key="object.image" id="onionvideo" volume=".35" v-if="object.image !== '' && object.image.indexOf('youtu.be') != -1" autoplay :src="object.image"></video> -->
 
-          <iframe width="1024" height="576" v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="1024" height="576" v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image + '?rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+          <iframe width="1024" height="576" v-if="object.image !== '' && object.image.indexOf('player.vimeo') != -1" :src="object.image" frameborder="0" title="OOBE" allow="fullscreen"></iframe>
+          <script src="https://player.vimeo.com/api/player.js"></script>
         </container>
       </onionskin>
-      <header>
-        <hgroup>
-          <h1><a href="/" title="Home Page">Wil Voss</a></h1>
-        </hgroup>
-      </header>
-      <nav>
-        <ul>
-          <li><a class="on" href="/" alt="A sample of Wil's work." title="A sample of Wil's work.">Work</a></li>
-          <li><a href="why.html" alt="Why work with Wil?" title="Why work with Wil?">Why</a></li>
-          <li><a href="about.html" alt="Read more about Wil Voss." title="Read more about Wil Voss.">About</a></li>
-        </ul>
-      </nav>
-      <article :style="{opacity: showArticle ? 1 : 0}">
-        <section class="intro">
-          <p>Game design, rapid prototyping, UX design &amp; integration, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking, could use a kick start, or just needs help getting across the finish line, I've done it or something like it. Publicly available products and websites that I've worked on are listed below.</p>
-        </section>
-        <section class="work">
-          <group v-for="(group, groupName) in workGroups" :key="groupName">
-            <h1>{{groupName}}</h1>
-            <work>
-              <button :class="{casestudy: work.caseStudyObjects.length > 0}" v-for="work in group" @click="SelectWork(work)" :title="work.alt" :style="{backgroundImage: 'url(' + work.backgroundImage +')'}">
-                <span>{{work.name}}<i>{{work.type}}</i></span>
-              </button>
-            </work>
-          </group>
-        </section>
-        <span class="clearBoth"></span>
-      </article>
+      <wrapper>
+        <header>
+          <hgroup>
+            <h1><a href="/" title="Home Page">Wil Voss</a></h1>
+          </hgroup>
+        </header>
+        <nav>
+          <ul>
+            <li><a class="on" href="/" alt="A sample of Wil's work." title="A sample of Wil's work.">Work</a></li>
+            <li><a href="why.html" alt="Why work with Wil?" title="Why work with Wil?">Why</a></li>
+            <li><a href="about.html" alt="Read more about Wil Voss." title="Read more about Wil Voss.">About</a></li>
+          </ul>
+        </nav>
+        <article :style="{opacity: showArticle ? 1 : 0}">
+          <section class="intro">
+            <p>Game design, rapid prototyping, UX design &amp; integration, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking, could use a kick start, or just needs help getting across the finish line, I've done it or something like it. Publicly available products and websites that I've worked on are listed below.</p>
+          </section>
+          <section class="work">
+            <group v-for="(group, groupName) in workGroups" :key="groupName">
+              <h1>{{groupName}}</h1>
+              <work>
+                <button :class="{casestudy: work.caseStudyObjects.length > 0}" v-for="work in group" @click="SelectWork(work)" :title="work.alt" :style="{backgroundImage: 'url(' + work.backgroundImage +')'}">
+                  <span>{{work.name}}<i>{{work.type}}</i></span>
+                </button>
+              </work>
+            </group>
+          </section>
+          <span class="clearBoth"></span>
+        </article>
+      </wrapper>
       <footer><button class="email" @click="EmailMe" title="Email">Email</button><button class="linkedIn" onclick="window.open('http://www.linkedin.com/in/wilvoss')" title="LinkedIn">LinkedIn</button><button class="accessibility" @click="ToggleContrast" title="Contrast">Contrast</button></footer>
     </app>
     <script src="models/CaseStudyObject.js" type="text/javascript"></script>
