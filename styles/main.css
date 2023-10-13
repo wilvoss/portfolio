@@ -1,11 +1,15 @@
 @font-face {
-    font-family: 'Terminal Dosis';
-    src: local('Terminal Dosis Medium'), local('TerminalDosis-Medium'), url('http://themes.googleusercontent.com/static/fonts/terminaldosis/v3/SwfduKDlxm7-vFPpKzhxue3KwenTjAJKfv_266DPzTg.woff') format('woff');
-}
-
-@font-face {
     font-family: 'Abel';
     src: local('Abel'), local('Abel-Regular'), url(http://themes.googleusercontent.com/static/fonts/abel/v3/wnJbeWILdr-ZMJJAMsiXsvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+
+:root {
+    --appBackgroundHSL: 240, 10%, 89%;
+    --appBackgroundDarkerHSL: 240, 10%, 84%;
+    --appBackgroundDarkestHSL: 240, 10%, 44%;
+    --appForegroundHSL: 240, 10%, 19%;
+    --borderRadius: 6px;
+    --linkColorHSL: 209, 79%, 40%;
 }
 
 html {
@@ -19,10 +23,10 @@ body {
     overflow: hidden;
     font-family: 'Abel', 'Segoe UI', 'Helvetica Neue';
     font-size: 1.3em;
-    color: #444;
+    color: hsl(var(--appForegroundHSL));
     line-height: 1.3em;
     margin: 0px 0px;
-    background: rgba(223, 223, 229, 255);
+    background: hsl(var(--appBackgroundHSL));
     text-wrap: supressed;
     word-wrap: break-word;
     width: 100%;
@@ -47,6 +51,12 @@ app {
     opacity: 0;
 }
 
+button {
+    font-family: 'Abel', 'Segoe UI', 'Helvetica Neue';
+    font-size: 75%;
+    cursor: pointer;
+}
+
 onionskin {
     display: flex;
     flex-direction: column;
@@ -60,21 +70,170 @@ onionskin {
     justify-content: start;
     align-items: center;
     background: rgba(0, 0, 0, 0.8);
+    background: hsla(var(--appBackgroundDarkerHSL), .95);
     transition: 250ms ease-out all;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     z-index: 200;
 }
 
-onionskin h1, onionskin p {
+onionskin close {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--borderRadius) 0 0 var(--borderRadius);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    background: hsla(var(--appBackgroundDarkestHSL), 1);
     color: white;
-    padding: 20px;
-    max-width: 1024px;
+    position: fixed;
+    top: 10px;
+    right: 0px;
+    box-shadow: 0px 1px 4px hsla(var(--appBackgroundDarkestHSL), .4);
+    cursor: pointer;
+    overflow: hidden;
+    transition: 200ms ease-in-out all;
 }
 
-onionskin container {
+onionskin close:hover {
+    width: 100px;
+}
+
+onionskin close:before {
+    text-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding: 0px 10px;
+    margin-top: 2px;
+    content: '⎋';
+}
+
+onionskin close:after {
     display: flex;
-    width: 80%;
+    text-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding: 0px 10px 0 0;
+    content: 'close';
+    justify-content: center;
+    align-items: center;
+    font-size: 75%;
+    line-height: 100%;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+onionskin h1, onionskin h2, onionskin h3, onionskin h4, onionskin p, onionskin ul {
+    /* color: white; */
+    padding: 0px 0px;
+    margin: 0 0 20px 0;
+    /* max-width: 1024px; */
+    font-weight: normal;
+    width: 100%;
+    text-align: left;
+}
+
+onionskin ul {
+    font-size: 60%;
+    list-style: none;
+    margin-bottom: 40px;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+onionskin ul li {
+    margin: 0 0 1px 0;
+    padding: 0 4px 0 0;
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    line-height: 130%;
+    overflow: hidden;
+}
+
+onionskin ul li span {
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-width: 1px 1px 1px 0;
+    background: rgba(255, 255, 255, .4);
+    /* background: rgba(255, 255, 255, .2); */
+    font-style: normal;
+    font-weight: normal;
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 0 4px 4px 0;
+    /* border-right: 1px solid rgba(0, 0, 0, .1); */
+}
+
+onionskin ul li span:first-of-type {
+    border-radius: 4px 0 0 4px;
+    background: hsla(var(--appBackgroundDarkestHSL), 1);
+    border-color: hsla(var(--appBackgroundDarkestHSL), .3);
+    border-width: 1px;
+    /* width: 70px; */
+    /* text-align: right; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    white-space: nowrap;
+
+    /* text-align: right; */
+    /* border-right: 1px solid rgba(0, 0, 0, .2); */
+    /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
+    text-transform: uppercase;
+    font-size: 90%;
+    letter-spacing: 1px;
+    color: white;
+}
+
+onionskin description {
+    font-size: 100%;
+    width: 100%;
+}
+
+onionskin h1 {
+    font-size: 130%;
+    margin: 0 0 8px 0;
+}
+
+onionskin h2 {
+    font-size: 120%;
+}
+
+onionskin h3 {
+    font-size: 110%;
+}
+
+onionskin button {
+    outline: none;
+    border: none;
+    display: inline-block;
+    font-size: 100%;
+    background: none;
+    color: hsl(var(--linkColorHSL));
+    font-weight: normal;
+    font-style: inherit;
+    padding: 0;
+    text-align: left;
+
+}
+
+onionskin intro, onionskin container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 90%;
+    max-width: 1024px;
+    font-size: 100%;
+}
+
+onionskin container lead {
+    display: block;
+    width: 100%;
 }
 
 onionskin.show {
@@ -82,15 +241,18 @@ onionskin.show {
     pointer-events: all;
 }
 
-onionskin img, onionskin video {
+onionskin img, onionskin video, onionskin iframe {
     width: 100%;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
     border-radius: var(--borderRadius);
+    margin-top: 10px;
+    margin-bottom: 50px;
+    overflow: hidden;
 }
 
 h1,
 .attribution a {
-    font-family: 'Terminal Dosis';
+    /* font-family: 'Terminal Dosis'; */
     font-weight: 700;
 }
 
@@ -213,7 +375,7 @@ header h1 {
 
 header h1 a,
 header h1 {
-    font-family: 'Terminal Dosis';
+    /* font-family: 'Terminal Dosis'; */
     color: #000;
     border: rgba(223, 223, 229, 0) solid 0px;
     border-width: 1px 0px;
@@ -259,16 +421,10 @@ nav a {
 }
 
 nav a:hover,
-nav a:active {
+nav a:active, nav a:focus {
     outline: none;
     color: #000;
     border-bottom-color: #000;
-    border-top-color: rgba(223, 223, 229, 0);
-}
-
-nav a:focus {
-    color: #008CFF;
-    border-color: #008CFF;
     border-top-color: rgba(223, 223, 229, 0);
 }
 
@@ -278,10 +434,6 @@ nav a.on {
     border-bottom-color: rgba(223, 223, 229, 0);
 }
 
-nav a:focus.on {
-    color: #008CFF;
-    border-color: #008CFF;
-}
 
 section {
     margin: 0px;
@@ -332,11 +484,23 @@ section.work {
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 section.intro {
     padding: 0px 0px 20px 0px;
     max-width: 570px
+}
+
+section.work group {
+    display: block;
+    margin-bottom: 20px;
+}
+
+section.work group work {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 section.work button {
@@ -350,12 +514,12 @@ section.work button {
     float: left;
     padding: 0px;
     line-height: 100%;
-    margin: 0px 20px 20px 0px;
+    /* margin: 0px 20px 20px 0px; */
     border: none;
     text-align: center;
-    border-radius: 6px;
+    border-radius: var(--borderRadius);
     font-weight: 800;
-
+    cursor: pointer;
 }
 
 section.work button:focus {
@@ -369,7 +533,8 @@ button::-moz-focus-inner {
 }
 
 section.work span {
-    background: rgba(223, 223, 229, .95);
+    background: hsla(var(--appBackgroundHSL), .98);
+    pointer-events: none;
     font-family: 'Abel';
     display: block;
     border: none;
@@ -420,7 +585,7 @@ section.work span i {
 
 footer {
     min-width: 377px;
-    font-family: 'Terminal Dosis';
+    /* font-family: 'Terminal Dosis'; */
     position: fixed;
     width: 100%;
     bottom: 0px;
@@ -473,7 +638,7 @@ footer button:focus,
 footer button:active {
     outline: none;
     border: none;
-    background-color: #1669b7;
+    background-color: hsl(var(--linkColorHSL));
     background-position: -26px 0px;
     opacity: 1;
 }
@@ -541,6 +706,11 @@ footer button:active {
 
     footer button.accessibility {
         margin-right: 30px;
+    }
+
+    onionskin intro, onionskin container {
+        width: calc(100%);
+        margin: 0;
     }
 }
 

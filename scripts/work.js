@@ -1,3 +1,4 @@
+/// <reference path="../models/CaseStudyObject.js" />
 /// <reference path="../models/WorkObject.js" />
 
 // if (!UseDebug) {
@@ -22,6 +23,9 @@ var app = new Vue({
   methods: {
     ToggleShowOnionSkin() {
       this.showOnionskin = !this.showOnionskin;
+      if (!this.showOnionskin) {
+        history.replaceState(null, null, window.location.origin);
+      }
       if (!this.showOnionskin && document.getElementById('onionvideo') != undefined) {
         document.getElementById('onionvideo').pause();
       } else if (document.getElementById('onionvideo') != undefined) {
@@ -30,13 +34,16 @@ var app = new Vue({
     },
 
     SelectWork(_work) {
-      if (_work.zoomImages.length === 0 && _work.url !== '') {
+      if (_work.caseStudyObjects.length === 0 && _work.url !== '') {
         window.open(_work.url);
       } else if (_work.zoomImage !== '') {
         // this.ZoomImage(_work.zoomImage);
         this.ToggleShowOnionSkin();
       }
       this.selectedWork = _work;
+      if (_work.caseStudyObjects.length > 0) {
+        history.replaceState(null, null, window.location.origin + '?csid=' + _work.id);
+      }
     },
 
     EmailMe() {
@@ -45,6 +52,15 @@ var app = new Vue({
 
     LoadPage() {
       this.GetContrastSetting();
+      let url = new URL(window.location.href);
+      let csid = parseInt(url.searchParams.get('csid'));
+
+      if (csid !== null && csid !== undefined) {
+        let work = this.works.find((item) => item.id === csid);
+        if (work !== null && work !== undefined && work.caseStudyObjects.length > 0) {
+          this.SelectWork(work);
+        }
+      }
       window.setTimeout(function () {
         app.showArticle = true;
       }, 10);
@@ -60,11 +76,29 @@ var app = new Vue({
         this.showContrast = true;
       }
     },
+
+    OpenUrl(e, _url) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      window.open(_url);
+    },
   },
 
   mounted() {
     this.LoadPage();
   },
 
-  computed: {},
+  computed: {
+    workGroups() {
+      return this.works.reduce((grouped, item) => {
+        const key = item.group;
+        if (!grouped[key]) {
+          grouped[key] = [];
+        }
+        grouped[key].push(item);
+        return grouped;
+      }, {});
+    },
+  },
 });

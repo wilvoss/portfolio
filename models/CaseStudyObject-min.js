@@ -1,0 +1,1 @@
+class CaseStudyObject{constructor(i){this.html=void 0===i.html?"":i.html,this.image=null==i.image?"":i.image,this.isMobile=null!=i.isMobile&&i.isMobile,this.alt=null==i.alt?"":i.alt,this.show=void 0===i.show||i.show}}
