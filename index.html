@@ -24,8 +24,8 @@
             <li v-if="selectedWork.linkText !== ''">
               <span>Link</span><span> <a @click="OpenUrl(event, selectedWork.url)" target="_blank">{{selectedWork.linkText}}</a></span>
             </li>
-            <li v-if="selectedWork.whyText !== ''"><span>Why</span> <span>{{selectedWork.whyText}}</span></li>
-            <li v-if="selectedWork.roleText !== ''"><span>What</span> <span>{{selectedWork.roleText}}</span></li>
+            <!-- <li v-if="selectedWork.whyText !== ''"><span>Why</span> <span>{{selectedWork.whyText}}</span></li> -->
+            <li v-if="selectedWork.roleText !== ''"><span>Skills</span> <span>{{selectedWork.roleText}}</span></li>
             <li><span>Read time</span> <span>7 to 10 minutes</span></li>
           </ul>
         </intro>
