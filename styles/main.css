@@ -125,7 +125,7 @@ onionskin close:after {
 }
 
 
-onionskin h1, onionskin h2, onionskin h3, onionskin h4, onionskin p, onionskin ul {
+onionskin h1, onionskin h2, onionskin h3, onionskin h4, onionskin p, onionskin intro ul {
     /* color: white; */
     padding: 0px 0px;
     margin: 0 0 20px 0;
@@ -135,16 +135,21 @@ onionskin h1, onionskin h2, onionskin h3, onionskin h4, onionskin p, onionskin u
     text-align: left;
 }
 
-onionskin ul {
-    font-size: 60%;
-    list-style: none;
+
+onionskin ul, onionskin ol {
+    font-size: 75%;
     margin-bottom: 40px;
     user-select: none;
     -webkit-user-select: none;
     cursor: default;
 }
 
-onionskin ul li {
+onionskin intro ul {
+    list-style: none;
+    font-size: 60%;
+}
+
+onionskin intro ul li {
     margin: 0 0 1px 0;
     padding: 0 4px 0 0;
     display: flex;
@@ -154,7 +159,7 @@ onionskin ul li {
     overflow: hidden;
 }
 
-onionskin ul li span {
+onionskin intro ul li span {
     border: 1px solid rgba(0, 0, 0, .2);
     border-width: 1px 1px 1px 0;
     background: rgba(255, 255, 255, .4);

@@ -60,10 +60,10 @@ var Works = [
         html: '<h2>Unpacking the process</h2><p>Progress began with UI improvements like tweaking overall spacing, sizing, colors, and UX flows while generating a positive feedback loop with fellow game designers and UX designers along the way. As well, I did this when I added features that required iconography, animation, visual assets, and content by sending out texts with comparison screenshots or by updating the prototype and asking folks for their opinions. Often I would grab an existing resource, test its viability and reception, then generate my own version, only to repeat this process until I was satisfied with the results.</p>',
       }),
       new CaseStudyObject({
-        html: '<p>A good example of this can be seen in my approach to giving user\'s guidance, both realtime and asynchonously. My initial attempts at a "how to" guide needed improvement. But it evolved from a poorly laid out single page modal to a polished layout, followed by version that didn\'t use imagery, but illustrated all concepts via coded design elements, and finally itereating on a full blown tutorial/oobe that really allowed users to get understand how to play.</p>',
+        html: '<p>This approach can be seen in my approach to giving user\'s guidance, both realtime and asynchonously. My initial attempts at a "how to" guide needed improvement. Gradually, it evolved through many iterations (with many small steps in between):</p> <ol><li>confusing single page modal</li><li>polished layout with clear navigation and more thorough guidance</li><li>removed imagery in favor of dynamic, scalable, coded design elements</li><li>full blown tutorial/oobe that really helped users withg gameplay fundamentals</li><li>animations and interactions that emphasized key elements of gameplay</li></ol>',
       }),
       new CaseStudyObject({
-        html: '<h2>More to come!</h2><p>Check back for more details, screenshots, and information about the process and journey of bringing this product to market.</p>',
+        html: '<h2>More to come!</h2><p>Check back for more details, screenshots, and information about the process and journey of bringing this product to market. In the meantime, if you are interested in all of the changes I committed in git, read its <a href="https://bigtentgames.com/?showVersionHistory=true#likeme" target="_blank">version history</a></p>',
       }),
     ],
   }),
