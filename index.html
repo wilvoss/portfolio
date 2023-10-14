@@ -12,12 +12,13 @@
   <body>
     <app id="app" v-cloak>
       <link rel="stylesheet" :href="showContrast ? 'styles/accessibility.css' : ''" media="screen" />
-      <onionskin v-if="selectedWork !== null" :class="{show: showOnionskin}">
+      <modal v-if="selectedWork !== null" :class="{show: showModal}">
         <chrome>
-          <close @click="ToggleShowOnionSkin"></close>
+          <close @click="ToggleShowModal"></close>
         </chrome>
         <intro>
           <!-- <h1>{{selectedWork.name}}</h1> -->
+          <img :src="selectedWork.backgroundImage" />
           <ul>
             <li><span>Case study</span> <span>{{selectedWork.name}}</span></li>
             <li v-if="selectedWork.description !== ''"><span>{{selectedWork.type}}</span> <span>{{selectedWork.description}}</span></li>
@@ -26,20 +27,19 @@
             </li>
             <!-- <li v-if="selectedWork.whyText !== ''"><span>Why</span> <span>{{selectedWork.whyText}}</span></li> -->
             <li v-if="selectedWork.roleText !== ''"><span>Skills</span> <span>{{selectedWork.roleText}}</span></li>
-            <li><span>Read time</span> <span>7 to 10 minutes</span></li>
+            <!-- <li><span>Read time</span> <span>7 to 10 minutes</span></li> -->
           </ul>
         </intro>
         <container v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
           <lead v-if="object.html !== ''" v-html="object.html"></lead>
           <img :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" />
-          <!-- <video :key="object.image" id="onionvideo" volume=".35" v-if="object.image !== '' && object.image.indexOf('youtu.be') != -1" autoplay :src="object.image"></video> -->
 
-          <iframe width="1024" height="576" v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image + '?rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image + '?rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-          <iframe width="1024" height="576" v-if="object.image !== '' && object.image.indexOf('player.vimeo') != -1" :src="object.image" frameborder="0" title="OOBE" allow="fullscreen"></iframe>
+          <iframe v-if="object.image !== '' && object.image.indexOf('player.vimeo') != -1" :src="object.image" frameborder="0" title="OOBE" allow="fullscreen"></iframe>
           <script src="https://player.vimeo.com/api/player.js"></script>
         </container>
-      </onionskin>
+      </modal>
       <wrapper>
         <header>
           <hgroup>

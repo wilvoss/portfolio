@@ -43,7 +43,7 @@ app {
     flex-direction: column;
 }
 
-/* 
+
 wrapper {
     overflow: hidden;
     height: 100%;
@@ -51,7 +51,7 @@ wrapper {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-} */
+}
 
 [v-cloak] {
     transition: 0ms ease-out opacity;
@@ -64,7 +64,7 @@ button {
     cursor: pointer;
 }
 
-onionskin {
+modal {
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -77,14 +77,12 @@ onionskin {
     justify-content: start;
     align-items: center;
     background: rgba(0, 0, 0, 0.8);
-    background: hsla(var(--appBackgroundDarkerHSL), .95);
+    background: hsla(var(--appBackgroundDarkerHSL), 1);
     transition: 250ms ease-out all;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     z-index: 200;
 }
 
-onionskin close {
+modal close {
     width: 40px;
     height: 40px;
     border-radius: 20px;
@@ -107,11 +105,11 @@ onionskin close {
     background-size: 16px 16px;
 }
 
-onionskin close:hover {
+modal close:hover {
     width: 100px;
 }
 
-onionskin close:before {
+modal close:before {
     text-wrap: nowrap;
     flex-wrap: nowrap;
     padding: 0px 10px;
@@ -122,7 +120,7 @@ onionskin close:before {
     content: '';
 }
 
-onionskin close:after {
+modal close:after {
     display: flex;
     text-wrap: nowrap;
     flex-wrap: nowrap;
@@ -139,13 +137,13 @@ onionskin close:after {
     transition: 200ms ease-in-out all;
 }
 
-onionskin close:hover:after {
+modal close:hover:after {
     opacity: 1;
 }
 
 
 
-onionskin h1, onionskin h2, onionskin h3, onionskin h4, onionskin p, onionskin intro ul {
+modal h1, modal h2, modal h3, modal h4, modal p, modal intro ul {
     /* color: white; */
     padding: 0px 0px;
     margin: 0 0 20px 0;
@@ -155,49 +153,49 @@ onionskin h1, onionskin h2, onionskin h3, onionskin h4, onionskin p, onionskin i
     text-align: left;
 }
 
-onionskin h1, onionskin h2 {
+modal h1, modal h2 {
     margin: 20px 0;
 
 }
 
-onionskin ul, onionskin ol {
+modal ul, modal ol {
     font-size: 75%;
-    margin-bottom: 20px;
     user-select: none;
     -webkit-user-select: none;
     cursor: default;
 }
 
-onionskin intro ul {
+modal intro ul {
     list-style: none;
     font-size: 60%;
+    width: auto;
+    margin-bottom: 0px;
 }
 
-onionskin intro ul li {
+modal intro ul li {
     margin: 0 0 1px 0;
     padding: 0 4px 0 0;
     display: flex;
     gap: 0;
     flex-wrap: wrap;
     line-height: 130%;
-    overflow: hidden;
 }
 
-onionskin intro ul li span {
+modal intro ul li span {
     border: 1px solid rgba(0, 0, 0, .2);
     border-width: 1px 1px 1px 0;
     background: rgba(255, 255, 255, .4);
     /* background: rgba(255, 255, 255, .2); */
     font-style: normal;
     font-weight: normal;
-    padding: 6px 12px;
+    padding: 7px 12px;
     display: inline-block;
     border-radius: 0 4px 4px 0;
     /* font-family: monospace; */
     /* border-right: 1px solid rgba(0, 0, 0, .1); */
 }
 
-onionskin ul li span:first-of-type {
+modal ul li span:first-of-type {
     /* font-family: 'Abel', 'Segoe UI', 'Helvetica Neue'; */
     border-radius: 4px 0 0 4px;
     background: hsla(var(--appBackgroundDarkestHSL), 1);
@@ -219,25 +217,25 @@ onionskin ul li span:first-of-type {
     color: white;
 }
 
-onionskin description {
+modal description {
     font-size: 100%;
     width: 100%;
 }
 
-onionskin h1 {
+modal h1 {
     font-size: 130%;
     margin: 0 0 8px 0;
 }
 
-onionskin h2 {
+modal h2 {
     font-size: 120%;
 }
 
-onionskin h3 {
+modal h3 {
     font-size: 110%;
 }
 
-onionskin button {
+modal button {
     outline: none;
     border: none;
     display: inline-block;
@@ -251,7 +249,7 @@ onionskin button {
 
 }
 
-onionskin intro, onionskin container, onionskin chrome {
+modal intro, modal container, modal chrome {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,21 +260,21 @@ onionskin intro, onionskin container, onionskin chrome {
     font-size: 100%;
 }
 
-onionskin chrome {
+modal chrome {
     align-items: end;
 }
 
-onionskin container lead {
+modal container lead {
     display: block;
     width: 100%;
 }
 
-onionskin.show {
+modal.show {
     opacity: 1;
     pointer-events: all;
 }
 
-onionskin img, onionskin video, onionskin iframe {
+modal img, modal video, modal iframe {
     width: 100%;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
     border: none;
@@ -286,8 +284,26 @@ onionskin img, onionskin video, onionskin iframe {
     overflow: hidden;
 }
 
+modal intro {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
 
-onionskin iframe {
+modal intro img {
+    width: 100%;
+    max-width: 328px;
+    margin: 0px;
+    box-shadow: none;
+}
+
+modal iframe {
+    height: calc(100vw * .5625);
+    max-height: 576px;
     margin-bottom: 40px;
     background: black;
 }
@@ -497,17 +513,17 @@ section.reference {
     margin-right: 0px;
     display: flex;
     flex-direction: row;
+    gap: 20px;
     width: 100%;
     flex-wrap: wrap;
 }
 
 section.reference p {
     line-height: 150%;
-    width: 275px;
-    float: left;
+    width: calc(33% - 20px);
     padding: 0px;
     text-indent: -4px;
-    margin: 0px 20px 20px 0px;
+    /* margin: 0px 20px 20px 0px; */
     background: rgba(255, 255, 255, 0);
 }
 
@@ -532,7 +548,6 @@ section.work {
 
 section.intro {
     padding: 0px 0px 20px 0px;
-    max-width: 570px
 }
 
 section.work group {
@@ -550,8 +565,8 @@ section.work button {
     outline: none;
     overflow: hidden;
     background-size: cover;
-    width: 275px;
-    height: 110px;
+    width: 328px;
+    height: 132px;
     display: block;
     font-size: 80%;
     float: left;
@@ -579,15 +594,17 @@ section.work span {
     background: hsla(var(--appBackgroundHSL), .98);
     pointer-events: none;
     font-family: 'Abel';
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: none;
     outline: none;
-    padding: 40px 20px 0px 20px;
-    height: 70px;
     font-size: 90%;
     color: #000;
     opacity: 0;
-    width: 235px;
+    width: 100%;
+    height: 100%;
     margin-left: 0px;
     -webkit-transform: translate(0px, -75px) scale(1.05, 1.05);
     transform: translate(0px, -75px) scale(1.05, 1.05);
@@ -688,15 +705,24 @@ footer button:active {
 
 @media screen and (max-width:640px) {
     body {
-        font-size: 1.5em;
+        font-size: 1.35em;
+        /* overflow: auto; */
+        /* overflow-y: auto; */
+        /* height: auto; */
+    }
+
+    app {
         overflow: auto;
-        overflow-y: auto;
+        height: 100%;
+    }
+
+    wrapper {
         height: auto;
+        overflow: auto;
     }
 
     article {
         overflow: initial;
-        margin-bottom: 40px;
     }
 
     section.work a {
@@ -733,7 +759,6 @@ footer button:active {
 
     section.reference p {
         height: auto;
-        margin-bottom: 30px;
     }
 
     section.intro {
@@ -743,7 +768,6 @@ footer button:active {
     article {
         padding-left: 30px;
         padding-right: 30px;
-        padding-bottom: 0px;
     }
 
     footer {
@@ -759,12 +783,17 @@ footer button:active {
         margin-right: 30px;
     }
 
-    onionskin intro, onionskin container {
+    modal intro, modal container {
         width: calc(100%);
         margin: 0;
     }
 
-    onionskin close {
+    modal intro {
+        flex-direction: column-reverse;
+        margin-bottom: 20px;
+    }
+
+    modal close {
         top: 10px;
         right: 10px;
         font-size: 90%;

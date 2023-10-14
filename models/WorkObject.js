@@ -42,7 +42,7 @@ var Works = [
         html: '<p>This case study is a demonstration of my process in a void, working by myself. If you want to learn about my work in teams, check out my other case studies!</p>',
       }),
       new CaseStudyObject({
-        html: '<h2>The challenge</h2><p>“Like Me?” initially debuted as a web-based proof-of-concept video game. The project was revitalized with the goal of bringing it to market as swiftly as possible. Despite the core gameplay being exceptional, the UI unfortunately fell short, as it was unbalanced, unintuitive, unhelpful, and somewhat unappealing. Specifically, users struggled to understand where to focus their attention, the meaning of certain visuals, and how to successfully play the game. There was also room for enhancements like score keeping and social sharing, as well as updated daily content.</p><p>Here are what the four main screens (home, gameplay, game over, how to play) looked like at the start of this journey:</p>',
+        html: '<h2>The challenge</h2><p>“Like Me?” initially debuted as a web-based proof-of-concept video game. The project was revitalized with the goal of bringing it to market as swiftly as possible. Despite the core gameplay being exceptional, the UI unfortunately fell short, as it was unintuitive, unhelpful, and somewhat unappealing. Specifically, users struggled to understand where to focus their attention, the meaning of certain visuals, and how to successfully play the game. There was also room for enhancements like score keeping and social sharing, as well as updated daily content.</p><p>Here are what the four main screens (home, gameplay, game over, how to play) looked like at the start of this journey:</p>',
         image: 'work/casestudies/likeme/1.png',
       }),
       new CaseStudyObject({
@@ -99,7 +99,7 @@ var Works = [
         html: '<h4>Process example: Theme Music</h4><p>My undergraduate degree is in music composition and theory. So when it came time to create a theme song, my heart was filled with joy! As with every other aspect of this production, I still asked for and incorporated feedback from players.</p><p>As you move from the first to the fourth track, note the changes in melody, texture, style, color, percussion, and mixing. It evolved from a sci-fi jazz combo to an popish, 8-bit nod with higher pitched notes, crisper tones with fewer overtones and a reduction of overall noise. All changes made with both player feedback and optimization for mobile gameplay in mind.</p>',
       }),
       new CaseStudyObject({
-        html: '<iframe width="100%" height="380" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1704507636&color=%2365657c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
+        html: '<iframe style="max-height: 380px; min-height: 380px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1704507636&color=%2365657c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
       }),
       new CaseStudyObject({
         html: "<p>I created, edited, and produced this song in GarageBand, a pretty good free application if you own a Mac. It was fun! Here's a screenshot of the current project within GarageBand. Needless to say, I switched instrumentation, entry and exit points, types of transitions, and dynamics frequently (pun intended).</p>",

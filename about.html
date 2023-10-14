@@ -13,29 +13,31 @@
   <body>
     <app id="app" v-cloak>
       <link rel="stylesheet" :href="showContrast ? 'styles/accessibility.css' : ''" media="screen" />
-      <header>
-        <hgroup>
-          <h1><a href="/" title="Home Page">Wil Voss</a></h1>
-        </hgroup>
-      </header>
-      <nav>
-        <ul>
-          <li><a href="/" alt="A sample of Wil's work." title="A sample of Wil's work.">Work</a></li>
-          <li><a href="why.html" alt="Why work with Wil?" title="Why work with Wil?">Why</a></li>
-          <li><a class="on" href="about.html" alt="Read more about Wil Voss." title="Read more about Wil Voss.">About</a></li>
-        </ul>
-      </nav>
-      <article :style="{opacity: showArticle ? 1 : 0}">
-        <section class="intro">
-          <p>Contact me through <a target="_blank" href="http://www.linkedin.com/in/wilvoss" title="LinkedIn">LinkedIn</a>.</p>
-          <p>My career began as a pre-production artist in Massachusetts where I cut my design teeth working for Bechtel/Parsons Brinckerhoff in downtown Boston. My artistic skills led to further design work in Boston and then New Orleans, Louisiana, where I designed and produced collateral for local companies that included the Louisiana Philharmonic Orchestra, Commander's Palace, Palace Cafe, Brennan's, and the New Orleans International Airport.</p>
-          <p>
-            My family now calls Seattle home where I have been building a body of work that represents game design, UX consulting, prototyping, branding, web development, and integration for clients that include Impira, Microsoft, Avanade, as well as various other companies. In addition, I started the video game company <a href="httsp://bigtentgames.com" target="_blank">Big Tent Games</a> where I conceive, design, develop, iterate, improve, test, publish, and market video
-            games.
-          </p>
-        </section>
-        <span class="clearBoth"></span>
-      </article>
+      <wrapper>
+        <header>
+          <hgroup>
+            <h1><a href="/" title="Home Page">Wil Voss</a></h1>
+          </hgroup>
+        </header>
+        <nav>
+          <ul>
+            <li><a href="/" alt="A sample of Wil's work." title="A sample of Wil's work.">Work</a></li>
+            <li><a href="why.html" alt="Why work with Wil?" title="Why work with Wil?">Why</a></li>
+            <li><a class="on" href="about.html" alt="Read more about Wil Voss." title="Read more about Wil Voss.">About</a></li>
+          </ul>
+        </nav>
+        <article :style="{opacity: showArticle ? 1 : 0}">
+          <section class="intro">
+            <p>Contact me through <a target="_blank" href="http://www.linkedin.com/in/wilvoss" title="LinkedIn">LinkedIn</a>.</p>
+            <p>My career began as a pre-production artist in Massachusetts where I cut my design teeth working for Bechtel/Parsons Brinckerhoff in downtown Boston. My artistic skills led to further design work in Boston and then New Orleans, Louisiana, where I designed and produced collateral for local companies that included the Louisiana Philharmonic Orchestra, Commander's Palace, Palace Cafe, Brennan's, and the New Orleans International Airport.</p>
+            <p>
+              My family now calls Seattle home where I have been building a body of work that represents game design, UX consulting, prototyping, branding, web development, and integration for clients that include Impira, Microsoft, Avanade, as well as various other companies. In addition, I started the video game company <a href="httsp://bigtentgames.com" target="_blank">Big Tent Games</a> where I conceive, design, develop, iterate, improve, test, publish, and market video
+              games.
+            </p>
+          </section>
+          <span class="clearBoth"></span>
+        </article>
+      </wrapper>
       <footer><button class="email" @click="EmailMe" title="Email">Email</button><button class="linkedIn" onclick="window.open('http://www.linkedin.com/in/wilvoss')" title="LinkedIn">LinkedIn</button><button class="accessibility" @click="ToggleContrast" title="Contrast">Contrast</button></footer>
     </app>
     <script src="models/CaseStudyObject.js" type="text/javascript"></script>

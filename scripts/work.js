@@ -17,19 +17,14 @@ var app = new Vue({
     showArticle: false,
     year: new Date().getFullYear(),
     selectedWork: null,
-    showOnionskin: false,
+    showModal: false,
     r: document.querySelector(':root'),
   },
   methods: {
-    ToggleShowOnionSkin() {
-      this.showOnionskin = !this.showOnionskin;
-      if (!this.showOnionskin) {
+    ToggleShowModal() {
+      this.showModal = !this.showModal;
+      if (!this.showModal) {
         history.replaceState(null, null, window.location.origin);
-      }
-      if (!this.showOnionskin && document.getElementById('onionvideo') != undefined) {
-        document.getElementById('onionvideo').pause();
-      } else if (document.getElementById('onionvideo') != undefined) {
-        document.getElementById('onionvideo').play();
       }
     },
 
@@ -38,7 +33,7 @@ var app = new Vue({
         window.open(_work.url);
       } else if (_work.zoomImage !== '') {
         // this.ZoomImage(_work.zoomImage);
-        this.ToggleShowOnionSkin();
+        this.ToggleShowModal();
       }
       this.selectedWork = _work;
       if (_work.caseStudyObjects.length > 0) {
