@@ -27,7 +27,7 @@ var Works = [
     url: 'https://bigtentgames.com/likeme.html',
     alt: 'Read about the process used in creating, developing, and producing the video game "Like Me?"',
     linkText: 'Marketing page',
-    roleText: 'Concepting, design, code, research, marketing',
+    roleText: 'Concept, design, code, research, marketing',
     whyText: 'Convey process and deep skillset',
     backgroundImage: 'work/likeme_thumbnail.jpg',
     group: 'case studies',

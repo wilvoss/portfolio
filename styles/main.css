@@ -101,6 +101,10 @@ onionskin close {
     cursor: pointer;
     overflow: hidden;
     transition: 200ms ease-in-out all;
+    background-image: url('../images/icon_close.svg');
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 16px 16px;
 }
 
 onionskin close:hover {
@@ -112,23 +116,33 @@ onionskin close:before {
     flex-wrap: nowrap;
     padding: 0px 10px;
     margin-top: 2px;
-    content: '⎋';
+    display: block;
+    width: 20px;
+    font-size: 20px;
+    content: '';
 }
 
 onionskin close:after {
     display: flex;
     text-wrap: nowrap;
     flex-wrap: nowrap;
-    padding: 0px 10px 0 0;
+    padding: 0;
     content: 'close';
     justify-content: center;
     align-items: center;
     font-size: 75%;
     line-height: 100%;
     margin-top: 2px;
+    opacity: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: 200ms ease-in-out all;
 }
+
+onionskin close:hover:after {
+    opacity: 1;
+}
+
 
 
 onionskin h1, onionskin h2, onionskin h3, onionskin h4, onionskin p, onionskin intro ul {
@@ -275,6 +289,7 @@ onionskin img, onionskin video, onionskin iframe {
 
 onionskin iframe {
     margin-bottom: 40px;
+    background: black;
 }
 
 h1,
