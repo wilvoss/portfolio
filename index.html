@@ -17,7 +17,6 @@
           <close @click="ToggleShowModal"></close>
         </chrome>
         <intro>
-          <!-- <h1>{{selectedWork.name}}</h1> -->
           <img :src="selectedWork.backgroundImage" />
           <ul>
             <li><span>Case study</span> <span>{{selectedWork.name}}</span></li>
@@ -39,6 +38,10 @@
           <iframe v-if="object.image !== '' && object.image.indexOf('player.vimeo') != -1" :src="object.image" frameborder="0" title="OOBE" allow="fullscreen"></iframe>
           <script src="https://player.vimeo.com/api/player.js"></script>
         </container>
+        <controls v-if="activeWorks.length > 1">
+          <button :class="{disabled: selectedWork.id === activeWorks[0].id}">previous</button>
+          <button :class="{disabled: selectedWork.id === activeWorks[activeWorks.length - 1].id}">next</button>
+        </controls>
       </modal>
       <wrapper>
         <header>

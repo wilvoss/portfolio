@@ -95,5 +95,9 @@ var app = new Vue({
         return grouped;
       }, {});
     },
+
+    activeWorks() {
+      return this.works.filter((obj) => obj.caseStudyObjects.length > 0).flat();
+    },
   },
 });

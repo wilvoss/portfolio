@@ -82,6 +82,11 @@ modal, onionskin {
     z-index: 200;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: .3;
+}
+
 onionskin {
     background: hsla(var(--appBackgroundDarkestHSL), .9);
 }
