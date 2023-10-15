@@ -64,7 +64,7 @@ button {
     cursor: pointer;
 }
 
-modal {
+modal, onionskin {
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -80,6 +80,10 @@ modal {
     background: hsla(var(--appBackgroundDarkerHSL), 1);
     transition: 250ms ease-out all;
     z-index: 200;
+}
+
+onionskin {
+    background: hsla(var(--appBackgroundDarkestHSL), .9);
 }
 
 modal close {
@@ -101,8 +105,8 @@ modal close {
     transition: 200ms ease-in-out all;
     background-image: url('../images/icon_close.svg');
     background-repeat: no-repeat;
-    background-position: 12px center;
-    background-size: 16px 16px;
+    background-position: 13px center;
+    background-size: 14px 14px;
 }
 
 modal close:hover {
