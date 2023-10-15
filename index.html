@@ -16,16 +16,19 @@
         <chrome>
           <close @click="ToggleShowModal"></close>
         </chrome>
+        <!-- <h2>Case Study #{{selectedWork.id}}</h2> -->
         <intro>
           <img :src="selectedWork.backgroundImage" />
           <ul>
-            <li><span>Case study</span> <span>{{selectedWork.name}}</span></li>
-            <li v-if="selectedWork.description !== ''"><span>{{selectedWork.type}}</span> <span>{{selectedWork.description}}</span></li>
+            <li><span>Case</span> <span>{{selectedWork.name}}</span></li>
+            <li v-if="selectedWork.description !== ''"><span>What</span> <span>{{selectedWork.description}}</span></li>
             <li v-if="selectedWork.linkText !== ''">
               <span>Link</span><span> <a @click="OpenUrl(event, selectedWork.url)" target="_blank">{{selectedWork.linkText}}</a></span>
             </li>
+            <li><span>Designer</span> <span>Wil Voss</span></li>
             <!-- <li v-if="selectedWork.whyText !== ''"><span>Why</span> <span>{{selectedWork.whyText}}</span></li> -->
-            <li v-if="selectedWork.roleText !== ''"><span>Skills</span> <span>{{selectedWork.roleText}}</span></li>
+            <li v-if="selectedWork.roleText !== ''"><span>Skillset</span> <span>{{selectedWork.roleText}}</span></li>
+            <!-- <li><span>Result</span> <span>7 to 10 minutes</span></li> -->
             <!-- <li><span>Read time</span> <span>7 to 10 minutes</span></li> -->
           </ul>
         </intro>

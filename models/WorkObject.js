@@ -26,11 +26,11 @@ var Works = [
     description: 'Casual, mobile-first, video game',
     url: 'https://bigtentgames.com/likeme.html',
     alt: 'Read about the process used in creating, developing, and producing the video game "Like Me?"',
-    linkText: 'Marketing page',
-    roleText: 'Concept, design, code, research, marketing',
+    linkText: 'https://bigtentgames.com/likeme.html',
+    roleText: 'Ideation, design, code, research, marketing',
     whyText: 'Convey process and deep skillset',
     backgroundImage: 'work/likeme_thumbnail.jpg',
-    group: 'case studies',
+    group: 'use cases',
     caseStudyObjects: [
       new CaseStudyObject({
         show: false,
@@ -60,7 +60,7 @@ var Works = [
         image: 'work/casestudies/likeme/4.png',
       }),
       new CaseStudyObject({
-        html: '<ol><li>cluttered and confusing single page modal</li><li>polished layout with clear navigation and more thorough guidance</li><li>removed imagery in favor of dynamic, scalable, coded design elements</li><li>full blown tutorial/oobe that really helped users with gameplay fundamentals</li></ol><p>Eventually, I added animations and interactions that emphasized key elements of gameplay. At one point I had a simple welcome screen for first time players, but chose to present the tutorial as the first time run or OOBE. Each step of the way, I asked for input from others and incorporated their feedback as needed. The final OOBE/tutorial can be seen in the following video.</p>',
+        html: '<ol><li>cluttered and confusing single page modal</li><li>polished layout with clear navigation and more thorough guidance</li><li>increased description and guidance with steps outline</li><li>full blown tutorial/oobe that really helped users with gameplay fundamentals</li></ol><p>Eventually, I added animations and interactions that emphasized key elements of gameplay. At one point I had a simple welcome screen for first time players, but chose to present the tutorial as the first time run or OOBE. Each step of the way, I asked for input from others and incorporated their feedback as needed. The final OOBE/tutorial can be seen in the following video.</p>',
         image: 'https://player.vimeo.com/video/874206343?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479',
       }),
       new CaseStudyObject({
@@ -96,7 +96,7 @@ var Works = [
         html: '<ol><li>"moody" color theme</li><li>alternate pattern, "awake" color theme</li><li>Cat Mode, "awake" color theme</li><li>Dark Mode, "keen" color theme, alternate pattern</li></ol><p>These options were provided knowing that certain users struggled with the default colors, shapes, and patterns. By opening up the possiblity of user choice, I enabled those player to adjust the game to their preferences ensuring a higher rate of success when playing. I also included music and sound effects which the user can toggle independently.</p>',
       }),
       new CaseStudyObject({
-        html: '<h4>Process example: Theme Music</h4><p>My undergraduate degree is in music composition and theory. So when it came time to create a theme song, my heart was filled with joy! As with every other aspect of this production, I still asked for and incorporated feedback from players.</p><p>As you move from the first to the fourth track, note the changes in melody, texture, style, color, percussion, and mixing. It evolved from a sci-fi jazz combo to an popish, 8-bit nod with higher pitched notes, crisper tones with fewer overtones and a reduction of overall noise. All changes made with both player feedback and optimization for mobile gameplay in mind.</p>',
+        html: '<h4>Process example: Theme Music</h4><p>My undergraduate degree is in music composition and theory. So when it came time to create a theme song, my heart was filled with joy! As with every other aspect of this production, I still asked for and incorporated feedback from players.</p><p>As you move from the first to the fourth track, note the changes in melody, texture, style, color, percussion, and mixing. It evolved from a sci-fi jazz combo to a bubblegum pop, 8-bit nod with higher pitched notes, crisper tones and a reduction of overall noise. All changes were made with both player feedback and optimization for mobile gameplay in mind.</p>',
       }),
       new CaseStudyObject({
         html: '<iframe style="max-height: 380px; min-height: 380px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1704507636&color=%2365657c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
