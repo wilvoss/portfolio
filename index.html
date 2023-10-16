@@ -6,6 +6,8 @@
     <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="keywords" content="Work, portfolio, samples, prototyping, rapid prototyping, UX integration, application development and integration, websites, Wil Voss, Will Voss, Seattle UX Developer, Designer, and Integrator" />
     <meta name="description" content="Select samples of the publicly viewable work of Wil Voss, Seattle-based Game Designer, Developer | UX Designer | Integrator." />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="stylesheet" href="styles/main.css" media="screen" />
   </head>
 
@@ -40,7 +42,7 @@
         </intro>
         <container v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
           <lead v-if="object.html !== ''" v-html="object.html"></lead>
-          <img :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" @click="zoomedImage = object.image; ToggleShowOnionSkin()" />
+          <img :is-disabled="!showModal" :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" @click="zoomedImage = object.image; ToggleShowOnionSkin()" />
 
           <iframe v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image + '?rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

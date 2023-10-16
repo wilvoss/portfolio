@@ -327,6 +327,9 @@ modal img, modal video, modal iframe {
     overflow: hidden;
 }
 
+modal img {
+    cursor: pointer;
+}
 
 onionskin img {
     height: 90%;

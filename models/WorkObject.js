@@ -56,7 +56,7 @@ var Works = [
         html: '<h3>Unpacking the process</h3><p>Progress began with UI improvements like tweaking overall spacing, sizing, colors, and UX flows while generating a positive feedback loop with players, fellow game designers, and UX designers along the way. I did this when adding features that required new iconography, animation, visual assets, and content by sending out texts with comparison screenshots or by updating the prototype and asking folks for their opinions. Often, I would grab an existing resource, test its viability and reception, then generate my own version, only to repeat this process until I was satisfied with the results.</p>',
       }),
       new CaseStudyObject({
-        html: '<h4>Process example: How To Play</h4><p>This technique can be seen in my approach to giving user\'s guidance, both realtime and asynchronously. My initial attempt at a "how to" guide needed improvement as players had frequently failed to grasp how to play, even after reading the instructions. By watching new users play the game for the first time, then asking them questions, I was able to get continuous feedback for improvement. Gradually, it evolved (with many small steps in between):</p>',
+        html: '<h4>Process example: How To Play</h4><p>This methodology can be seen in my approach to giving user\'s guidance, both realtime and asynchronously. My initial attempt at a "how to" guide needed improvement as players had frequently failed to grasp how to play, even after reading the instructions. By watching new users play the game for the first time, then asking them questions, I was able to get continuous feedback for improvement. Gradually, it evolved (with many small steps in between):</p>',
         image: 'work/casestudies/likeme/4.png',
       }),
       new CaseStudyObject({
@@ -102,18 +102,10 @@ var Works = [
         html: '<iframe style="max-height: 380px; min-height: 380px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1704507636&color=%2365657c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
       }),
       new CaseStudyObject({
-        html: "<p>I created, edited, and produced this song in GarageBand, a pretty good free application if you own a Mac. It was fun! Here's a screenshot of the current project within GarageBand. Needless to say, I switched instrumentation, entry and exit points, types of transitions, and dynamics frequently (pun intended).</p>",
-        image: 'work/casestudies/likeme/9.gif',
+        html: "<h2>A little developer context</h2><p>The \"Like Me?\" <a href='https://likeme.games' target='_blank'>prototype</a> is a progressive web app (PWA) that is built on the Vue.js framework. With a few recent exceptions, I engineered everything myself including the structure, format, html, css and javascript. I'm not a traditional developer as I have no formal education in computer science. I make code choices that are based on my experience, what I've learned from others, and what makes the most sense to me.</p>",
       }),
       new CaseStudyObject({
-        html: "<h2>A little developer context</h2><p>The \"Like Me?\" <a href='https://likeme.games' target='_blank'>prototype</a> is a progressive web app (PWA) that is built on the Vue.js framework. With a few recent exceptions, I engineered everything myself including the structure, format, html, css and javascript. I'm not a traditional developer as I have no formal education in computer science. I make code choices that are based on my experience, what I've learned from others, and what makes the most sense to me.</p><p>For example, if you crack open the developer tools and look at the html, you'll notice custom elements everywhere. I do this to add syntactic clarity to the DOM as well as to avoid using classes, preferring to let the cascade in CSS do its thing.</p>",
-        image: 'work/casestudies/likeme/3.gif',
-      }),
-      new CaseStudyObject({
-        html: "<p>I use Vue.js because it's lightweight, handles data-binding in an intuitive way for me, and speeds my development dramatically. Where I had to slow down and learn an incredible amount was when I worked to make this a true PWA. This was not easy, but the results are phenomenal: the prototype runs like a native app with very few exceptions. In fact, it's so solid that I opted to use PWABuilder to package it up for the major app stores. As a result of my choices, I was able to write once and then deploy onto multiple platforms without writing ANY native code. That's incredibly satisfying.</p><p>That wasn't the only place I had to slow down and learn either. But that's another story for a different time.</p>",
-      }),
-      new CaseStudyObject({
-        html: '<h2>More to come!</h2><p>Check back for more details, screenshots, and information about the process and journey of bringing this product to market. Next up, more insight into developing this game. In the meantime, if you are interested in all of the changes I committed in git, <a href="https://bigtentgames.com/?showVersionHistory=true#likeme" target="_blank">here is its version history</a>.</p>',
+        html: "<p>Vue.js is my go-to framework of choice because it's lightweight, handles data-binding in an intuitive way for me, and speeds research, iteration and development dramatically. Where I had to slow down and learn an incredible amount was when I worked to make this a true PWA. This was not easy, but the results are phenomenal: the prototype runs like a native app with very few exceptions. In fact, it's so solid that I opted to use PWABuilder to package it up for the major app stores. As a result of my choices, I was able to write once and then deploy onto multiple platforms without writing ANY native code. That's incredibly satisfying.</p>",
       }),
     ],
   }),

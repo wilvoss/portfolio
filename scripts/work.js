@@ -33,7 +33,9 @@ var app = new Vue({
     },
 
     ToggleShowOnionSkin() {
-      this.showOnion = !this.showOnion;
+      if (this.showModal) {
+        this.showOnion = !this.showOnion;
+      }
     },
 
     SelectWork(_work) {
