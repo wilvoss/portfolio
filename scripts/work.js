@@ -18,6 +18,9 @@ var app = new Vue({
     year: new Date().getFullYear(),
     selectedWork: null,
     showModal: false,
+    showOnion: false,
+    zoomedImageFits: false,
+    zoomedImage: '',
     r: document.querySelector(':root'),
   },
   methods: {
@@ -26,6 +29,10 @@ var app = new Vue({
       if (!this.showModal) {
         history.replaceState(null, null, window.location.origin);
       }
+    },
+
+    ToggleShowOnionSkin() {
+      this.showOnion = !this.showOnion;
     },
 
     SelectWork(_work) {
@@ -39,6 +46,10 @@ var app = new Vue({
       if (_work.caseStudyObjects.length > 0) {
         history.replaceState(null, null, window.location.origin + '?csid=' + _work.id);
       }
+    },
+
+    CheckZoom() {
+      this.zoomedImageFits = document.getElementById('onionimage').offsetWidth < window.innerWidth;
     },
 
     EmailMe() {
@@ -82,6 +93,7 @@ var app = new Vue({
 
   mounted() {
     this.LoadPage();
+    window.addEventListener('resize', this.CheckZoom);
   },
 
   computed: {

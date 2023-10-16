@@ -12,6 +12,12 @@
   <body>
     <app id="app" v-cloak>
       <link rel="stylesheet" :href="showContrast ? 'styles/accessibility.css' : ''" media="screen" />
+      <onionskin :class="{show: showOnion, zoomfits: zoomedImageFits}" @click="ToggleShowOnionSkin">
+        <chrome>
+          <close></close>
+        </chrome>
+        <img id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
+      </onionskin>
       <modal v-if="selectedWork !== null" :class="{show: showModal}">
         <chrome>
           <close @click="ToggleShowModal"></close>
@@ -34,7 +40,7 @@
         </intro>
         <container v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
           <lead v-if="object.html !== ''" v-html="object.html"></lead>
-          <img :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" />
+          <img :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" @click="zoomedImage = object.image; ToggleShowOnionSkin()" />
 
           <iframe v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image + '?rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
