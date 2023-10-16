@@ -28,9 +28,9 @@
           <ul>
             <li><span>Case</span> <span>{{selectedWork.name}}</span></li>
             <li v-if="selectedWork.description !== ''"><span>What</span> <span>{{selectedWork.description}}</span></li>
-            <li v-if="selectedWork.linkText !== ''">
+            <!-- <li v-if="selectedWork.linkText !== ''">
               <span>Link</span><span> <a @click="OpenUrl(event, selectedWork.url)" target="_blank">{{selectedWork.linkText}}</a></span>
-            </li>
+            </li> -->
             <li><span>Designer</span> <span>Wil Voss</span></li>
             <!-- <li v-if="selectedWork.whyText !== ''"><span>Why</span> <span>{{selectedWork.whyText}}</span></li> -->
             <li v-if="selectedWork.roleText !== ''"><span>Skillset</span> <span>{{selectedWork.roleText}}</span></li>
