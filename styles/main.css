@@ -47,6 +47,7 @@ app {
 wrapper {
     overflow: hidden;
     height: 100%;
+    width: 100%;
     max-width: 1124px;
     margin: 0 auto;
     display: flex;
@@ -171,14 +172,23 @@ modal close:hover:after, onionskin close:hover:after {
 
 
 
-modal h1, modal h2, modal h3, modal h4, modal p, modal intro ul {
+modal h1, modal h2, modal h3, modal h4, modal p, modal ul, modal ol, modal intro ul {
     /* color: white; */
-    padding: 0px 0px;
+    padding: 0px 0 0 0;
     margin: 0 0 20px 0;
     /* max-width: 1024px; */
     font-weight: normal;
     width: 100%;
+    max-width: 650px;
     text-align: left;
+}
+
+modal ul, modal ol {
+    margin-left: 40px;
+}
+
+modal intro ul {
+    padding: 0;
 }
 
 modal h1, modal h2 {
@@ -201,7 +211,7 @@ modal intro ul {
 }
 
 modal intro ul li {
-    margin: 0 0 2px 0;
+    margin: 0 0 1px 0;
     padding: 0;
     display: flex;
     gap: 0;
@@ -220,7 +230,7 @@ modal intro ul li span {
     /* border-width: 1px 1px 1px 0; */
     font-style: normal;
     font-weight: normal;
-    padding: 5px 9px;
+    padding: 5px 9px 4px;
     display: inline-block;
     /* border-radius: 0px 4px 4px 0px; */
     flex-grow: 1;
@@ -289,6 +299,10 @@ modal intro, modal container, modal chrome, onionskin chrome {
     font-size: 100%;
 }
 
+onionskin chrome {
+    max-width: unset;
+}
+
 modal chrome {
     align-items: end;
 }
@@ -334,6 +348,7 @@ modal intro {
 }
 
 modal intro img {
+    display: none;
     width: 100%;
     max-width: 328px;
     margin: 0px;
@@ -396,9 +411,10 @@ a:active {
 }
 
 p {
-    padding: 0px;
+    padding: 0px 0px 0 0;
     margin: 0px 0px 10px 0px;
     font-size: 75%;
+    max-width: 650px;
 }
 
 article ul,
@@ -438,16 +454,18 @@ canvas {
     transition-timing-function: ease-out;
 }
 
-article {
-    -webkit-transition-property: background-color, opacity;
-    -webkit-transition-duration: 0.5s;
-    -webkit-transition-timing-function: ease-in;
-    transition-property: background-color, opacity;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-in;
+header.compact {
+    display: flex;
+    gap: 60px;
+}
+
+nav {
+    margin: 0px;
 }
 
 article {
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
     padding: 20px 50px 40px 50px;
     margin: 0px;
     opacity: 0;
@@ -498,6 +516,10 @@ nav {
     border-bottom: 1px solid rgba(223, 223, 229, 0);
 }
 
+.compact nav {
+    margin-top: 1px;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0px;
@@ -546,6 +568,11 @@ section h1 {
     letter-spacing: 1px;
 }
 
+section.columnize {
+    columns: 2;
+    column-gap: 20px;
+}
+
 section.reference {
     padding: 0px;
     font-size: 90%;
@@ -577,6 +604,7 @@ section.reference a:hover {
 section.work {
     padding: 0px;
     font-size: 90%;
+    margin-top: 30px;
     margin-right: 0px;
     display: flex;
     flex-direction: row;
@@ -785,20 +813,28 @@ footer button:active {
         margin-top: 111px;
     }
 
-    header,
-    nav {
+    header {
         padding: 10px;
         margin-left: 20px;
         margin-right: 20px;
     }
 
-    nav {
-        margin-top: 0px;
+    header.compact {
+        display: block;
+        gap: 0px;
+    }
+
+    .compact nav {
+        margin-top: 40px;
+        margin-left: 0px;
+        padding: 0;
     }
 
     section.reference p {
         height: auto;
     }
+
+
 
     section.intro {
         padding-right: 0px;
@@ -837,6 +873,22 @@ footer button:active {
         right: 10px;
         font-size: 90%;
         margin-right: 0px;
+    }
+
+    modal intro img {
+        display: block;
+    }
+
+
+    modal ul, modal ol {
+        /* margin-left: 40px; */
+        width: calc(100% - 40px);
+    }
+}
+
+@media screen and (max-width: 880px) {
+    section.columnize {
+        columns: 1;
     }
 }
 

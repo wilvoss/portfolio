@@ -35,7 +35,7 @@
             <!-- <li v-if="selectedWork.whyText !== ''"><span>Why</span> <span>{{selectedWork.whyText}}</span></li> -->
             <li v-if="selectedWork.roleText !== ''"><span>Skillset</span> <span>{{selectedWork.roleText}}</span></li>
             <!-- <li><span>Result</span> <span>7 to 10 minutes</span></li> -->
-            <!-- <li><span>Read time</span> <span>7 to 10 minutes</span></li> -->
+            <li><span>Time</span> <span>7 to 10 minutes</span></li>
           </ul>
         </intro>
         <container v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
@@ -53,20 +53,20 @@
         </controls>
       </modal>
       <wrapper>
-        <header>
+        <header :class="{compact: showCompactHeader}">
           <hgroup>
             <h1><a href="/" title="Home Page">Wil Voss</a></h1>
           </hgroup>
+          <nav>
+            <ul>
+              <li><a class="on" href="/" alt="A sample of Wil's work." title="A sample of Wil's work.">Work</a></li>
+              <li><a href="why.html" alt="Why work with Wil?" title="Why work with Wil?">Why</a></li>
+              <li><a href="about.html" alt="Read more about Wil Voss." title="Read more about Wil Voss.">About</a></li>
+            </ul>
+          </nav>
         </header>
-        <nav>
-          <ul>
-            <li><a class="on" href="/" alt="A sample of Wil's work." title="A sample of Wil's work.">Work</a></li>
-            <li><a href="why.html" alt="Why work with Wil?" title="Why work with Wil?">Why</a></li>
-            <li><a href="about.html" alt="Read more about Wil Voss." title="Read more about Wil Voss.">About</a></li>
-          </ul>
-        </nav>
         <article :style="{opacity: showArticle ? 1 : 0}">
-          <section class="intro">
+          <section>
             <p>Game design, rapid prototyping, UX design &amp; integration, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking, could use a kick start, or just needs help getting across the finish line, I've done it or something like it. Publicly available products and websites that I've worked on are listed below.</p>
           </section>
           <section class="work">

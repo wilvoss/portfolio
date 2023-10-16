@@ -20,6 +20,7 @@ var app = new Vue({
     showModal: false,
     showOnion: false,
     zoomedImageFits: false,
+    showCompactHeader: false,
     zoomedImage: '',
     r: document.querySelector(':root'),
   },
@@ -89,11 +90,27 @@ var app = new Vue({
 
       window.open(_url);
     },
+
+    HandleKeyUpEvent(e) {
+      switch (e.key) {
+        case 'Escape':
+          if (this.showOnion) {
+            this.ToggleShowOnionSkin();
+          } else if (this.showModal) {
+            this.ToggleShowModal();
+          }
+          break;
+
+        default:
+          break;
+      }
+    },
   },
 
   mounted() {
     this.LoadPage();
     window.addEventListener('resize', this.CheckZoom);
+    window.addEventListener('keyup', this.HandleKeyUpEvent);
   },
 
   computed: {
