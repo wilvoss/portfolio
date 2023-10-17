@@ -57,9 +57,10 @@ var app = new Vue({
         history.replaceState(null, null, window.location.origin + '?csid=' + _work.id);
       }
       this.modalContainer = document.getElementsByTagName('modal')[0];
-      if (this.showWork && this.modalContainer !== null) {
-        console.log(this.modalContainer);
-        this.modalContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      if (this.modalContainer !== null) {
+        window.setTimeout(function () {
+          app.modalContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }, 50);
       }
     },
 
