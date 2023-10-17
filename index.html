@@ -28,8 +28,8 @@
         <intro>
           <img :src="selectedWork.backgroundImage" />
           <ul>
-            <li><span>Case</span> <span>{{selectedWork.name}}</span></li>
-            <li v-if="selectedWork.description !== ''"><span>What</span> <span>{{selectedWork.description}}</span></li>
+            <li><span>Case</span> <span>{{selectedWork.tileText}}</span></li>
+            <!-- <li v-if="selectedWork.description !== ''"><span>What</span> <span>{{selectedWork.description}}</span></li> -->
             <!-- <li v-if="selectedWork.linkText !== ''">
               <span>Link</span><span> <a @click="OpenUrl(event, selectedWork.url)" target="_blank">{{selectedWork.linkText}}</a></span>
             </li> -->
@@ -51,8 +51,8 @@
           <script src="https://player.vimeo.com/api/player.js"></script>
         </container>
         <controls v-if="activeWorks.length > 1">
-          <button @click="PreviousWork">previous</button>
-          <button @click="NextWork">next</button>
+          <button :class="{disabled: selectedWork === activeWorks[0]}" @click="PreviousWork">previous</button>
+          <button :class="{disabled: selectedWork === activeWorks[activeWorks.length - 1]}" @click="NextWork">next</button>
         </controls>
       </modal>
       <wrapper>
@@ -74,7 +74,7 @@
           </section>
           <section class="work">
             <group v-for="(group, groupName) in workGroups" :key="groupName">
-              <h1>{{groupName}}</h1>
+              <h2>{{groupName}}</h2>
               <work>
                 <button :class="{casestudy: work.caseStudyObjects.length > 0}" v-for="work in group" @click="SelectWork(work)" :title="work.alt" :style="{backgroundImage: 'url(' + work.backgroundImage +')'}">
                   <span>{{work.caseStudyObjects.length > 0 ? work.tileText : work.name}}<i>{{work.caseStudyObjects.length > 0 ? work.roleText : work.type}}</i></span>

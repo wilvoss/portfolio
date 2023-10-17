@@ -138,12 +138,6 @@ var app = new Vue({
     this.LoadPage();
     window.addEventListener('resize', this.CheckZoom);
     window.addEventListener('keyup', this.HandleKeyUpEvent);
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        // This hides the address bar:
-        window.scrollTo(0, 1);
-      }, 0);
-    });
   },
 
   computed: {

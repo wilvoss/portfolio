@@ -83,7 +83,7 @@ modal, onionskin {
     justify-content: start;
     align-items: center;
     background: rgba(0, 0, 0, 0.8);
-    background: hsla(var(--appBackgroundDarkerHSL), 1);
+    background: linear-gradient(180deg, hsla(var(--appBackgroundHSL), 1) 10px, hsla(var(--appBackgroundDarkerHSL), 1) 100px);
     transition: 250ms ease-out all;
     z-index: 200;
 }
@@ -432,9 +432,10 @@ modal iframe {
 modal controls {
     width: 100%;
     display: flex;
-    gap: var(--defaultGap);
+    gap: calc(var(--defaultGap) * 4);
     flex-direction: start;
     max-width: 1024px;
+    justify-content: space-between;
 }
 
 h1,
@@ -635,7 +636,7 @@ section {
     padding: 0px;
 }
 
-section h1 {
+section h2 {
     margin-top: 0px;
     font-weight: normal;
     font-size: 90%;
@@ -884,6 +885,7 @@ footer button:active {
 
     app {
         overflow: unset;
+        overflow-x: hidden;
         height: auto;
     }
 
@@ -894,10 +896,11 @@ footer button:active {
     wrapper {
         height: auto;
         overflow: unset;
+        overflow-x: hidden;
     }
 
     article {
-        overflow: initial;
+        overflow: unset;
     }
 
     section.work a {
@@ -918,12 +921,6 @@ footer button:active {
         width: auto;
         margin-right: 0px;
         min-width: 275px;
-    }
-
-    section.work h2 {
-        background: #777;
-        opacity: 1;
-        margin-top: 111px;
     }
 
     header {
