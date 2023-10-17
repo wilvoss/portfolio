@@ -31,10 +31,10 @@
         <article :style="{opacity: showArticle ? 1 : 0}">
           <section>
             <p>Contact me through <a target="_blank" href="http://www.linkedin.com/in/wilvoss" title="LinkedIn">LinkedIn</a>.</p>
-          </section>
-          <section>
             <p>My career began in downtown Boston working as a design contractor for Bechtel/Parsons Brinckerhoff. Since then, I've worked in New Orleans, San Francisco, and Seattle.</p>
             <p>I have built a body of work for clients that include Impira, Microsoft, McGraw Hill, Charles Schwab, Avanade, as well as various other companies. In addition, I started the video game company <a href="httsp://bigtentgames.com" target="_blank">Big Tent Games</a> where I conceive, design, develop, iterate, test, publish, and market video games.</p>
+          </section>
+          <section>
             <montage>
               <img v-for="image in personalImages" :src="'images/' + image" />
             </montage>

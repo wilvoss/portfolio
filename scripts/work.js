@@ -24,7 +24,7 @@ var app = new Vue({
     zoomedImage: '',
     modalContainer: null,
     onionskinContainer: null,
-    personalImages: ['family.jpg', 'gaming.jpg', 'cat2.jpg', 'hazel-wolf.jpg', 'guitar.jpg', 'run-hike.jpg', 'biking.jpg'],
+    personalImages: ['family.jpg', 'gaming.jpg', 'cat2.jpg', 'hazel-wolf-2.jpg', 'run-hike.jpg', 'biking.jpg', 'guitar.jpg'],
     r: document.querySelector(':root'),
   },
   methods: {
@@ -57,10 +57,10 @@ var app = new Vue({
         history.replaceState(null, null, window.location.origin + '?csid=' + _work.id);
       }
       this.modalContainer = document.getElementsByTagName('modal')[0];
-      console.log(this.modalContainer);
-      window.setTimeout(function () {
-        app.modalContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      }, 50);
+      if (this.showWork && this.modalContainer !== null) {
+        console.log(this.modalContainer);
+        this.modalContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }
     },
 
     PreviousWork() {
