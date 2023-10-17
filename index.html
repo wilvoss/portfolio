@@ -14,44 +14,46 @@
   <body>
     <app id="app" v-cloak>
       <link rel="stylesheet" :href="showContrast ? 'styles/accessibility.css' : ''" media="screen" />
-      <onionskin :class="{show: showOnion, zoomfits: zoomedImageFits}" @click="ToggleShowOnionSkin">
+      <onionskin id="onionskin" :class="{show: showOnion, zoomfits: zoomedImageFits}" @click="ToggleShowOnionSkin">
         <chrome>
           <close></close>
         </chrome>
-        <img id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
+        <img :key="zoomedImage" id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
       </onionskin>
-      <modal v-if="selectedWork !== null" :class="{show: showModal}">
+      <modal :is-disabled="!showModal" v-if="selectedWork !== null" :class="{show: showModal}">
         <chrome>
           <close @click="ToggleShowModal"></close>
         </chrome>
         <!-- <h2>Case Study #{{selectedWork.id}}</h2> -->
+        <h1>Case study</h1>
         <intro>
           <img :src="selectedWork.backgroundImage" />
           <ul>
-            <li><span>Case</span> <span>{{selectedWork.name}}</span></li>
+            <li><span>Title</span> <span>{{selectedWork.name}}</span></li>
             <li v-if="selectedWork.description !== ''"><span>What</span> <span>{{selectedWork.description}}</span></li>
             <!-- <li v-if="selectedWork.linkText !== ''">
               <span>Link</span><span> <a @click="OpenUrl(event, selectedWork.url)" target="_blank">{{selectedWork.linkText}}</a></span>
             </li> -->
-            <li><span>Designer</span> <span>Wil Voss</span></li>
-            <!-- <li v-if="selectedWork.whyText !== ''"><span>Why</span> <span>{{selectedWork.whyText}}</span></li> -->
-            <li v-if="selectedWork.roleText !== ''"><span>Skillset</span> <span>{{selectedWork.roleText}}</span></li>
+            <!-- <li><span>Designer</span> <span>Wil Voss</span></li> -->
+            <li v-if="selectedWork.resultText !== ''"><span>Results</span> <span>{{selectedWork.resultText}}</span></li>
+            <li v-if="selectedWork.roleText !== ''"><span>Features</span> <span>{{selectedWork.roleText}}</span></li>
             <!-- <li><span>Result</span> <span>7 to 10 minutes</span></li> -->
             <li><span>Time</span> <span>7 to 10 minutes</span></li>
           </ul>
         </intro>
-        <container v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
+        <container :class="{dark: object.darkBackground}" v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
           <lead v-if="object.html !== ''" v-html="object.html"></lead>
-          <img :is-disabled="!showModal" :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" @click="zoomedImage = object.image; ToggleShowOnionSkin()" />
+          <img :is-disabled="!showModal" :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" @click="zoomedImage = object.imageZoomed != '' ? object.imageZoomed : object.image; ToggleShowOnionSkin()" />
 
           <iframe v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image + '?rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
           <iframe v-if="object.image !== '' && object.image.indexOf('player.vimeo') != -1" :src="object.image" frameborder="0" title="OOBE" allow="fullscreen"></iframe>
+          <lead v-if="object.afterImageHtml !== ''" v-html="object.afterImageHtml"></lead>
           <script src="https://player.vimeo.com/api/player.js"></script>
         </container>
         <controls v-if="activeWorks.length > 1">
-          <button :class="{disabled: selectedWork.id === activeWorks[0].id}">previous</button>
-          <button :class="{disabled: selectedWork.id === activeWorks[activeWorks.length - 1].id}">next</button>
+          <button @click="PreviousWork">previous</button>
+          <button @click="NextWork">next</button>
         </controls>
       </modal>
       <wrapper>
@@ -76,7 +78,7 @@
               <h1>{{groupName}}</h1>
               <work>
                 <button :class="{casestudy: work.caseStudyObjects.length > 0}" v-for="work in group" @click="SelectWork(work)" :title="work.alt" :style="{backgroundImage: 'url(' + work.backgroundImage +')'}">
-                  <span>{{work.name}}<i>{{work.type}}</i></span>
+                  <span>{{work.caseStudyObjects.length > 0 ? work.tileText : work.name}}<i>{{work.caseStudyObjects.length > 0 ? work.roleText : work.type}}</i></span>
                 </button>
               </work>
             </group>

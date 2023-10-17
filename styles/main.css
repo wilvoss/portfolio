@@ -7,6 +7,7 @@
     --appBackgroundHSL: 240, 10%, 89%;
     --appBackgroundDarkerHSL: 240, 10%, 84%;
     --appBackgroundDarkestHSL: 240, 10%, 44%;
+    --appBackgroundAltHSL: 240, 10%, 34%;
     --appForegroundHSL: 240, 10%, 19%;
     --borderRadius: 6px;
     --linkColorHSL: 209, 79%, 40%;
@@ -196,6 +197,12 @@ modal h1, modal h2 {
 
 }
 
+
+modal h3, modal h4 {
+    margin: 10px 0;
+
+}
+
 modal ul, modal ol {
     font-size: 75%;
     user-select: none;
@@ -263,7 +270,8 @@ modal description {
 
 modal h1 {
     font-size: 130%;
-    margin: 0 0 8px 0;
+    margin: 0 0 20px 0;
+    max-width: 1024px;
 }
 
 modal h2 {
@@ -301,6 +309,29 @@ modal intro, modal container, modal chrome, onionskin chrome {
 
 onionskin chrome {
     max-width: unset;
+}
+
+container.dark {
+    background-color: hsl(var(--appBackgroundAltHSL));
+    border-radius: var(--borderRadius);
+    color: hsl(var(--appBackgroundHSL));
+    margin: 20px;
+    padding: 20px 40px;
+}
+
+container.dark a {
+    color: hsl(var(--appBackgroundHSL));
+}
+
+container.dark img, container.dark iframe {
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+
+}
+
+container.dark img+lead, container.dark iframe+lead {
+    padding-top: 10px;
+
 }
 
 modal chrome {
@@ -343,7 +374,7 @@ onionskin img {
 modal intro {
     display: flex;
     gap: 20px;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: start;
     align-items: start;
     flex-wrap: wrap;
@@ -351,7 +382,7 @@ modal intro {
 }
 
 modal intro img {
-    display: none;
+    /* display: none; */
     width: 100%;
     max-width: 328px;
     margin: 0px;
@@ -363,6 +394,14 @@ modal iframe {
     max-height: 576px;
     margin-bottom: 40px;
     background: black;
+}
+
+modal controls {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: start;
+    max-width: 1024px;
 }
 
 h1,
@@ -887,6 +926,14 @@ footer button:active {
         /* margin-left: 40px; */
         width: calc(100% - 40px);
     }
+
+    container.dark {
+        border-radius: 0px;
+        margin: 20px 0px;
+        padding: 20px 20px 0px;
+    }
+
+    container.dark img {}
 }
 
 @media screen and (max-width: 880px) {

@@ -22,6 +22,8 @@ var app = new Vue({
     zoomedImageFits: false,
     showCompactHeader: false,
     zoomedImage: '',
+    modalContainer: null,
+    onionskinContainer: null,
     r: document.querySelector(':root'),
   },
   methods: {
@@ -36,12 +38,16 @@ var app = new Vue({
       if (this.showModal) {
         this.showOnion = !this.showOnion;
       }
+      if (this.showOnion) {
+        this.onionskinContainer = document.getElementsByTagName('onionskin')[0];
+        this.onionskinContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }
     },
 
-    SelectWork(_work) {
+    SelectWork(_work, _toggleModal = true) {
       if (_work.caseStudyObjects.length === 0 && _work.url !== '') {
         window.open(_work.url);
-      } else if (_work.zoomImage !== '') {
+      } else if (_toggleModal) {
         // this.ZoomImage(_work.zoomImage);
         this.ToggleShowModal();
       }
@@ -49,6 +55,23 @@ var app = new Vue({
       if (_work.caseStudyObjects.length > 0) {
         history.replaceState(null, null, window.location.origin + '?csid=' + _work.id);
       }
+      this.modalContainer = document.getElementsByTagName('modal')[0];
+      console.log(this.modalContainer);
+      window.setTimeout(function () {
+        app.modalContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }, 50);
+    },
+
+    PreviousWork() {
+      let currentIndex = this.activeWorks.indexOf(this.selectedWork);
+      if (currentIndex === 0) currentIndex = this.activeWorks.length;
+      this.SelectWork(this.activeWorks[currentIndex - 1], false);
+    },
+
+    NextWork() {
+      let currentIndex = this.activeWorks.indexOf(this.selectedWork);
+      if (currentIndex === this.activeWorks.length - 1) currentIndex = -1;
+      this.SelectWork(this.activeWorks[currentIndex + 1], false);
     },
 
     CheckZoom() {
