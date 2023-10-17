@@ -24,7 +24,7 @@ var app = new Vue({
     zoomedImage: '',
     modalContainer: null,
     onionskinContainer: null,
-    personalImages: ['family.jpg', 'gaming.jpg', 'cat2.jpg', 'hazel-wolf-2.jpg', 'run-hike.jpg', 'biking.jpg', 'guitar.jpg'],
+    personalImages: ['family.jpg', 'gaming.jpg', 'run-hike.jpg', 'hazel-wolf-2.jpg', 'guitar.jpg', 'biking.jpg', 'cat2.jpg'],
     r: document.querySelector(':root'),
   },
   methods: {

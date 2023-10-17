@@ -35,8 +35,6 @@ body {
     word-wrap: break-word;
     width: 100%;
     height: 100%;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
     display: block;
 }
 
@@ -73,12 +71,15 @@ modal, onionskin {
     display: flex;
     flex-direction: column;
     opacity: 0;
+    max-height: 100%;
     pointer-events: none;
-    position: absolute;
+    position: fixed;
+    top: 0;
     padding: 40px 30px;
     width: calc(100% - 60px);
     height: calc(100% - 80px);
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
     justify-content: start;
     align-items: center;
     background: rgba(0, 0, 0, 0.8);
@@ -692,6 +693,7 @@ section.intro {
 }
 
 section.work group {
+    width: 100%;
     display: block;
     margin-bottom: var(--defaultGap);
 }
@@ -785,10 +787,10 @@ section.work span i {
 }
 
 montage {
-    margin: var(--defaultGap) 0;
+    margin: var(--defaultGap) 0 0;
     display: block;
     columns: 4;
-    column-fill: auto;
+    /* column-fill: auto; */
     /* grid-template-columns: repeat(2, 1fr); */
     /* grid-auto-rows: minmax(auto, auto); */
     gap: var(--defaultGap);
@@ -875,19 +877,23 @@ footer button:active {
 @media screen and (max-width:640px) {
     body {
         font-size: 1.35em;
-        /* overflow: auto; */
-        /* overflow-y: auto; */
-        /* height: auto; */
+        overflow: visible;
+        overflow-x: hidden;
+        height: 100%;
     }
 
     app {
-        overflow: auto;
-        height: 100%;
+        overflow: unset;
+        height: auto;
+    }
+
+    footer {
+        position: relative;
     }
 
     wrapper {
         height: auto;
-        overflow: auto;
+        overflow: unset;
     }
 
     article {
@@ -896,6 +902,11 @@ footer button:active {
 
     section.work a {
         margin-bottom: 60px;
+    }
+
+    section.work button {
+        width: 100%;
+        height: calc(100vw * .402 - 25px)
     }
 
     section.reference {
