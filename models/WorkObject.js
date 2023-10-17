@@ -7,6 +7,7 @@ class WorkObject {
     this.description = spec.description == undefined ? '' : spec.description;
     this.url = spec.url == undefined ? '' : spec.url;
     this.alt = spec.alt == undefined ? '' : spec.alt;
+    this.heroImage = spec.heroImage === undefined ? '' : spec.heroImage;
     this.linkText = spec.linkText == undefined ? '' : spec.linkText;
     this.tileText = spec.tileText == undefined ? '' : spec.tileText;
     this.resultText = spec.resultText == undefined ? '' : spec.resultText;
@@ -15,7 +16,7 @@ class WorkObject {
     this.type = spec.type === undefined ? 'product' : spec.type;
     this.group = spec.group === undefined ? 'external links' : spec.group;
     this.backgroundImage = spec.backgroundImage === undefined ? '' : spec.backgroundImage;
-    // this.isCaseStudy = spec.isCaseStudy == undefined ? false : spec.isCaseStudy;
+    this.isCaseStudy = spec.isCaseStudy == undefined ? false : spec.isCaseStudy;
     this.caseStudyObjects = spec.caseStudyObjects === undefined ? [] : spec.caseStudyObjects;
     this.isSelected = spec.isSelected === undefined ? false : spec.isSelected;
   }
@@ -24,6 +25,7 @@ class WorkObject {
 var Works = [
   new WorkObject({
     id: 1,
+    isCaseStudy: true,
     name: 'Like Me?',
     tileText: 'Like Me? - Mobile video game',
     description: 'Casual, mobile-first, video game',
@@ -48,7 +50,7 @@ var Works = [
         image: 'work/casestudies/likeme/1.png',
       }),
       new CaseStudyObject({
-        //darkBackground: true,
+        darkBackground: true,
         html: '<h2>The solution</h2><p>You can see those same four screens at the end of this process here:</p>',
         image: 'work/casestudies/likeme/2.png',
         afterImageHtml: '<p>After three months of diligent work, the "final" product, now available on all major app stores, <a href="https://likeme.games" target="_blank">speaks for itself</a>. Producing this game involved much iteration, all of which was done in the web prototype.</p>',
@@ -65,7 +67,7 @@ var Works = [
         image: 'https://player.vimeo.com/video/874206343?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479',
       }),
       new CaseStudyObject({
-        //darkBackground: true,
+        darkBackground: true,
         html: '<h4>Process example: Home</h4><p>This is what the home screen looked like during the same versions as the How To Play screens in the previous example:</p>',
         image: 'work/casestudies/likeme/5.png',
         afterImageHtml:
@@ -83,11 +85,11 @@ var Works = [
         html: "<p>The delivery of these hints and tips went through multiple versions. For me, seeing that settings screen introduces a set of features and improvements that I'm eager to go over, but first I want to talk about accessibility.</p>",
       }),
       new CaseStudyObject({
-        //darkBackground: true,
+        darkBackground: true,
         html: '<h4>Process example: Accessibility</h4><p>Early on, in the original prototype, I chose the initial colors with a mind towards accessibllity. I also chose patterns and shapes with this feature in mind. The default colors are each based on some variant of red, green, and blue, and then tested to ensure their uniqueness was preserved for most users with a color vision deficiency. In addition, the values needed to stand up for someone who had set their accessibility options to display all content in grayscale.</p>',
         image: 'work/casestudies/likeme/7.png',
         afterImageHtml:
-          '<ol><li>baseline - vision shared by most people</li><li>protanopia - vision in which the retina doesn\'t to respond to red or green</li><li>deuteranopia - vision that tends towards muted red and green colors</li><li>tritanopia - vision with a greenish/pink tone</li><li>grayscale</li></ol><p>These are all approximations and cannot replace an actual player\'s experience if they have a color vision deficiency. Support for PC game play with keyboard shortcuts opened "Like Me?" up to an even larger audience. That said, I wanted to make the game accessible to as many people as possible which is why personalization became a high priority.</p>',
+          '<ol><li>baseline - vision shared by most people</li><li>protanopia - vision in which the retina doesn\'t to respond to red or green</li><li>deuteranopia - vision that tends towards muted red and green colors</li><li>tritanopia - vision with a greenish/pink tone</li><li>grayscale</li></ol><p>These are all approximations and cannot replace an actual player\'s experience if they have a color vision deficiency. Support for PC gameplay with keyboard shortcuts opened "Like Me?" up to an even larger audience. That said, I wanted to make the game accessible to as many people as possible which is why personalization became a high priority.</p>',
       }),
       new CaseStudyObject({
         html: '<h4>Process example: Personalization</h4><p>In keeping with a player-first mindset, I decided to extend the options for gameplay colors, patterns, and even shapes. Twelve color combinations in all were added, each named after a feeling. In addition, I added an alternate pattern to help those users who found the default set less distinguishable. Support for different shape sets was added which allowed me to provide Cat Mode. Doing that pushed me to consider rebranding the entire game to "Copycats!" but I personally find the cat outlines much more difficult to play with. Finally, I recognized my own need to play in the middle of the night and not disturb my partner, so I introduced Dark Mode. This makes for a total of 96 different combinations!</p>',
@@ -97,7 +99,7 @@ var Works = [
         html: '<ol><li>"moody" color theme</li><li>alternate pattern, "awake" color theme</li><li>Cat Mode, alternate pattern, "awake" color theme</li><li>Dark Mode, alternate pattern, "keen" color theme</li></ol><p>These options were provided knowing that certain users struggled with the default colors, shapes, and patterns. By opening up the possiblity of user choice, I enabled those player to adjust the game to their preferences ensuring a higher rate of success when playing. I also included music and sound effects which the user can toggle independently.</p>',
       }),
       new CaseStudyObject({
-        //darkBackground: true,
+        darkBackground: true,
         html: '<h4>Process example: Theme Music</h4><p>My undergraduate degree is in music composition and theory. So when it came time to create a theme song, my heart was filled with joy! As with every other aspect of this production, I still asked for and incorporated feedback from players.</p><p>As you move from the first to the fourth track, note the changes in melody, texture, style, color, percussion, and mixing. It evolved from a sci-fi jazz combo to a bubblegum pop, 8-bit nod with higher pitched notes, crisper tones and a reduction of overall noise. All changes were made with both player feedback and optimization for mobile gameplay in mind.</p><iframe style="max-height: 380px; min-height: 380px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1704507636&color=%2365657c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
       }),
       new CaseStudyObject({
@@ -111,6 +113,7 @@ var Works = [
 
   new WorkObject({
     id: 2,
+    isCaseStudy: true,
     name: 'Impira',
     tileText: 'Impira - Onboarding',
     description: 'Onboarding 2.0',
@@ -128,7 +131,7 @@ var Works = [
         imageZoomed: 'work/casestudies/impira/1z.png',
       }),
       new CaseStudyObject({
-        //darkBackground: true,
+        darkBackground: true,
         html: '<h2>The solution</h2><p>Through many rounds of iteration, user research, prototyping, and brainstorming with the engineering team, we deployed a new onboarding flow that improved both the "aha" and "success" moments by over 8% and our early activation by 15%.</p><p>Here is the first screen of the final flow (click to see full flow).</p>',
         image: 'work/casestudies/impira/2.png',
         imageZoomed: 'work/casestudies/impira/2z.png',

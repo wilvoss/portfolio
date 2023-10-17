@@ -24,6 +24,7 @@ var app = new Vue({
     zoomedImage: '',
     modalContainer: null,
     onionskinContainer: null,
+    personalImages: ['family.jpg', 'gaming.jpg', 'cat2.jpg', 'hazel-wolf.jpg', 'guitar.jpg', 'run-hike.jpg', 'biking.jpg'],
     r: document.querySelector(':root'),
   },
   methods: {
@@ -45,14 +46,14 @@ var app = new Vue({
     },
 
     SelectWork(_work, _toggleModal = true) {
-      if (_work.caseStudyObjects.length === 0 && _work.url !== '') {
+      if ((!_work.isCaseStudy || _work.caseStudyObjects.length === 0) && _work.url !== '') {
         window.open(_work.url);
       } else if (_toggleModal) {
         // this.ZoomImage(_work.zoomImage);
         this.ToggleShowModal();
       }
       this.selectedWork = _work;
-      if (_work.caseStudyObjects.length > 0) {
+      if (_work.isCaseStudy && _work.caseStudyObjects.length > 0) {
         history.replaceState(null, null, window.location.origin + '?csid=' + _work.id);
       }
       this.modalContainer = document.getElementsByTagName('modal')[0];
@@ -136,6 +137,12 @@ var app = new Vue({
     this.LoadPage();
     window.addEventListener('resize', this.CheckZoom);
     window.addEventListener('keyup', this.HandleKeyUpEvent);
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+      }, 0);
+    });
   },
 
   computed: {
@@ -151,7 +158,7 @@ var app = new Vue({
     },
 
     activeWorks() {
-      return this.works.filter((obj) => obj.caseStudyObjects.length > 0).flat();
+      return this.works.filter((obj) => obj.isCaseStudy).flat();
     },
   },
 });

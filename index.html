@@ -24,21 +24,20 @@
         <chrome>
           <close @click="ToggleShowModal"></close>
         </chrome>
-        <!-- <h2>Case Study #{{selectedWork.id}}</h2> -->
-        <h1>Case study</h1>
+        <h1>Case Study</h1>
         <intro>
           <img :src="selectedWork.backgroundImage" />
           <ul>
-            <li><span>Title</span> <span>{{selectedWork.name}}</span></li>
+            <li><span>Case</span> <span>{{selectedWork.name}}</span></li>
             <li v-if="selectedWork.description !== ''"><span>What</span> <span>{{selectedWork.description}}</span></li>
             <!-- <li v-if="selectedWork.linkText !== ''">
               <span>Link</span><span> <a @click="OpenUrl(event, selectedWork.url)" target="_blank">{{selectedWork.linkText}}</a></span>
             </li> -->
-            <!-- <li><span>Designer</span> <span>Wil Voss</span></li> -->
-            <li v-if="selectedWork.resultText !== ''"><span>Results</span> <span>{{selectedWork.resultText}}</span></li>
-            <li v-if="selectedWork.roleText !== ''"><span>Features</span> <span>{{selectedWork.roleText}}</span></li>
+            <li><span>Who</span> <span>Wil Voss</span></li>
+            <li v-if="selectedWork.resultText !== ''"><span>Impact</span> <span>{{selectedWork.resultText}}</span></li>
+            <li v-if="selectedWork.roleText !== ''"><span>Skills</span> <span>{{selectedWork.roleText}}</span></li>
             <!-- <li><span>Result</span> <span>7 to 10 minutes</span></li> -->
-            <li><span>Time</span> <span>7 to 10 minutes</span></li>
+            <li><span>Read in</span> <span>7 to 10 minutes</span></li>
           </ul>
         </intro>
         <container :class="{dark: object.darkBackground}" v-for="object in selectedWork.caseStudyObjects" v-if="object.show">

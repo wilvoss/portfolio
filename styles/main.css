@@ -9,8 +9,11 @@
     --appBackgroundDarkestHSL: 240, 10%, 44%;
     --appBackgroundAltHSL: 240, 10%, 34%;
     --appForegroundHSL: 240, 10%, 19%;
-    --borderRadius: 6px;
     --linkColorHSL: 209, 79%, 40%;
+
+    --footerHeight: 40px;
+    --defaultGap: 20px;
+    --borderRadius: 6px;
 }
 
 html {
@@ -72,8 +75,8 @@ modal, onionskin {
     opacity: 0;
     pointer-events: none;
     position: absolute;
-    padding: 40px 20px;
-    width: calc(100% - 40px);
+    padding: 40px 30px;
+    width: calc(100% - 60px);
     height: calc(100% - 80px);
     overflow: scroll;
     justify-content: start;
@@ -82,6 +85,17 @@ modal, onionskin {
     background: hsla(var(--appBackgroundDarkerHSL), 1);
     transition: 250ms ease-out all;
     z-index: 200;
+}
+
+
+modal::-webkit-scrollbar, onionskin::-webkit-scrollbar {
+    display: none;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    touch-action: auto;
+    scroll-behavior: smooth;
 }
 
 .disabled {
@@ -176,7 +190,7 @@ modal close:hover:after, onionskin close:hover:after {
 modal h1, modal h2, modal h3, modal h4, modal p, modal ul, modal ol, modal intro ul {
     /* color: white; */
     padding: 0px 0 0 0;
-    margin: 0 0 20px 0;
+    margin: 0 0 var(--defaultGap) 0;
     /* max-width: 1024px; */
     font-weight: normal;
     width: 100%;
@@ -192,8 +206,17 @@ modal intro ul {
     padding: 0;
 }
 
+modal h1 span {
+    display: inline-block;
+    font-size: 68%;
+    padding: 0px;
+    line-height: 116%;
+    border-bottom: 1px solid hsl(var(--appForegroundHSL));
+    transform: translateY(-5px);
+}
+
 modal h1, modal h2 {
-    margin: 20px 0;
+    margin: var(--defaultGap) 0;
 
 }
 
@@ -254,7 +277,7 @@ modal ul li span:first-of-type {
     text-wrap: nowrap;
     white-space: nowrap;
     flex-grow: 0;
-    width: 52px;
+    width: 40px;
     /* text-align: right; */
     /* border-right: 1px solid rgba(0, 0, 0, .2); */
     /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
@@ -270,7 +293,7 @@ modal description {
 
 modal h1 {
     font-size: 130%;
-    margin: 0 0 20px 0;
+    margin: 0 0 var(--defaultGap) 0;
     max-width: 1024px;
 }
 
@@ -307,6 +330,10 @@ modal intro, modal container, modal chrome, onionskin chrome {
     font-size: 100%;
 }
 
+modal container {
+    display: block;
+}
+
 onionskin chrome {
     max-width: unset;
 }
@@ -315,8 +342,8 @@ container.dark {
     background-color: hsl(var(--appBackgroundAltHSL));
     border-radius: var(--borderRadius);
     color: hsl(var(--appBackgroundHSL));
-    margin: 20px;
-    padding: 20px 40px;
+    margin: var(--defaultGap);
+    padding: var(--defaultGap) 40px;
 }
 
 container.dark a {
@@ -327,6 +354,11 @@ container.dark img, container.dark iframe {
     padding-bottom: 0px;
     margin-bottom: 10px;
 
+}
+
+container.dark img {
+    /* width: calc(100% - 0px); */
+    height: auto;
 }
 
 container.dark img+lead, container.dark iframe+lead {
@@ -354,7 +386,7 @@ modal img, modal video, modal iframe {
     border: none;
     border-radius: var(--borderRadius);
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: var(--defaultGap);
     overflow: hidden;
 }
 
@@ -373,12 +405,12 @@ onionskin img {
 
 modal intro {
     display: flex;
-    gap: 20px;
+    gap: var(--defaultGap);
     flex-direction: row-reverse;
     justify-content: start;
     align-items: start;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: var(--defaultGap);
 }
 
 modal intro img {
@@ -399,7 +431,7 @@ modal iframe {
 modal controls {
     width: 100%;
     display: flex;
-    gap: 20px;
+    gap: var(--defaultGap);
     flex-direction: start;
     max-width: 1024px;
 }
@@ -470,7 +502,7 @@ article ol {
 article ul span {
     display: inline-block;
     width: 24px;
-    margin-right: 20px;
+    margin-right: var(--defaultGap);
     font-weight: bold;
     text-align: left;
 }
@@ -508,11 +540,11 @@ nav {
 article {
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
-    padding: 20px 50px 40px 50px;
+    padding: var(--defaultGap) 50px 40px 50px;
     margin: 0px;
     opacity: 0;
     clear: both;
-    margin-bottom: 20px;
+    margin-bottom: var(--footerHeight);
     overflow: auto;
 }
 
@@ -553,7 +585,7 @@ header h1 a:focus {
 
 nav {
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: var(--defaultGap);
     font-size: 70%;
     border-bottom: 1px solid rgba(223, 223, 229, 0);
 }
@@ -577,7 +609,7 @@ nav li {
 
 nav a {
     display: inline-block;
-    margin: 0px 20px 0px 0px;
+    margin: 0px var(--defaultGap) 0px 0px;
     border-top: 1px solid rgba(223, 223, 229, 0);
     text-transform: uppercase;
 }
@@ -621,14 +653,14 @@ section.reference {
     margin-right: 0px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: var(--defaultGap);
     width: 100%;
     flex-wrap: wrap;
 }
 
 section.reference p {
     line-height: 150%;
-    width: calc(33% - 20px);
+    width: calc(33% - var(--defaultGap));
     padding: 0px;
     text-indent: -4px;
     /* margin: 0px 20px 20px 0px; */
@@ -652,21 +684,21 @@ section.work {
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--defaultGap);
 }
 
 section.intro {
-    padding: 0px 0px 20px 0px;
+    padding: 0px 0px var(--defaultGap) 0px;
 }
 
 section.work group {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: var(--defaultGap);
 }
 
 section.work group work {
     display: flex;
-    gap: 20px;
+    gap: var(--defaultGap);
     flex-wrap: wrap;
 }
 
@@ -752,13 +784,41 @@ section.work span i {
     overflow: hidden;
 }
 
+montage {
+    margin: var(--defaultGap) 0;
+    display: block;
+    columns: 4;
+    column-fill: auto;
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* grid-auto-rows: minmax(auto, auto); */
+    gap: var(--defaultGap);
+    /* filter: grayscale(); */
+    /* transition: 200ms ease-out all; */
+}
+
+montage img {
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+
+}
+
+/* montage:hover {
+    filter: none;
+} */
+
 footer {
     min-width: 377px;
     /* font-family: 'Terminal Dosis'; */
     position: fixed;
     width: 100%;
+    height: var(--footerHeight);
     bottom: 0px;
-    padding: 4px 0px 4px 0px;
+    padding: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
     border-top: 1px solid rgba(223, 223, 229, 1);
     font-size: 62%;
     text-align: right;
@@ -857,8 +917,8 @@ footer button:active {
 
     header {
         padding: 10px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: var(--defaultGap);
+        margin-right: var(--defaultGap);
     }
 
     header.compact {
@@ -900,6 +960,10 @@ footer button:active {
         margin-right: 30px;
     }
 
+    modal {
+        overflow-x: hidden;
+    }
+
     modal intro, modal container {
         width: calc(100%);
         margin: 0;
@@ -907,7 +971,7 @@ footer button:active {
 
     modal intro {
         flex-direction: column-reverse;
-        margin-bottom: 20px;
+        margin-bottom: var(--defaultGap);
     }
 
     modal close {
@@ -929,11 +993,20 @@ footer button:active {
 
     container.dark {
         border-radius: 0px;
-        margin: 20px 0px;
-        padding: 20px 20px 0px;
+        margin: var(--defaultGap) 0px;
+        padding: var(--defaultGap) 30px 0px;
     }
 
-    container.dark img {}
+    montage {
+        columns: 2;
+        gap: calc(var(--defaultGap) / 2);
+
+    }
+
+    montage img {
+        margin: 0 0 2px 0;
+    }
+
 }
 
 @media screen and (max-width: 880px) {
