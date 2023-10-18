@@ -89,7 +89,7 @@ modal, onionskin {
 }
 
 
-modal::-webkit-scrollbar, onionskin::-webkit-scrollbar {
+article::-webkit-scrollbar, modal::-webkit-scrollbar, onionskin::-webkit-scrollbar {
     display: none;
 
     -ms-overflow-style: none;
@@ -107,6 +107,8 @@ modal::-webkit-scrollbar, onionskin::-webkit-scrollbar {
 onionskin {
     background: hsla(var(--appForegroundHSL), .9);
     z-index: 300;
+    overflow-x: auto;
+    overflow-y: hidden;
     justify-content: center;
     align-items: start;
     backdrop-filter: blur(5px);
@@ -750,6 +752,7 @@ section.work span {
     width: 100%;
     height: 100%;
     margin-left: 0px;
+    /* transition-delay: 200ms; */
     -webkit-transform: translate(0px, -75px) scale(1.05, 1.05);
     transform: translate(0px, -75px) scale(1.05, 1.05);
     font-weight: 700;
@@ -757,6 +760,7 @@ section.work span {
 
 section.work button:focus span,
 section.work button:hover span {
+    /* transition-delay: 0ms; */
     -webkit-transform: translate(0px, 0px) scale(1, 1);
     transform: translate(0px, 0px) scale(1, 1);
     opacity: 1;
