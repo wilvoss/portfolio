@@ -675,8 +675,6 @@ section.reference a:hover {
     border-color: #666;
 }
 
-
-
 section.intro {
     padding: 0px 0px var(--defaultGap) 0px;
 }
@@ -893,11 +891,11 @@ footer button:active {
         overflow: unset;
     }
 
-    section.work a {
+    work a {
         margin-bottom: 60px;
     }
 
-    section.work button {
+    work button {
         width: 100%;
         height: calc(100vw * .402 - 25px)
     }
@@ -940,8 +938,6 @@ footer button:active {
     section.reference p {
         height: auto;
     }
-
-
 
     section.intro {
         padding-right: 0px;
@@ -1000,6 +996,10 @@ footer button:active {
     modal ul, modal ol {
         /* margin-left: 40px; */
         width: calc(100% - 40px);
+    }
+
+    intro ul {
+        width: 100%;
     }
 
     container.dark {
