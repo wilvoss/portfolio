@@ -30,6 +30,8 @@ body {
     line-height: 1.3em;
     margin: 0px 0px;
     background: hsl(var(--appBackgroundHSL));
+    /* background: linear-gradient(180deg, hsla(var(--appBackgroundHSL), 1) calc(100% - 100px), hsla(var(--appBackgroundDarkerHSL), 1) 100%); */
+    /* background-attachment: fixed; */
     text-wrap: supressed;
     word-wrap: break-word;
     width: 100%;
@@ -82,7 +84,6 @@ modal, onionskin {
     overflow-y: auto;
     justify-content: start;
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
     background: linear-gradient(180deg, hsla(var(--appBackgroundHSL), 1) 10px, hsla(var(--appBackgroundDarkerHSL), 1) 100px);
     transition: 250ms ease-out all;
     z-index: 200;
@@ -454,7 +455,7 @@ a,
 img,
 h2,
 button,
-section.work button span {
+work button span {
     -webkit-transition-property: margin, color, background-color, border, padding, opacity, -webkit-transform;
     -webkit-transition-duration: 0.15s;
     -webkit-transition-timing-function: ease-out;
@@ -743,15 +744,15 @@ work span {
     font-weight: 700;
 }
 
-section.work button:focus span,
-section.work button:hover span {
+work button:focus span,
+work button:hover span {
     /* transition-delay: 0ms; */
     -webkit-transform: translate(0px, 0px) scale(1, 1);
     transform: translate(0px, 0px) scale(1, 1);
     opacity: 1;
 }
 
-section.work span i {
+work span i {
     opacity: .6;
     padding-top: 3px;
     display: block;
@@ -956,7 +957,8 @@ footer button:active {
         justify-content: start;
         /* border: none; */
         border-color: hsla(var(--appBackgroundDarkestHSL), .3);
-        background: none;
+        background: hsla(var(--appBackgroundDarkerHSL));
+        background: linear-gradient(0deg, hsla(var(--appBackgroundHSL), 1), hsla(var(--appBackgroundDarkerHSL), 1));
         padding: calc(var(--defaultGap) / 2) 0;
         /* position: relative; */
     }

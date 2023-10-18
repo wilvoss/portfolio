@@ -207,12 +207,12 @@ var Works = [
     alt: 'Download Mouse & Keyboard Center 2.0',
     backgroundImage: 'work/mkcenter_thumbnail.jpg',
   }),
-  new WorkObject({
-    id: 11,
-    name: 'HTML5 Particle Engine',
-    url: 'https://wilvoss.com/particles/?showsettings',
-    alt: 'A simple particle generator.',
-    backgroundImage: 'work/magicParticles_thumbnail.jpg',
-    type: 'website',
-  }),
+  // new WorkObject({
+  //   id: 11,
+  //   name: 'HTML5 Particle Engine',
+  //   url: 'https://wilvoss.com/particles/?showsettings',
+  //   alt: 'A simple particle generator.',
+  //   backgroundImage: 'work/magicParticles_thumbnail.jpg',
+  //   type: 'website',
+  // }),
 ];
