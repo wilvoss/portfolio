@@ -28,16 +28,16 @@
         <intro>
           <img :src="selectedWork.backgroundImage" />
           <ul>
-            <li><span>Case</span> <span>{{selectedWork.tileText}}</span></li>
+            <li><span>Title</span> <span>{{selectedWork.tileText}}</span></li>
             <!-- <li v-if="selectedWork.description !== ''"><span>What</span> <span>{{selectedWork.description}}</span></li> -->
             <!-- <li v-if="selectedWork.linkText !== ''">
               <span>Link</span><span> <a @click="OpenUrl(event, selectedWork.url)" target="_blank">{{selectedWork.linkText}}</a></span>
             </li> -->
             <li><span>Who</span> <span>Wil Voss</span></li>
-            <li v-if="selectedWork.resultText !== ''"><span>Impact</span> <span>{{selectedWork.resultText}}</span></li>
             <li v-if="selectedWork.roleText !== ''"><span>Skills</span> <span>{{selectedWork.roleText}}</span></li>
+            <li v-if="selectedWork.resultText !== ''"><span>Impact</span> <span>{{selectedWork.resultText}}</span></li>
             <!-- <li><span>Result</span> <span>7 to 10 minutes</span></li> -->
-            <li><span>Read in</span> <span>7 to 10 minutes</span></li>
+            <li><span>Length</span> <span>{{selectedWork.readTime}}</span></li>
           </ul>
         </intro>
         <container :class="{dark: object.darkBackground}" v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
@@ -68,21 +68,18 @@
             </ul>
           </nav>
         </header>
+      </wrapper>
+      <wrapper>
         <article :style="{opacity: showArticle ? 1 : 0}">
-          <section>
-            <p>Game design, rapid prototyping, UX design &amp; integration, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking, could use a kick start, or just needs help getting across the finish line, I've done it or something like it. Publicly available products and websites that I've worked on are listed below.</p>
-          </section>
-          <section class="work">
-            <group v-for="(group, groupName) in workGroups" :key="groupName">
-              <h2>{{groupName}}</h2>
-              <work>
-                <button :class="{casestudy: work.caseStudyObjects.length > 0}" v-for="work in group" @click="SelectWork(work)" :title="work.alt" :style="{backgroundImage: 'url(' + work.backgroundImage +')'}">
-                  <span>{{work.caseStudyObjects.length > 0 ? work.tileText : work.name}}<i>{{work.caseStudyObjects.length > 0 ? work.roleText : work.type}}</i></span>
-                </button>
-              </work>
-            </group>
-          </section>
-          <span class="clearBoth"></span>
+          <p>Game design, rapid prototyping, UX design &amp; integration, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking, could use a kick start, or just needs help getting across the finish line, I've done it or something like it. Publicly available products and websites that I've worked on are listed below.</p>
+          <group v-for="(group, groupName) in workGroups" :key="groupName">
+            <h2>{{groupName}}</h2>
+            <work>
+              <button :class="{casestudy: work.caseStudyObjects.length > 0}" v-for="work in group" @click="SelectWork(work)" :title="work.alt" :style="{backgroundImage: 'url(' + work.backgroundImage +')'}">
+                <span>{{work.caseStudyObjects.length > 0 ? work.tileText : work.name}}<i>{{work.caseStudyObjects.length > 0 ? work.roleText : work.type}}</i></span>
+              </button>
+            </work>
+          </group>
         </article>
       </wrapper>
       <footer><button class="email" @click="EmailMe" title="Email">Email</button><button class="linkedIn" onclick="window.open('http://www.linkedin.com/in/wilvoss')" title="LinkedIn">LinkedIn</button><button class="accessibility" @click="ToggleContrast" title="Contrast">Contrast</button></footer>

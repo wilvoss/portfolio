@@ -24,22 +24,21 @@
             <ul>
               <li><a href="/" alt="A sample of Wil's work." title="A sample of Wil's work.">Work</a></li>
               <li><a href="why.html" alt="Why work with Wil?" title="Why work with Wil?">Why</a></li>
-              <li><a class="on" href="about.html" alt="Read more about Wil Voss." title="Read more about Wil Voss.">About</a></li>
+              <li><a class="on" alt="Read more about Wil Voss." title="Read more about Wil Voss.">About</a></li>
             </ul>
           </nav>
         </header>
+      </wrapper>
+      <wrapper>
         <article :style="{opacity: showArticle ? 1 : 0}">
           <section>
             <p>Contact me through <a target="_blank" href="http://www.linkedin.com/in/wilvoss" title="LinkedIn">LinkedIn</a>.</p>
-            <p>Contracting for Bechtel/Parsons Brinckerhoff in Boston marks the beginning of my UX design career. I've since worked in New Orleans, San Francisco, and Seattle, creating designs for clients like Microsoft, McGraw Hill, Charles Schwab, and Avanade. I also run my own video game company, <a href="httsp://bigtentgames.com" target="_blank">Big Tent Games</a>, where I do everything from game conception to design, development, publishing, and marketing.</p>
-          </section>
-          <section>
+            <p>Contracting for Bechtel/Parsons Brinckerhoff in Boston marks the beginning of my design career. I've since worked in New Orleans, San Francisco, and Seattle, creating designs for clients like Microsoft, McGraw Hill, Charles Schwab, and Avanade. I also run my own video game company, <a href="httsp://bigtentgames.com" target="_blank">Big Tent Games</a>, where I do everything from game conception to design, development, publishing, and marketing.</p>
             <montage>
               <img v-for="image in personalImages" :src="'images/' + image" />
             </montage>
             <p>Outside of my professional and business efforts, my interests include gaming with friends and family, running, biking, making music, going on walks with my wife, hanging out with our cats, supporting local businesses, and coming up with new ideas that might eventually make their way into the world (check out <a href="https://wilvoss.com" target="_blank">wilvoss.com</a>). Occasionally, I've run design workshops with students at local schools.</p>
           </section>
-          <span class="clearBoth"></span>
         </article>
       </wrapper>
       <footer><button class="email" @click="EmailMe" title="Email">Email</button><button class="linkedIn" onclick="window.open('http://www.linkedin.com/in/wilvoss')" title="LinkedIn">LinkedIn</button><button class="accessibility" @click="ToggleContrast" title="Contrast">Contrast</button></footer>

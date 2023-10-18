@@ -12,6 +12,7 @@ class WorkObject {
     this.tileText = spec.tileText == undefined ? '' : spec.tileText;
     this.resultText = spec.resultText == undefined ? '' : spec.resultText;
     this.roleText = spec.roleText == undefined ? '' : spec.roleText;
+    this.readTime = spec.readTime === undefined ? '5 minutes' : spec.readTime;
     this.whyText = spec.whyText == undefined ? '' : spec.whyText;
     this.type = spec.type === undefined ? 'product' : spec.type;
     this.group = spec.group === undefined ? 'external links' : spec.group;
@@ -31,9 +32,11 @@ var Works = [
     description: 'Casual, mobile-first, video game',
     url: 'https://bigtentgames.com/likeme.html',
     alt: 'Read about the process used in creating, developing, and producing the video game "Like Me?"',
+    readTime: '7 to 10 minutes',
+    backgroundImage: 'work/likeme_thumbnail.jpg',
+    resultText: '5-star rating in app store',
     linkText: 'https://bigtentgames.com/likeme.html',
     roleText: 'Concepting, design, code, research, marketing',
-    backgroundImage: 'work/likeme_thumbnail.jpg',
     group: 'use cases',
     caseStudyObjects: [
       new CaseStudyObject({
