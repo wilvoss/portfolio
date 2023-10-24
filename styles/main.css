@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Abel';
-    src: local('Abel'), local('Abel-Regular'), url(http://themes.googleusercontent.com/static/fonts/abel/v3/wnJbeWILdr-ZMJJAMsiXsvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+    src: url('../fonts/Abel-Regular.ttf');
 }
 
 :root {
@@ -723,7 +723,7 @@ button::-moz-focus-inner {
 work span {
     background: hsla(var(--appBackgroundHSL), .98);
     pointer-events: none;
-    font-family: 'Abel';
+    font-family: 'Abel', 'Segoe UI', 'Helvetica Neue';
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -761,6 +761,7 @@ work span i {
     margin: 5px 0px 0px 0px;
     display: block;
     text-indent: 0px;
+    text-transform: lowercase;
 }
 
 .attribution a {
@@ -792,6 +793,9 @@ montage img {
     overflow: hidden;
     width: 100%;
     height: auto;
+    margin: 0 0 10px 0;
+    /* display: inline-block; */
+    cursor: default;
 
 }
 

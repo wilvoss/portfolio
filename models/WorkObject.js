@@ -19,6 +19,7 @@ class WorkObject {
     this.backgroundImage = spec.backgroundImage === undefined ? '' : spec.backgroundImage;
     this.isCaseStudy = spec.isCaseStudy == undefined ? false : spec.isCaseStudy;
     this.caseStudyObjects = spec.caseStudyObjects === undefined ? [] : spec.caseStudyObjects;
+    this.feedbackImages = spec.feedbackImages === undefined ? [] : spec.feedbackImages;
     this.isSelected = spec.isSelected === undefined ? false : spec.isSelected;
   }
 }
@@ -38,6 +39,7 @@ var Works = [
     linkText: 'https://bigtentgames.com/likeme.html',
     roleText: 'Concepting, design, code, research, marketing',
     group: 'use cases',
+    feedbackImages: ['work/casestudies/likeme/feedback-1.png', 'work/casestudies/likeme/feedback-3.png', 'work/casestudies/likeme/feedback-8.png', 'work/casestudies/likeme/feedback-9.png', 'work/casestudies/likeme/feedback-4.png', 'work/casestudies/likeme/feedback-5.png', 'work/casestudies/likeme/feedback-6.png', 'work/casestudies/likeme/feedback-2.png', 'work/casestudies/likeme/feedback-7.png'],
     caseStudyObjects: [
       new CaseStudyObject({
         show: false,

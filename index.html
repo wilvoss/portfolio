@@ -50,6 +50,11 @@
           <lead v-if="object.afterImageHtml !== ''" v-html="object.afterImageHtml"></lead>
           <script src="https://player.vimeo.com/api/player.js"></script>
         </container>
+        <!-- <container>
+          <montage v-if="selectedWork.feedbackImages.length >0">
+            <img :src="src" v-for="src in selectedWork.feedbackImages" />
+          </montage>
+        </container> -->
         <controls v-if="activeWorks.length > 1">
           <button :class="{disabled: selectedWork === activeWorks[0]}" @click="PreviousWork">previous</button>
           <button :class="{disabled: selectedWork === activeWorks[activeWorks.length - 1]}" @click="NextWork">next</button>
