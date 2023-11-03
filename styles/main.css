@@ -441,6 +441,7 @@ modal controls {
     gap: calc(var(--defaultGap) * 4);
     flex-direction: start;
     max-width: 1024px;
+    padding-top: calc(var(--defaultGap) * 2);
     justify-content: space-between;
 }
 

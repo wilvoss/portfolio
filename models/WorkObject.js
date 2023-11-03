@@ -37,7 +37,7 @@ var Works = [
     backgroundImage: 'work/likeme_thumbnail.jpg',
     resultText: '5-star rating in app store',
     linkText: 'https://bigtentgames.com/likeme.html',
-    roleText: 'Concepting, design, code, research, marketing',
+    roleText: 'Concepting, design, code, research',
     group: 'use cases',
     feedbackImages: ['work/casestudies/likeme/feedback-1.png', 'work/casestudies/likeme/feedback-3.png', 'work/casestudies/likeme/feedback-8.png', 'work/casestudies/likeme/feedback-9.png', 'work/casestudies/likeme/feedback-4.png', 'work/casestudies/likeme/feedback-5.png', 'work/casestudies/likeme/feedback-6.png', 'work/casestudies/likeme/feedback-2.png', 'work/casestudies/likeme/feedback-7.png'],
     caseStudyObjects: [
@@ -51,14 +51,15 @@ var Works = [
         html: '<p>This case study is a demonstration of my process in a void, working by myself. If you want to learn about my work in teams, check out my other case studies!</p>',
       }),
       new CaseStudyObject({
-        html: '<h2>The challenge</h2><p>“Like Me?” initially debuted as a web-based proof-of-concept video game. The project was revitalized with the goal of bringing it to market as swiftly as possible. Despite the core gameplay being exceptional, the UX unfortunately fell short, as it was unintuitive, unhelpful, and somewhat unappealing. Specifically, users struggled to understand where to focus their attention, the meaning of certain visuals, and how to successfully play the game. There was also room for enhancements like score keeping and social sharing, as well as updated daily content.</p><p>Here are what the four main screens (home, gameplay, game over, how to play) looked like at the start:</p>',
+        html: '<h2>The challenge</h2><p>“Like Me?” initially debuted as a web-based proof-of-concept video game that I created for fun. I revitalized the project with the goal of bringing it to market as swiftly as possible. Despite the core gameplay being exceptional, the UX unfortunately fell short, as it was unintuitive, unhelpful, and somewhat unappealing. Specifically, users struggled to understand where to focus their attention, the meaning of certain visuals, and how to successfully play the game. There was also room for enhancements like score keeping and social sharing, as well as updated daily content.</p><p>Here are what the four main screens (home, gameplay, game over, how to play) looked like at the start:</p>',
         image: 'work/casestudies/likeme/1.png',
       }),
       new CaseStudyObject({
         darkBackground: true,
         html: '<h2>The solution</h2><p>You can see those same four screens at the end of this process here:</p>',
         image: 'work/casestudies/likeme/2.png',
-        afterImageHtml: '<p>After three months of diligent work, the "final" product, now available on all major app stores, <a href="https://likeme.games" target="_blank">speaks for itself</a>. Producing this game involved much iteration, all of which was done in the web prototype.</p>',
+        afterImageHtml:
+          '<p>After three months of diligent work, the "final" product, now available on all major app stores, <a href="https://likeme.games" target="_blank">speaks for itself</a>. Producing this game involved much iteration, all of which was done in the web prototype. It also showcases a more organic process than the formal, team-oriented processes you\'ll find in my other case study. Although proud of my achievements, I know for a fact that this product would be better if I was working with a full team and not just the users.</p>',
       }),
       new CaseStudyObject({
         html: '<h3>Unpacking the process</h3><p>Progress began with UI improvements like tweaking overall spacing, sizing, colors, and UX flows while generating a positive feedback loop with players, fellow game designers, and UX designers along the way. I did this when adding features that required new iconography, animation, visual assets, and content by sending out texts with comparison screenshots or by updating the prototype and asking folks for their opinions. Often, I would grab an existing resource, test its viability and reception, then generate my own version, only to repeat this process until I was satisfied with the results.</p>',
@@ -113,6 +114,12 @@ var Works = [
       new CaseStudyObject({
         html: "<p>Vue.js is my go-to framework of choice because it's lightweight, handles data-binding in an intuitive way for me, and speeds research, iteration and development dramatically. Where I had to slow down and learn an incredible amount was when I worked to make this a true PWA. This was not easy, but the results are phenomenal: the prototype runs like a native app with very few exceptions. In fact, it's so solid that I opted to use PWABuilder to package it up for the major app stores. As a result of my choices, I was able to write once and then deploy onto multiple platforms without writing ANY native code. That's incredibly satisfying.</p>",
       }),
+      new CaseStudyObject({
+        html: '<p>When the game was just a proof-of-concept, there were so many functional engineering pieces missing that I spent a good portion of my time implementing basic features like restorable state, user preference support, different visual states like modals and notifications, score keeping, theme support, sound support, in-app updates - all things gamers take for granted in any well designed game. Even now, its not finished, but its certainly good enough to ship and improve based on real user feedback.</p>',
+      }),
+      new CaseStudyObject({
+        html: '<h3>Conclusion</h3><p>This game has been an absolute blast to envision, design, develop, test, improve, and ultimately release. Continous improvements based on user feedback as well as bug reporting are made regularly. The next big step for this product is full marketing campaigns which will leverage the branding and communications already established up to this point. Its hard to describe every piece of this project that I worked on, every skill I either leveraged or improved during this journey.</p>',
+      }),
     ],
   }),
 
@@ -131,22 +138,62 @@ var Works = [
     group: 'use cases',
     caseStudyObjects: [
       new CaseStudyObject({
-        html: '<h2>The challenge</h2><p>Impira was a startup founded on machine learning technology that took unstructured data and automatically converted it to structured data with minimal effort from its users. The product, a complicated online web application, was logging higher occurances of falloff during key moments of the funnel. After engaging with users directly, watching online session of first time users, and running brainstorm sessions within the company, it became clear that the onboarding process was both confusing and too long for most users.</p><p>Here is the first screen of the original flow (click to see full flow):',
+        html: '<h2>The challenge</h2><p>Impira was a startup founded on machine learning technology that took unstructured data and automatically converted it to structured data with minimal effort from its users. The product, a complicated online web application, was logging higher occurances of falloff during key moments of the funnel. After engaging with users directly, watching online sessions of first time users, and running brainstorm sessions within the company, it became clear that the onboarding process was both confusing and too long for most users.</p><p>Here is the first screen of the original flow (click to see full flow):',
         image: 'work/casestudies/impira/1.png',
         imageZoomed: 'work/casestudies/impira/1z.png',
       }),
       new CaseStudyObject({
         darkBackground: true,
-        html: '<h2>The solution</h2><p>Through many rounds of iteration, user research, prototyping, and brainstorming with the engineering team, we deployed a new onboarding flow that improved both the "aha" and "success" moments by over 8% and our early activation by 15%.</p><p>Here is the first screen of the final flow (click to see full flow).</p>',
+        html: '<h2>The solution</h2><p>I\'m a firm believe in the idea that, together, we are stronger. Through many rounds of collaborative iteration, user research, prototyping, brainstorming, and incremental release scheduling, we deployed a new onboarding flow that improved both the "aha" and "success" moments by over 8% and our early activation by 15%. Key improvements made in this UX include starting the user in the actual application, focusing the user on clearly defined tasks with strong feedback, removing unnecessary information and steps/pages, and adding new capability to remove friction.</p><p>Here is the first screen of the final flow (click to see full flow).</p>',
         image: 'work/casestudies/impira/2.png',
         imageZoomed: 'work/casestudies/impira/2z.png',
       }),
       new CaseStudyObject({
-        html: '<h3>Unpacking the process</h3><p>There were a number of theories that the team thought might be challenging prospective customers during this experience: too many steps, unclear instruction, confusing nomenclature, etc.</p>',
+        html: '<h3>Unpacking the process</h3><p>While at Impira, the general process for every feature and flow that I designed followed these basic steps:</p><ol><li>Gather information</li><li>Define problem and solution hypotheses</li><li>Ideate and generate artifacts</li><li>Test</li><li>Iterate (repeating steps 1-4)</li><li>Implement, observe, and adjust as needed</li></ol><p>Every single step above included some form of collaboration. This was done with individual meetings, shareout and brainstorm sessions, and observing users directly.</p>',
       }),
-
       new CaseStudyObject({
-        html: '<p>In terms of conversion, we knew based on research and experience that two key moments during the funnel were critical:</p><ol><li>the "aha" moment - when a user creates their first extractable field</li><li>the "success" moment - when a user has seen an extracted field automatically identified on new documents',
+        html: '<h3>Unpacking the process</h3><p>There were a number of theories that the team thought might be challenging prospective customers during this experience: too many steps, unclear instruction, confusing nomenclature, etc. In terms of conversion, we knew based on research and experience that two key moments during the funnel were critical:</p><ol><li>the "success" moment - when a user creates their first extractable field</li><li>the "aha" moment - when a user has seen an extracted field\'s value automatically identified on more than one document</li></ol><p>In order to keep the team on track, I created a simplified view of the golden path with clear requirements and expected results. Every design choice I made was filtered through this framework.',
+        image: 'work/casestudies/impira/3.png',
+      }),
+      new CaseStudyObject({
+        html: '<p>With this knowledge in mind, I generated a few hypotheses, generated rough wireframes, shared with the design and development team in multiple Figma sessions and tested some of those flows with users on UserZoom, an online UX research platform. The collaboration within the Impira team was always about striving for insight and feedback, iterating, and repeating until we had versions that felt strong enough to test with users. In that spirit, I encouraged all team members to add comments and even add their own design ideas directly in the Figma file.</p>',
+      }),
+      new CaseStudyObject({
+        darkBackground: true,
+        html: "<h4>Rough wireframe: Hero's Journey</h4><p>This flow reduced cognitive overload by removing competing visuals, confusing animations, and bring the end product closer to the beginning of the user experience. (click to see full flow).</p>",
+        image: 'work/casestudies/impira/4.png',
+        imageZoomed: 'work/casestudies/impira/4z.png',
+      }),
+      new CaseStudyObject({
+        html: '<h4>Rough wireframe: Small But Mighty</h4><p>Small adjustments to the original flow, reduced content, and stronger visual cues (click to see full flow).</p>',
+        image: 'work/casestudies/impira/5.png',
+        imageZoomed: 'work/casestudies/impira/5z.png',
+      }),
+      new CaseStudyObject({
+        darkBackground: true,
+        html: "<h4>Rough wireframe: Can't Miss It</h4><p>In this UX, very deliberate callouts were placed throughout the first run experience (click to see full flow). </p>",
+        image: 'work/casestudies/impira/6.png',
+        imageZoomed: 'work/casestudies/impira/6z.png',
+      }),
+      new CaseStudyObject({
+        html: '<h4>Wirefames</h4><p>Typically, I worked on and presented many concepts and iterations. Some of these presentations were formal sessions with multiple teammates commenting live and asynchronously, always driving towards a stronger, more feasible solution. As I honed in on the final flow, I broke the implementation into smaller features for sequential rollout. This approach allowed us to help our users faster while generating strong, targeted feedback, unfettered with concerns about "which feature was actually having an impact." Rollout features were tested against a control group, observed with real-time recording of user engagement, and measured in terms of actual impact on various parts of the funnel. After iterating based on this feedback loop, we would release the full feature while adding the next rollout.</p>',
+        image: 'work/casestudies/impira/7.png',
+      }),
+      new CaseStudyObject({
+        html: '<h3>Rollouts</h3><p>Over the course of many months, wireframing, collaborating, iterating, and prototyping through dozens of concepts and possibilities, we landed on the first of many incremental changes we considered ready for production. It\'s important to note that, as a startup, Impira built both a framework and culture around experimentation. This means that we spent engineering effort on implimenting and releasing this flow quickly while adding both telemetry and an a/b style approach to help us understand the results of this work in the real world. At no point did we think "one and done" - everything was subject to revisiting and iteration if the data supported it.</p>',
+      }),
+      new CaseStudyObject({
+        html: "<h4>Rollouts example: First increment</h4><p>Early on, I identified a serious problem for our users: even if they made it to the core application, they couldn't upload any more files without leaving the core app experience. All of my prototypes assumed we would provide core-app uploading as an improved feature that would not only help users during OOBE, but throughout their experience. This is the first feature we implemented on the road towards a fully revamped onboarding experience (click to see full flow). </p>",
+        image: 'work/casestudies/impira/sidebar.png',
+        imageZoomed: 'work/casestudies/impira/sidebarz.png',
+      }),
+      new CaseStudyObject({
+        html: "<h4>Rollouts example: Final increment</h4><p>An expanded version of what was shown earlier in this case study, this is a bird's eye view of the entire final onboarding UX (click to see full flow). My final flows include error states, styling for interactive states like hover, CSS animation guidelines, where specific indicated links would resolve, and pretty much everything our developers needed to fully realize what's being presented. Of course, not all edge cases can be anticipated, so I worked closely with our engineers to accomodate new edge cases, clarify issues, provide assets, and even update the final flow based on feedback as needed. </p>",
+        image: 'work/casestudies/impira/8.png',
+        imageZoomed: 'work/casestudies/impira/8z.png',
+      }),
+      new CaseStudyObject({
+        html: "<h3>Conclusion</h3><p>This project involved many people, our users, and a strong focus on bringing a better experience, incrementally, to our customers with the intent of increasing our product growth. We did this with amazing results. Throughout, I worked personally with the UX content designer, the project manager, the head of product, both the backend and frontend engineering teams, the actual engineers who implemented this work. Because onboarding doesn't have to end when a user stops working with the app for the first time, I worked with marketing to envision new onboarding opportunities for users who abandoned the app, but were drawn back through direct messaging.</p>",
       }),
     ],
   }),
