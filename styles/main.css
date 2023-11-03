@@ -435,6 +435,16 @@ modal iframe {
     background: black;
 }
 
+/* modal a.linkedin:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/In-Blue-72.png) no-repeat;
+    background-size: 20px 20px;
+    background-position: 4px left;
+} */
+
 modal controls {
     width: 100%;
     display: flex;
