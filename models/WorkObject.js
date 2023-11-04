@@ -118,7 +118,7 @@ var Works = [
         html: '<p>When the game was just a proof-of-concept, there were so many functional engineering pieces missing that I spent a good portion of my time implementing basic features like restorable state, user preference support, different visual states like modals and notifications, score keeping, theme support, sound support, in-app updates - all things gamers take for granted in any well designed game. Even now, its not finished, but its certainly good enough to ship and improve based on real user feedback.</p>',
       }),
       new CaseStudyObject({
-        html: '<h3>Conclusion</h3><p>This game has been an absolute blast to envision, design, develop, test, improve, and ultimately release. Continous improvements based on user feedback as well as bug reporting are made regularly. The next big step for this product is full marketing campaigns which will leverage the branding and communications already established up to this point. Its hard to describe every piece of this project that I worked on, every skill I either leveraged or improved during this journey.</p>',
+        html: "<h3>Conclusion</h3><p>This game has been an absolute blast to envision, design, develop, test, improve, and ultimately release. Continous improvements based on user feedback as well as bug reporting are made regularly. The next big step for this product is full marketing campaigns which will leverage the branding and communications already established up to this point. It's hard to describe every piece of this project that I worked on, every skill I either leveraged or improved during this journey. Send me a message if you want to learn more.</p>",
       }),
     ],
   }),
@@ -160,7 +160,7 @@ var Works = [
       }),
       new CaseStudyObject({
         darkBackground: true,
-        html: "<h4>Rough wireframe: Hero's Journey</h4><p>This flow reduced cognitive overload by removing competing visuals, confusing animations, and bring the end product closer to the beginning of the user experience. (click to see full flow).</p>",
+        html: "<h4>Rough wireframe: Hero's Journey</h4><p>This flow reduced cognitive overload by removing competing visuals, confusing animations, and bringing the end product closer to the beginning of the user experience. (click to see full flow).</p>",
         image: 'work/casestudies/impira/4.png',
         imageZoomed: 'work/casestudies/impira/4z.png',
       }),
@@ -188,12 +188,12 @@ var Works = [
         imageZoomed: 'work/casestudies/impira/sidebarz.png',
       }),
       new CaseStudyObject({
-        html: "<h4>Rollouts example: Final increment</h4><p>An expanded version of what was shown earlier in this case study, this is a bird's eye view of the entire final onboarding UX (click to see full flow). My final flows include error states, styling for interactive states like hover, CSS animation guidelines, where specific indicated links would resolve, and pretty much everything our developers needed to fully realize what's being presented. Of course, not all edge cases can be anticipated, so I worked closely with our engineers to accomodate new edge cases, clarify issues, provide assets, and even update the final flow based on feedback as needed. </p>",
+        html: "<h4>Rollouts example: Final increment</h4><p>An expanded version of what was shown earlier in this case study, this is a bird's eye view of the entire final onboarding UX (click to see full flow). My final flows include error states, styling for interactive states like hover, CSS animation guidelines, where specific indicated links would resolve, and pretty much everything our developers needed to fully realize what's being presented. Of course, not all edge cases can be anticipated, so I worked closely with our engineers to accommodate new edge cases, clarify issues, provide assets, and even update the final flow based on feedback as needed. </p>",
         image: 'work/casestudies/impira/8.png',
         imageZoomed: 'work/casestudies/impira/8z.png',
       }),
       new CaseStudyObject({
-        html: "<h3>Conclusion</h3><p>This project involved many people, our users, and a strong focus on bringing a better experience, incrementally, to our customers with the intent of increasing our product growth. We did this with amazing results. Throughout, I worked personally with the UX content designer, the project manager, the head of product, both the backend and frontend engineering teams, the actual engineers who implemented this work. Because onboarding doesn't have to end when a user stops working with the app for the first time, I worked with marketing to envision new onboarding opportunities for users who abandoned the app, but were drawn back through direct messaging.</p>",
+        html: "<h3>Conclusion</h3><p>This project involved many people in the compnay, our users, and a strong focus on bringing a better experience, incrementally, to our customers with the intent of increasing our product growth. We did this with amazing results. Throughout, I worked personally with the UX content designer, the project manager, the head of product, both the backend and frontend engineering teams, and the actual engineers who implemented this work. Because onboarding doesn't have to end when a user stops working with the app for the first time, I worked with marketing to envision new onboarding opportunities for users who abandoned the app, but were drawn back through direct messaging. If you want to learn more about my work at Impira, please let me know.</p>",
       }),
     ],
   }),
