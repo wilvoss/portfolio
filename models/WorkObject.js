@@ -305,15 +305,38 @@ var Works = [
       }),
     ],
   }),
-  // new WorkObject({
-  //   id: 3,
-  //   name: 'The Fight Is In Us',
-  //   tileText: 'The Fight Is In Us Website',
-  //   url: 'https://www.geekwire.com/2020/fight-us-blood-plasma-campaign-deploys-microsoft-bot-search-covid-19-antibodies/',
-  //   // alt: 'Read an article about The Fight Is In Us Covid Plasma Donation campaign.',
-  //   backgroundImage: 'work/tfiiu3_thumbnail.jpg',
-  //   type: 'website',
-  // }),
+  new WorkObject({
+    id: 3,
+    name: 'The Fight Is In Us',
+    tileText: 'The Fight Is In Us Donation Site',
+    url: 'https://www.geekwire.com/2020/fight-us-blood-plasma-campaign-deploys-microsoft-bot-search-covid-19-antibodies/',
+    // alt: 'Read an article about The Fight Is In Us Covid Plasma Donation campaign.',
+    backgroundImage: 'work/tfiiu3_thumbnail.jpg',
+    type: 'website',
+    roleText: 'UX design, concepting',
+    caseStudyObjects: [
+      new CaseStudyObject({
+        darkBackground: true,
+        html: '<h3>Summary</h3><p>At the beginning of March 2020, Microsoft Health was already aware of the coming storm related to COVID. We\'d begun partnerships wherever we thought we could make a difference and one of those partnerships was with the Covid plasma donation program "The Fight is In Us." The primary technology Microsoft Health brought to the partnership was our Health Bot. A relatively novel and exciting IP for the organization, Health Bot promised to solve an immediate problem for handling health related inquiries at scale. For this reason, it was chosen as the interface for onboarding volunteers towards the cause. I designed many concepts with feedback along the way which included a vauge promise of celebrity endorsement. Ultimately, the site was built and ran for a critical period of time when nobody really knew much about Covid or how to help.</p>',
+      }),
+      new CaseStudyObject({
+        html: '<h3>screenshots</h3>',
+        image: 'work/casestudies/fight/1.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/fight/2.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/fight/4.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/fight/3.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/fight/5.png',
+      }),
+    ],
+  }),
   // new WorkObject({
   //   id: 8,
   //   name: 'Surface Remix Project',
