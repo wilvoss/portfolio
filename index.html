@@ -4,8 +4,8 @@
     <title>Work (portfolio) - Wil Voss</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <meta name="keywords" content="Work, portfolio, samples, prototyping, rapid prototyping, UX integration, application development and integration, websites, Wil Voss, Will Voss, Seattle UX Developer, Designer, and Integrator" />
-    <meta name="description" content="Select samples of the publicly viewable work of Wil Voss, Seattle-based Game Designer, Developer | UX Designer | Integrator." />
+    <meta name="keywords" content="Work, game design, game designer, portfolio, samples, prototyping, rapid prototyping, UX integration, application development and integration, websites, Wil Voss, Will Voss, Seattle UX Developer, Designer, and Integrator" />
+    <meta name="description" content="Select samples of the publicly viewable work of Wil Voss, Seattle-based Game Designer, UX Designer, Developer, Integrator." />
     <link rel="icon" type="image/png" sizes="48x48" href="favicon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="stylesheet" href="styles/main.css" media="screen" />
@@ -24,7 +24,7 @@
         <chrome>
           <close @click="ToggleShowModal"></close>
         </chrome>
-        <h1>Case Study</h1>
+        <h1>{{selectedWork.category}} <span v-if="selectedWork.readTime !== ''">({{selectedWork.readTime}} read)</span></h1>
         <intro>
           <img :src="selectedWork.backgroundImage" />
           <ul>
@@ -37,7 +37,7 @@
             <li v-if="selectedWork.roleText !== ''"><span>Skills</span> <span>{{selectedWork.roleText}}</span></li>
             <li v-if="selectedWork.resultText !== ''"><span>Impact</span> <span>{{selectedWork.resultText}}</span></li>
             <!-- <li><span>Result</span> <span>7 to 10 minutes</span></li> -->
-            <li><span>Length</span> <span>{{selectedWork.readTime}}</span></li>
+            <!-- <li><span>Length</span> <span>{{selectedWork.readTime}}</span></li> -->
           </ul>
         </intro>
         <container :class="{dark: object.darkBackground}" v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
@@ -51,7 +51,7 @@
           <script src="https://player.vimeo.com/api/player.js"></script>
         </container>
         <container>
-          <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+          <p>If you want to learn more about my work on this project or any of my other work, please reach out!</p>
           <p><img style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
         </container>
         <!-- <container>
@@ -80,7 +80,6 @@
       </wrapper>
       <wrapper>
         <article :style="{opacity: showArticle ? 1 : 0}">
-          <p>Each improvement you make in a design brings you both closer to and further from perfection. The very act of improving a product expands its potential.</p>
           <p>Game design, rapid prototyping, UX design &amp; integration, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking, could use a kick start, or just needs help getting across the finish line, I've done it or something like it. Publicly available products and websites that I've worked on are listed below.</p>
           <group v-for="(group, groupName) in workGroups" :key="groupName">
             <h2>{{groupName}}</h2>
@@ -90,6 +89,8 @@
               </button>
             </work>
           </group>
+          <h2>my philosophy</h2>
+          <p>Each improvement you make in a design brings you both closer to and further from perfection. The very act of improving a product expands its potential.</p>
         </article>
       </wrapper>
       <footer><button class="email" @click="EmailMe" title="Email">Email</button><button class="linkedIn" onclick="window.open('http://www.linkedin.com/in/wilvoss')" title="LinkedIn">LinkedIn</button><button class="accessibility" @click="ToggleContrast" title="Contrast">Contrast</button></footer>

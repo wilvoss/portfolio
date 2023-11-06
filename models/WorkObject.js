@@ -6,16 +6,17 @@ class WorkObject {
     this.name = spec.name === undefined ? 'name' : spec.name;
     this.description = spec.description == undefined ? '' : spec.description;
     this.url = spec.url == undefined ? '' : spec.url;
-    this.alt = spec.alt == undefined ? '' : spec.alt;
+    this.alt = spec.alt == undefined ? 'Read a quick summary of this project.' : spec.alt;
     this.heroImage = spec.heroImage === undefined ? '' : spec.heroImage;
-    this.linkText = spec.linkText == undefined ? '' : spec.linkText;
+    this.linkText = spec.linkText == undefined ? 'Take a quick' : spec.linkText;
     this.tileText = spec.tileText == undefined ? '' : spec.tileText;
     this.resultText = spec.resultText == undefined ? '' : spec.resultText;
-    this.roleText = spec.roleText == undefined ? '' : spec.roleText;
-    this.readTime = spec.readTime === undefined ? '5 minutes' : spec.readTime;
+    this.roleText = spec.roleText == undefined ? 'Design, prototyping' : spec.roleText;
+    this.readTime = spec.readTime === undefined ? '' : spec.readTime;
     this.whyText = spec.whyText == undefined ? '' : spec.whyText;
     this.type = spec.type === undefined ? 'product' : spec.type;
-    this.group = spec.group === undefined ? 'external links' : spec.group;
+    this.group = spec.group === undefined ? 'Quick Reads' : spec.group;
+    this.category = spec.category === undefined ? 'Quick Read' : spec.category;
     this.backgroundImage = spec.backgroundImage === undefined ? '' : spec.backgroundImage;
     this.isCaseStudy = spec.isCaseStudy == undefined ? false : spec.isCaseStudy;
     this.caseStudyObjects = spec.caseStudyObjects === undefined ? [] : spec.caseStudyObjects;
@@ -33,12 +34,13 @@ var Works = [
     description: 'Casual, mobile-first, video game',
     url: 'https://bigtentgames.com/likeme.html',
     alt: 'Read about the process used in creating, developing, and producing the video game "Like Me?"',
-    readTime: '7 to 10 minutes',
+    readTime: '8 minute',
     backgroundImage: 'work/likeme_thumbnail.jpg',
     resultText: '5-star rating in app store',
     linkText: 'https://bigtentgames.com/likeme.html',
     roleText: 'Concepting, design, code, research',
-    group: 'use cases',
+    group: 'Deep Dives',
+    category: 'Deep Dive',
     feedbackImages: ['work/casestudies/likeme/feedback-1.png', 'work/casestudies/likeme/feedback-3.png', 'work/casestudies/likeme/feedback-8.png', 'work/casestudies/likeme/feedback-9.png', 'work/casestudies/likeme/feedback-4.png', 'work/casestudies/likeme/feedback-5.png', 'work/casestudies/likeme/feedback-6.png', 'work/casestudies/likeme/feedback-2.png', 'work/casestudies/likeme/feedback-7.png'],
     caseStudyObjects: [
       new CaseStudyObject({
@@ -118,7 +120,7 @@ var Works = [
         html: '<p>When the game was just a proof-of-concept, there were so many functional engineering pieces missing that I spent a good portion of my time implementing basic features like restorable state, user preference support, different visual states like modals and notifications, score keeping, theme support, sound support, in-app updates - all things gamers take for granted in any well designed game. Even now, its not finished, but its certainly good enough to ship and improve based on real user feedback.</p>',
       }),
       new CaseStudyObject({
-        html: "<h3>Conclusion</h3><p>This game has been an absolute blast to envision, design, develop, test, improve, and ultimately release. Continous improvements based on user feedback as well as bug reporting are made regularly. The next big step for this product is full marketing campaigns which will leverage the branding and communications already established up to this point. It's hard to describe every piece of this project that I worked on, every skill I either leveraged or improved during this journey. Send me a message if you want to learn more.</p>",
+        html: "<h3>Conclusion</h3><p>This game has been an absolute blast to envision, design, develop, test, improve, and ultimately release. Continous improvements based on user feedback as well as bug reporting are made regularly. The next big step for this product is a full marketing campaign which will leverage the branding and communications already established up to this point. It's hard to describe every piece of this project that I worked on, every skill I either leveraged or improved during this journey. Send me a message if you want to learn more.</p>",
       }),
     ],
   }),
@@ -128,31 +130,34 @@ var Works = [
     isCaseStudy: true,
     name: 'Impira',
     tileText: 'Impira Product Onboarding',
+    readTime: '6 minute',
     description: 'Onboarding 2.0',
     url: 'https://www.youtube.com/channel/UCDCBj9hI8mUphp-7Twc6_nA/videos',
-    alt: "Watch videos about Impira's product.",
+    alt: "Learn about the process I used as a staff product growth designer at Impira while improving their application's onboarding experience.",
     backgroundImage: 'work/impira_thumbnail.jpg',
     resultText: '15% increase account activation',
     linkText: 'https://www.youtube.com/channel/UCDCBj9hI8mUphp-7Twc6_nA/videos',
     roleText: 'Ideation, design, prototyping, research',
-    group: 'use cases',
+    group: 'Deep Dives',
+    category: 'Deep Dive',
     caseStudyObjects: [
       new CaseStudyObject({
-        html: '<h2>The challenge</h2><p>Impira was a startup founded on machine learning technology that took unstructured data and automatically converted it to structured data with minimal effort from its users. The product, a complicated online web application, was logging higher occurances of falloff during key moments of the funnel. After engaging with users directly, watching online sessions of first time users, and running brainstorm sessions within the company, it became clear that the onboarding process was both confusing and too long for most users.</p><p>Here is the first screen of the original flow (click to see full flow):',
+        html: '<h2>The challenge</h2><p>Impira was a startup founded on machine learning technology that took unstructured data and automatically converted it to structured data with minimal effort from its users. The product, a complicated online web application, was logging higher occurances of falloff during key moments of the funnel. After engaging with users directly, watching online sessions of first time users, and running brainstorm sessions within the company, it became clear that the onboarding process was both confusing and too long for most users.</p><p>Here is the first screen of the original flow (click image to see full flow):',
         image: 'work/casestudies/impira/1.png',
         imageZoomed: 'work/casestudies/impira/1z.png',
       }),
       new CaseStudyObject({
         darkBackground: true,
-        html: '<h2>The solution</h2><p>I\'m a firm believe in the idea that, together, we are stronger. Through many rounds of collaborative iteration, user research, prototyping, brainstorming, and incremental release scheduling, we deployed a new onboarding flow that improved both the "aha" and "success" moments by over 8% and our early activation by 15%. Key improvements made in this UX include starting the user in the actual application, focusing the user on clearly defined tasks with strong feedback, removing unnecessary information and steps/pages, and adding new capability to remove friction.</p><p>Here is the first screen of the final flow (click to see full flow).</p>',
+        html: '<h2>The solution</h2><p>I\'m a firm believer in the idea that, together, we are stronger. Through many rounds of collaborative iteration, user research, prototyping, brainstorming, and incremental release scheduling, we deployed a new onboarding flow that improved both the "aha" and "success" moments by over 8% and our early activation by 15%. Key improvements made in this UX include starting the user in the actual application, focusing the user on clearly defined tasks with strong feedback, removing unnecessary information and steps/pages, and adding new capability to remove friction.</p><p>Here is the first screen of the final flow (click image to see full flow).</p>',
         image: 'work/casestudies/impira/2.png',
         imageZoomed: 'work/casestudies/impira/2z.png',
+        afterImageHtml: "<blockquote>&ldquo;Wil helped us make cutting edge AI technology approachable for the average person. He iterated patiently and persistently on our onboarding, teaching our users to create Machine Learning models. He is technically savvy, quickly picking up new concepts, and making them approachable to new users. He's a pleasure to work with, creative, responsive and collaborative.&rdquo; <span>— Lorilyn McCue, Head of Product<span></blockquote>",
       }),
       new CaseStudyObject({
-        html: '<h3>Unpacking the process</h3><p>While at Impira, the general process for every feature and flow that I designed followed these basic steps:</p><ol><li>Gather information</li><li>Define problem and solution hypotheses</li><li>Ideate and generate artifacts</li><li>Test</li><li>Iterate (repeating steps 1-4)</li><li>Implement, observe, and adjust as needed</li></ol><p>Every single step above included some form of collaboration. This was done with individual meetings, shareout and brainstorm sessions, and observing users directly.</p>',
+        html: '<h3>Unpacking the process</h3><p>While at Impira, the general process for every feature and flow that I designed followed these basic steps:</p><ol><li>Gather information</li><li>Define problem and solution hypotheses</li><li>Ideate and generate artifacts</li><li>Test</li><li>Iterate (repeating steps 1-4)</li><li>Implement, observe, and adjust as needed</li></ol><p>Every single step above included some form of collaboration. This was done through individual meetings, shareout and brainstorm sessions, and observing users directly.</p>',
       }),
       new CaseStudyObject({
-        html: '<h3>Unpacking the process</h3><p>There were a number of theories that the team thought might be challenging prospective customers during this experience: too many steps, unclear instruction, confusing nomenclature, etc. In terms of conversion, we knew based on research and experience that two key moments during the funnel were critical:</p><ol><li>the "success" moment - when a user creates their first extractable field</li><li>the "aha" moment - when a user has seen an extracted field\'s value automatically identified on more than one document</li></ol><p>In order to keep the team on track, I created a simplified view of the golden path with clear requirements and expected results. Every design choice I made was filtered through this framework.',
+        html: '<h3>Unpacking the process</h3><p>The team had a number of theories about what might be challenging prospective customers during this experience: too many steps, unclear instruction, confusing nomenclature, etc. In terms of conversion, we knew based on research and experience that two key moments during the funnel were critical:</p><ol><li>the "success" moment - when a user creates their first extractable field</li><li>the "aha" moment - when a user has seen an extracted field\'s value automatically identified on more than one document</li></ol><p>In order to keep the team on track, I created a simplified view of the golden path with clear requirements and expected results. Every design choice I made was filtered through this framework.',
         image: 'work/casestudies/impira/3.png',
       }),
       new CaseStudyObject({
@@ -160,18 +165,18 @@ var Works = [
       }),
       new CaseStudyObject({
         darkBackground: true,
-        html: "<h4>Rough wireframe: Hero's Journey</h4><p>This flow reduced cognitive overload by removing competing visuals, confusing animations, and bringing the end product closer to the beginning of the user experience. (click to see full flow).</p>",
+        html: "<h4>Rough wireframe: Hero's Journey</h4><p>This flow reduced cognitive overload by removing competing visuals, confusing animations, and bringing the end product closer to the beginning of the user experience. (click image to see full flow).</p>",
         image: 'work/casestudies/impira/4.png',
         imageZoomed: 'work/casestudies/impira/4z.png',
       }),
       new CaseStudyObject({
-        html: '<h4>Rough wireframe: Small But Mighty</h4><p>Small adjustments to the original flow, reduced content, and stronger visual cues (click to see full flow).</p>',
+        html: '<h4>Rough wireframe: Small But Mighty</h4><p>Small adjustments to the original flow, reduced content, and stronger visual cues (click image to see full flow).</p>',
         image: 'work/casestudies/impira/5.png',
         imageZoomed: 'work/casestudies/impira/5z.png',
       }),
       new CaseStudyObject({
         darkBackground: true,
-        html: "<h4>Rough wireframe: Can't Miss It</h4><p>In this UX, very deliberate callouts were placed throughout the first run experience (click to see full flow). </p>",
+        html: "<h4>Rough wireframe: Can't Miss It</h4><p>In this UX, very deliberate callouts were placed throughout the first run experience (click image to see full flow). </p>",
         image: 'work/casestudies/impira/6.png',
         imageZoomed: 'work/casestudies/impira/6z.png',
       }),
@@ -180,82 +185,172 @@ var Works = [
         image: 'work/casestudies/impira/7.png',
       }),
       new CaseStudyObject({
-        html: '<h3>Rollouts</h3><p>Over the course of many months, wireframing, collaborating, iterating, and prototyping through dozens of concepts and possibilities, we landed on the first of many incremental changes we considered ready for production. It\'s important to note that, as a startup, Impira built both a framework and culture around experimentation. This means that we spent engineering effort on implimenting and releasing this flow quickly while adding both telemetry and an a/b style approach to help us understand the results of this work in the real world. At no point did we think "one and done" - everything was subject to revisiting and iteration if the data supported it.</p>',
+        html: '<h3>Rollouts</h3><p>Over the course of many months wireframing, collaborating, iterating, and prototyping through dozens of concepts and possibilities, we landed on the first of many incremental changes we considered ready for production. It\'s important to note that, as a startup, Impira built both a framework and culture around experimentation. This means that we spent engineering effort on implimenting and releasing this flow quickly while adding both telemetry and an a/b style approach to help us understand the results of this work in the real world. At no point did we think "one and done" - everything was subject to revisiting and iteration if the data supported it.</p>',
       }),
       new CaseStudyObject({
-        html: "<h4>Rollouts example: First increment</h4><p>Early on, I identified a serious problem for our users: even if they made it to the core application, they couldn't upload any more files without leaving the core app experience. All of my prototypes assumed we would provide core-app uploading as an improved feature that would not only help users during OOBE, but throughout their experience. This is the first feature we implemented on the road towards a fully revamped onboarding experience (click to see full flow). </p>",
+        html: "<h4>Rollouts example: First increment</h4><p>Early on, I identified a serious problem for our users: even if they made it to the core application, they couldn't upload any more files without leaving the core app experience. All of my prototypes assumed we would provide core-app uploading as an improved feature that would not only help users during OOBE, but throughout their experience. This is the first feature we implemented on the road towards a fully revamped onboarding experience (click image to see full flow). </p>",
         image: 'work/casestudies/impira/sidebar.png',
         imageZoomed: 'work/casestudies/impira/sidebarz.png',
       }),
       new CaseStudyObject({
-        html: "<h4>Rollouts example: Final increment</h4><p>An expanded version of what was shown earlier in this case study, this is a bird's eye view of the entire final onboarding UX (click to see full flow). My final flows include error states, styling for interactive states like hover, CSS animation guidelines, where specific indicated links would resolve, and pretty much everything our developers needed to fully realize what's being presented. Of course, not all edge cases can be anticipated, so I worked closely with our engineers to accommodate new edge cases, clarify issues, provide assets, and even update the final flow based on feedback as needed. </p>",
+        html: "<h4>Rollouts example: Final increment</h4><p>An expanded version of what was shown earlier in this case study, this is a bird's eye view of the entire final onboarding UX (click image to see full flow). My final flows include error states, styling for interactive states like hover, CSS animation guidelines, where specific indicated links would resolve, and pretty much everything our developers needed to fully realize what's being presented. Of course, not all edge cases can be anticipated, so I worked closely with our engineers to accommodate new edge cases, clarify issues, provide assets, and even update the final flow based on feedback as needed. </p>",
         image: 'work/casestudies/impira/8.png',
         imageZoomed: 'work/casestudies/impira/8z.png',
       }),
       new CaseStudyObject({
-        html: "<h3>Conclusion</h3><p>This project involved many people in the compnay, our users, and a strong focus on bringing a better experience, incrementally, to our customers with the intent of increasing our product growth. We did this with amazing results. Throughout, I worked personally with the UX content designer, the project manager, the head of product, both the backend and frontend engineering teams, and the actual engineers who implemented this work. Because onboarding doesn't have to end when a user stops working with the app for the first time, I worked with marketing to envision new onboarding opportunities for users who abandoned the app, but were drawn back through direct messaging. If you want to learn more about my work at Impira, please let me know.</p>",
+        html: "<h3>Conclusion</h3><p>This project involved many people in the company, our users, and a strong focus on bringing a better experience, incrementally, to our customers with the intent of increasing our product growth. We did this with amazing results. Throughout, I worked personally with the UX content designer, the project manager, the head of product, both the backend and frontend engineering teams, and the actual engineers who implemented this work. Because onboarding doesn't have to end when a user stops working with the app for the first time, I worked with marketing to envision new onboarding opportunities for users who abandoned the app, but were drawn back through direct messaging. If you want to learn more about my work at Impira, please let me know.</p>",
       }),
     ],
   }),
   new WorkObject({
     id: 4,
     name: 'Fred Hutch Cancer Center',
+    tileText: 'Remote Patient Monitoring App',
     url: 'https://www.fredhutch.org/en.html',
-    alt: 'Visit the Fred Hutch site.',
+    // alt: 'Visit the Fred Hutch site.',
+    roleText: 'Design, prototyping, research',
+    resultText: 'Helped secure 3-year partnership',
     backgroundImage: 'work/fredhutch_thumbnail.jpg',
+    caseStudyObjects: [
+      new CaseStudyObject({
+        darkBackground: true,
+        html: '<h3>Summary</h3><p>While working at Microsoft Health, I designed, prototyped, and helped deliver a symptom tracking app for partner researchers at Fred Hutch Cancer Center. The process and designs I created helped convince Fred Hutch to sign a 3-year contract with our organization. The process involved evaluating patient feedback, stakeholder input, iteration, and testing. The app paired with a bluetooth armband monitor which required device management in the application as well as the core symptom tracking feature.</p><blockquote>&ldquo;Wil helped my team at Microsoft Health by designing an awesome app for remote patient monitoring and handled a REALLY tricky stakeholder situation with tons of grace and patience.&rdquo; <span>— Jessica Glago, Product Manager</span></blockquote',
+      }),
+      new CaseStudyObject({
+        html: "<h3>Flows</h3><p>These images show the some of the UX flows patient's used on a daily basis.",
+        image: 'work/casestudies/fredhutch/1.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/fredhutch/2.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/fredhutch/3.png',
+      }),
+    ],
   }),
   new WorkObject({
     id: 5,
-    name: 'Microsoft Health',
+    name: 'Microsoft Health NExT',
+    tileText: 'Microsoft Health NExT Start App',
     url: 'https://www.microsoft.com/microsoft-health/en-us',
-    alt: 'Visit the Microsoft Health site.',
+    // alt: 'Visit the Microsoft Health site.',
+    roleText: 'Design, prototyping, research, code',
     backgroundImage: 'work/nextstart_thumbnail.jpg',
-    zoomImage: 'work/nextstart_zoom.png',
-  }),
-  new WorkObject({
-    id: 9,
-    name: 'Big Tent Games',
-    url: 'https://bigtentgames.com',
-    alt: 'Visit the Big Tent Games site.',
-    backgroundImage: 'work/btg_thumbnail.jpg',
-    type: 'website',
-  }),
-  new WorkObject({
-    id: 7,
-    name: 'Suplari',
-    url: 'https://suplari.com',
-    alt: 'Visit the Suplari site.',
-    backgroundImage: 'work/suplari_thumbnail.jpg',
-  }),
-  new WorkObject({
-    id: 3,
-    name: 'The Fight Is In Us',
-    url: 'https://www.geekwire.com/2020/fight-us-blood-plasma-campaign-deploys-microsoft-bot-search-covid-19-antibodies/',
-    alt: 'Read an article about The Fight Is In Us Covid Plasma Donation campaign.',
-    backgroundImage: 'work/tfiiu3_thumbnail.jpg',
-    type: 'website',
+    caseStudyObjects: [
+      new CaseStudyObject({
+        darkBackground: true,
+        html: "<h3>Summary</h3><p>Microsoft NExT Start was an internal application meant to help researchers bring their ideas to market. There were additional stakeholders in the form of leadership who wanted a way to track all of the possible projects within AI+R and subject matter experts (SMEs) who were being inundated with questions about the process.</p><p>The team had stalled after a year of feature creep and design iteration with no tangible results. There was a big disconnect between the needs of leadership and the needs of the end users. In addition to refining the visuals, branding alignment, and functionality of the application, I focused the team's efforts on maximizing the impact for our users by identifying their core needs and driving our design process with those needs at the front.</p>",
+      }),
+      new CaseStudyObject({
+        html: '<h3>results</h3><p>This is what the application looked like at the end of this process.</p>',
+        image: 'work/casestudies/next/2.png',
+      }),
+      new CaseStudyObject({
+        html: '<p>This is what the application looked like before I stepped in to help the team.</p>',
+        image: 'work/casestudies/next/1.png',
+      }),
+    ],
   }),
   new WorkObject({
     id: 6,
     name: 'Microsoft Band 2',
+    tileText: 'Microsoft Band 2 Uber Tile',
     url: 'https://www.techradar.com/reviews/wearables/microsoft-band-2-1306006/review',
-    alt: 'Read a review of the Microsoft Band 2.',
+    // alt: 'Read a review of the Microsoft Band 2.',
     backgroundImage: 'work/msband_thumbnail.jpg',
+    caseStudyObjects: [
+      new CaseStudyObject({
+        darkBackground: true,
+        html: '<h3>Summary</h3><p>Microsoft Band was a product ahead of its time, before Apple Watch was even a thing, the Microsoft wearable was tracking health and fitness data while providing incredibly useful, elegant solutions for health buffs, dataheads, and even basic productivity users. Aside from prototyping the entire UI for Band 2, I played a critical role in the development of some of the features and apps that won hearts with our user base. Two of those concepts are shown below.</p>',
+      }),
+      new CaseStudyObject({
+        html: '<h4>Uber App</h4><p>Uber was announced as a Microsoft partner with Band team at a public event by senior leadership. We had two weeks to prove to Uber that our product was worth that partnership. This flow that I designed, along with the prototype I created, helped secure that partnership and determine the next feature to be built.</p>',
+        image: 'work/casestudies/band/2.png',
+      }),
+      new CaseStudyObject({
+        html: '<h3>flows</h3><h4>Music controls</h4><p>After multiple failed attempts to implement this #1 rated user requested feature, I stepped in and drove the design process reboot which resulted in the release of one my proudest contributions to any product. This design was frought with many challenges, but the end result was both highly desired and well received.</p>',
+        image: 'work/casestudies/band/1.png',
+      }),
+    ],
   }),
   new WorkObject({
-    id: 8,
-    name: 'Surface Remix Project',
-    url: 'https://www.theverge.com/2013/9/23/4762256/surface-remix-project-hands-on-dj-setup',
-    alt: 'Read a review of the Microsoft Surface Remix Project.',
-    backgroundImage: 'work/remix_thumbnail.jpg',
+    id: 7,
+    name: 'Suplari',
+    tileText: 'Suplari App and Brand Concepts',
+    roleText: 'UX design, conceptualization, branding',
+    url: 'https://suplari.com',
+    // alt: 'Visit the Suplari site.',
+    backgroundImage: 'work/suplari_thumbnail.jpg',
+    caseStudyObjects: [
+      new CaseStudyObject({
+        darkBackground: true,
+        html: "<h3>Summary</h3><p>In the early stages of startup Suplari's funding, I was invited to brainstorm and craft wireframes to help kickstart the direction Suplari could take with their application. My work involved many brainstorm sessions with the founding partners as well as time spent wireframing, ideating, and concepting individually. The results led to a job offer and helped the team gain clarification on future features and directions.</p>",
+      }),
+      new CaseStudyObject({
+        html: '<h3>wireframes</h3>',
+        image: 'work/casestudies/suplari/1.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/suplari/3.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/suplari/2.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/suplari/4.png',
+      }),
+      new CaseStudyObject({
+        html: '<h3>Logo concepts</h3>',
+        image: 'work/casestudies/suplari/5.png',
+      }),
+    ],
   }),
+  // new WorkObject({
+  //   id: 3,
+  //   name: 'The Fight Is In Us',
+  //   tileText: 'The Fight Is In Us Website',
+  //   url: 'https://www.geekwire.com/2020/fight-us-blood-plasma-campaign-deploys-microsoft-bot-search-covid-19-antibodies/',
+  //   // alt: 'Read an article about The Fight Is In Us Covid Plasma Donation campaign.',
+  //   backgroundImage: 'work/tfiiu3_thumbnail.jpg',
+  //   type: 'website',
+  // }),
+  // new WorkObject({
+  //   id: 8,
+  //   name: 'Surface Remix Project',
+  //   tileText: 'Microsoft Surface Music Hardware and App',
+  //   url: 'https://www.theverge.com/2013/9/23/4762256/surface-remix-project-hands-on-dj-setup',
+  //   // alt: 'Read a review of the Microsoft Surface Remix Project.',
+  //   backgroundImage: 'work/remix_thumbnail.jpg',
+  // }),
   new WorkObject({
-    id: 10,
-    name: 'Mouse & Keyboard Center 2.0',
-    url: 'https://www.microsoft.com/hardware/en-us/downloads/mouse-keyboard-center',
-    alt: 'Download Mouse & Keyboard Center 2.0',
-    backgroundImage: 'work/mkcenter_thumbnail.jpg',
-  }),
+    id: 9,
+    name: 'Big Tent Games',
+    tileText: 'Big Tent Games Website',
+    url: 'https://bigtentgames.com',
+    // alt: 'Visit the Big Tent Games site.',
+    backgroundImage: 'work/btg_thumbnail.jpg',
+    type: 'website',
+    caseStudyObjects: [
+      new CaseStudyObject({
+        darkBackground: true,
+        html: "<h3>Summary</h3><p>Big Tent Games is a casual video game company that I created in 2022. Initially the website was a simple way to share my prototypes and free games, but over time it evolved into a real business digital front. The site is intended to feel like an app store with highlights and product pages complete with reviews, download links, and marketing materials. You can visit it directly at <a href='https://bigtentgames.com' target='_blank'>bigtentgames.com</a></p>",
+      }),
+      new CaseStudyObject({
+        html: '<h3>screenshot</h3>',
+        image: 'work/casestudies/btg/1.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/btg/2.png',
+      }),
+    ],
+  }), // new WorkObject({
+  //   id: 10,
+  //   name: 'Mouse & Keyboard Center 2.0',
+  //   name: 'Mouse & Keyboard Center 2.0',
+  //   url: 'https://www.microsoft.com/hardware/en-us/downloads/mouse-keyboard-center',
+  //   alt: 'Download Mouse & Keyboard Center 2.0',
+  //   backgroundImage: 'work/mkcenter_thumbnail.jpg',
+  // }),
   // new WorkObject({
   //   id: 11,
   //   name: 'HTML5 Particle Engine',

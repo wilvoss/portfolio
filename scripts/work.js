@@ -46,16 +46,17 @@ var app = new Vue({
     },
 
     SelectWork(_work, _toggleModal = true) {
-      if ((!_work.isCaseStudy || _work.caseStudyObjects.length === 0) && _work.url !== '') {
-        window.open(_work.url);
-      } else if (_toggleModal) {
+      // if ((!_work.isCaseStudy || _work.caseStudyObjects.length === 0) && _work.url !== '') {
+      //   window.open(_work.url);
+      // } else
+      if (_toggleModal) {
         // this.ZoomImage(_work.zoomImage);
         this.ToggleShowModal();
       }
       this.selectedWork = _work;
-      if (_work.isCaseStudy && _work.caseStudyObjects.length > 0) {
-        history.replaceState(null, null, window.location.origin + '?csid=' + _work.id);
-      }
+      // if (_work.isCaseStudy && _work.caseStudyObjects.length > 0) {
+      history.replaceState(null, null, window.location.origin + '?csid=' + _work.id);
+      // }
       this.modalContainer = document.getElementsByTagName('modal')[0];
       if (this.modalContainer !== null) {
         window.setTimeout(function () {
@@ -91,7 +92,7 @@ var app = new Vue({
 
       if (csid !== null && csid !== undefined) {
         let work = this.works.find((item) => item.id === csid);
-        if (work !== null && work !== undefined && work.caseStudyObjects.length > 0) {
+        if (work !== null && work !== undefined) {
           this.SelectWork(work);
         }
       }
@@ -153,7 +154,7 @@ var app = new Vue({
     },
 
     activeWorks() {
-      return this.works.filter((obj) => obj.isCaseStudy).flat();
+      return this.works.filter((obj) => obj.group === this.selectedWork.group);
     },
   },
 });
