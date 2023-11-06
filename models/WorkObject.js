@@ -214,7 +214,7 @@ var Works = [
     caseStudyObjects: [
       new CaseStudyObject({
         darkBackground: true,
-        html: '<h3>Summary</h3><p>While working at Microsoft Health, I designed, prototyped, and helped deliver a symptom tracking app for partner researchers at Fred Hutch Cancer Center. The process and designs I created helped convince Fred Hutch to sign a 3-year contract with our organization. The process involved evaluating patient feedback, stakeholder input, iteration, and testing. The app paired with a bluetooth armband monitor which required device management in the application as well as the core symptom tracking feature.</p><blockquote>&ldquo;Wil helped my team at Microsoft Health by designing an awesome app for remote patient monitoring and handled a REALLY tricky stakeholder situation with tons of grace and patience.&rdquo; <span>— Jessica Glago, Product Manager</span></blockquote',
+        html: '<h3>Summary</h3><p>While working at Microsoft Health, I designed, prototyped, and helped deliver a remote patient monitoring app for our research partners at Fred Hutch Cancer Center. The process and designs I created helped convince Fred Hutch to sign a 3-year contract with our organization. The process involved evaluating patient feedback, stakeholder input, iteration, and testing. The app paired with a bluetooth armband monitor which required device management in the application as well as the core symptom tracking feature.</p><blockquote>&ldquo;Wil helped my team at Microsoft Health by designing an awesome app for remote patient monitoring and handled a REALLY tricky stakeholder situation with tons of grace and patience.&rdquo; <span>— Jessica Glago, Product Manager</span></blockquote',
       }),
       new CaseStudyObject({
         html: "<h3>Flows</h3><p>These images show the some of the UX flows patient's used on a daily basis.",
@@ -277,7 +277,7 @@ var Works = [
     id: 7,
     name: 'Suplari',
     tileText: 'Suplari App and Brand Concepts',
-    roleText: 'UX design, conceptualization, branding',
+    roleText: 'UX design, ideation, branding',
     url: 'https://suplari.com',
     // alt: 'Visit the Suplari site.',
     backgroundImage: 'work/suplari_thumbnail.jpg',
@@ -352,6 +352,7 @@ var Works = [
     url: 'https://bigtentgames.com',
     // alt: 'Visit the Big Tent Games site.',
     backgroundImage: 'work/btg_thumbnail.jpg',
+    roleText: 'Design, branding, code',
     type: 'website',
     caseStudyObjects: [
       new CaseStudyObject({
