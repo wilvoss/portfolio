@@ -214,7 +214,7 @@ var Works = [
     caseStudyObjects: [
       new CaseStudyObject({
         darkBackground: true,
-        html: '<h3>Summary</h3><p>While working at Microsoft Health, I designed, prototyped, and helped deliver a remote patient monitoring app for our research partners at Fred Hutch Cancer Center. The process and designs I created helped convince Fred Hutch to sign a 3-year contract with our organization. The process involved evaluating patient feedback, stakeholder input, iteration, and testing. The app paired with a bluetooth armband monitor which required device management in the application as well as the core symptom tracking feature.</p><blockquote>&ldquo;Wil helped my team at Microsoft Health by designing an awesome app for remote patient monitoring and handled a REALLY tricky stakeholder situation with tons of grace and patience.&rdquo; <span>— Jessica Glago, Product Manager</span></blockquote',
+        html: '<h3>Summary</h3><p>While working at Microsoft Health, I designed, prototyped, and helped deliver a remote patient monitoring app for our research partners at Fred Hutch Cancer Center. The designs I created helped convince Fred Hutch to sign a 3-year contract with our organization. The process I used involved evaluating patient feedback, stakeholder input, iteration, and testing. The app paired with a bluetooth armband monitor which required device management in the application alongside the core symptom tracking feature.</p><blockquote>&ldquo;Wil helped my team at Microsoft Health by designing an awesome app for remote patient monitoring and handled a REALLY tricky stakeholder situation with tons of grace and patience.&rdquo; <span>— Jessica Glago, Product Manager</span></blockquote',
       }),
       new CaseStudyObject({
         html: "<h3>Flows</h3><p>These images show the some of the UX flows patient's used on a daily basis.",
@@ -239,7 +239,7 @@ var Works = [
     caseStudyObjects: [
       new CaseStudyObject({
         darkBackground: true,
-        html: "<h3>Summary</h3><p>Microsoft NExT Start was an internal application meant to help researchers bring their ideas to market. There were additional stakeholders in the form of leadership who wanted a way to track all of the possible projects within AI+R and subject matter experts (SMEs) who were being inundated with questions about the process.</p><p>The team had stalled after a year of feature creep and design iteration with no tangible results. There was a big disconnect between the needs of leadership and the needs of the end users. In addition to refining the visuals, branding alignment, and functionality of the application, I focused the team's efforts on maximizing the impact for our users by identifying their core needs and driving our design process with those needs at the front.</p>",
+        html: "<h3>Summary</h3><p>Microsoft NExT Start was an internal application meant to help researchers bring their ideas to market. When I joined NExT, the product team had stalled after a year of feature creep and design iteration with no tangible results. There was a big disconnect between the needs of leadership and the needs of the end users. In addition to refining the visuals, branding alignment, and functionality of the application, I focused the team's efforts on maximizing the impact for our users by identifying their core needs and driving our design process with those needs at the front.</p>",
       }),
       new CaseStudyObject({
         html: '<h3>results</h3><p>This is what the application looked like at the end of this process.</p>',
@@ -261,7 +261,7 @@ var Works = [
     caseStudyObjects: [
       new CaseStudyObject({
         darkBackground: true,
-        html: '<h3>Summary</h3><p>Microsoft Band was a product ahead of its time, before Apple Watch was even a thing, the Microsoft wearable was tracking health and fitness data while providing incredibly useful, elegant solutions for health buffs, dataheads, and even basic productivity users. Aside from prototyping the entire UI for Band 2, I played a critical role in the development of some of the features and apps that won hearts with our user base. Two of those concepts are shown below.</p>',
+        html: '<h3>Summary</h3><p>Microsoft Band was a product ahead of its time. Before Apple Watch was even a thing, this Microsoft wearable was tracking health and fitness data while providing incredibly useful, elegant solutions for health buffs, dataheads, and even basic productivity users. Aside from prototyping the entire UI for Band 2, I played a critical role in the development of some of the features and apps that won hearts with our user base. Two of those concepts are shown below.</p>',
       }),
       new CaseStudyObject({
         html: '<h4>Uber App</h4><p>Uber was announced as a Microsoft partner with Band team at a public event by senior leadership. We had two weeks to prove to Uber that our product was worth that partnership. This flow that I designed, along with the prototype I created, helped secure that partnership and determine the next feature to be built.</p>',
@@ -317,7 +317,7 @@ var Works = [
     caseStudyObjects: [
       new CaseStudyObject({
         darkBackground: true,
-        html: '<h3>Summary</h3><p>At the beginning of March 2020, Microsoft Health was already aware of the coming storm related to COVID. We\'d begun partnerships wherever we thought we could make a difference and one of those partnerships was with the Covid plasma donation program "The Fight is In Us." The primary technology Microsoft Health brought to the partnership was our Health Bot. A relatively novel and exciting IP for the organization, Health Bot promised to solve an immediate problem for handling health related inquiries at scale. For this reason, it was chosen as the interface for onboarding volunteers towards the cause. I designed many concepts with feedback along the way which included a vauge promise of celebrity endorsement. Ultimately, the site was built and ran for a critical period of time when nobody really knew much about Covid or how to help.</p>',
+        html: '<h3>Summary</h3><p>At the beginning of March 2020, Microsoft Health was already aware of the coming storm related to COVID. We\'d begun partnerships wherever we thought we could make a difference and one of those partnerships was with the Covid plasma donation program "The Fight is In Us." The primary technology Microsoft Health brought to the partnership was our Health Bot. A relatively novel and exciting IP for the organization, Health Bot promised to solve an immediate problem for handling health related inquiries at scale. For this reason, it was chosen as the interface for onboarding volunteers towards the cause.</p>',
       }),
       new CaseStudyObject({
         html: '<h3>screenshots</h3>',

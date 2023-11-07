@@ -1,1 +1,1 @@
-Sitemap: http://www.wilvoss.com/sitemap.xml
+Sitemap: http://portfolio.wilvoss.com/sitemap.xml

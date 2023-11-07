@@ -427,7 +427,7 @@ onionskin img {
 modal intro {
     display: flex;
     gap: var(--defaultGap);
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: start;
     align-items: start;
     flex-wrap: wrap;
@@ -522,6 +522,10 @@ p, blockquote {
     margin: 0px 0px 10px 0px;
     font-size: 75%;
     max-width: 650px;
+}
+
+p:last-of-type, blockquote:last-of-type {
+    padding-bottom: 0px;
 }
 
 article ul,
@@ -996,6 +1000,11 @@ footer button:active {
         margin-right: 30px;
     }
 
+    h1 {
+        font-size: 134%;
+        margin: 14px 0 var(--defaultGap) 0;
+    }
+
     modal {
         overflow-x: hidden;
     }
@@ -1006,7 +1015,7 @@ footer button:active {
     }
 
     modal intro {
-        flex-direction: column-reverse;
+        flex-direction: column;
         margin-bottom: var(--defaultGap);
     }
 
