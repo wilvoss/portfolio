@@ -22,6 +22,7 @@ class WorkObject {
     this.caseStudyObjects = spec.caseStudyObjects === undefined ? [] : spec.caseStudyObjects;
     this.feedbackImages = spec.feedbackImages === undefined ? [] : spec.feedbackImages;
     this.isSelected = spec.isSelected === undefined ? false : spec.isSelected;
+    this.period = spec.period === undefined ? '' : spec.period;
   }
 }
 
@@ -30,6 +31,7 @@ var Works = [
     id: 1,
     isCaseStudy: true,
     name: 'Like Me?',
+    period: '2023',
     tileText: 'Like Me? Video Game',
     description: 'Casual, mobile-first, video game',
     url: 'https://bigtentgames.com/likeme.html',
@@ -53,7 +55,7 @@ var Works = [
         html: '<p>This case study is a demonstration of my process in a void, working by myself. If you want to learn about my work in teams, check out my other case studies!</p>',
       }),
       new CaseStudyObject({
-        html: '<h2>The challenge</h2><p>“Like Me?” initially debuted as a web-based proof-of-concept video game that I created for fun. I revitalized the project with the goal of bringing it to market as swiftly as possible. Despite the core gameplay being exceptional, the UX unfortunately fell short, as it was unintuitive, unhelpful, and somewhat unappealing. Specifically, users struggled to understand where to focus their attention, the meaning of certain visuals, and how to successfully play the game. There was also room for enhancements like score keeping and social sharing, as well as updated daily content.</p><p>Here are what the four main screens (home, gameplay, game over, how to play) looked like at the start:</p>',
+        html: '<h2>The challenge</h2><p>“Like Me?” initially debuted as a web-based proof-of-concept video game that I created for fun. I revitalized the project with the goal of bringing it to market as swiftly as possible. Despite the core gameplay being exceptional, the UX unfortunately fell short, as it was unintuitive, unhelpful, and somewhat unappealing. Specifically, users struggled to understand where to focus their attention, the meaning of certain visuals, and how to successfully play the game. There was also room for enhancements like score keeping and social sharing, as well as updated daily content. Here are what the four main screens (home, gameplay, game over, how to play) looked like at the start:</p>',
         image: 'work/casestudies/likeme/1.png',
       }),
       new CaseStudyObject({
@@ -61,22 +63,22 @@ var Works = [
         html: '<h2>The solution</h2><p>You can see those same four screens at the end of this process here:</p>',
         image: 'work/casestudies/likeme/2.png',
         afterImageHtml:
-          '<p>After three months of diligent work, the "final" product, now available on all major app stores, <a href="https://likeme.games" target="_blank">speaks for itself</a>. Producing this game involved much iteration, all of which was done in the web prototype. It also showcases a more organic process than the formal, team-oriented processes you\'ll find in my other case study. Although proud of my achievements, I know for a fact that this product would be better if I was working with a full team and not just the users.</p>',
+          '<p>After three months of diligent work, the "final" product, now available on all major app stores, <a href="https://likeme.games" target="_blank">speaks for itself</a>. Producing this game involved much iteration, all of which was done in the web prototype. It also showcases a more organic process than the formal, team-oriented processes you\'ll find in my other deep dive. Although proud of my achievements, I know for a fact that this product would be better if I was working with a full team and not just the users.</p>',
       }),
       new CaseStudyObject({
-        html: '<h3>Unpacking the process</h3><p>Progress began with UI improvements like tweaking overall spacing, sizing, colors, and UX flows while generating a positive feedback loop with players, fellow game designers, and UX designers along the way. I did this when adding features that required new iconography, animation, visual assets, and content by sending out texts with comparison screenshots or by updating the prototype and asking folks for their opinions. Often, I would grab an existing resource, test its viability and reception, then generate my own version, only to repeat this process until I was satisfied with the results.</p>',
+        html: '<h3>Unpacking the process</h3><p>Progress began with UI improvements like tweaking overall spacing, sizing, colors, and UX flows while generating a positive feedback loop with players, fellow game designers, and UX designers along the way. I did this when adding features that required new iconography, animation, visual assets, and content by sending out texts with comparison screenshots or by updating the prototype and asking games for their opinions. Often, I would grab an existing resource online, test its viability and reception, then generate my own version, only to repeat this process until I was satisfied with the results.</p>',
       }),
       new CaseStudyObject({
         html: '<h4>Process example: How To Play</h4><p>This methodology can be seen in my approach to giving user\'s guidance, both realtime and asynchronously. My initial attempt at a "how to" guide needed improvement as players had frequently failed to grasp how to play, even after reading the instructions. By watching new users play the game for the first time, then asking them questions, I was able to get continuous feedback for improvement. Gradually, it evolved (with many small steps in between):</p>',
         image: 'work/casestudies/likeme/4.png',
       }),
       new CaseStudyObject({
-        html: '<ol><li>cluttered and confusing single page modal</li><li>polished layout with clear navigation and more thorough guidance</li><li>increased description and guidance with steps outline</li><li>full blown tutorial/oobe that really helped users with gameplay fundamentals</li></ol><p>Eventually, I added animations and interactions that emphasized key elements of gameplay. At one point I had a simple welcome screen for first time players, but chose to present the tutorial as the first time run or OOBE. Each step of the way, I asked for input from others and incorporated their feedback as needed. The final OOBE/tutorial can be seen in the following video.</p>',
+        html: '<ol><li>cluttered and confusing single page modal</li><li>improved layout with clear navigation and more thorough guidance</li><li>increased description and guidance with steps outline</li><li>full blown tutorial/OOBE that really helped users with gameplay fundamentals</li></ol><p>Eventually, I added animations and interactions that emphasized key elements of gameplay. At one point I had a simple welcome screen for first time players, but chose to present the tutorial as the first time run or OOBE. Each step of the way, I asked for input from others and incorporated their feedback as needed. The final OOBE/tutorial can be seen in the following video.</p>',
         image: 'https://player.vimeo.com/video/874206343?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479',
       }),
       new CaseStudyObject({
         darkBackground: true,
-        html: '<h4>Process example: Home</h4><p>This is what the home screen looked like during the same versions as the How To Play screens in the previous example:</p>',
+        html: '<h4>Process example: Home</h4><p>This is a series of iterations showing what the home screen looked liked over time:</p>',
         image: 'work/casestudies/likeme/5.png',
         afterImageHtml:
           '<ol><li>hierarchy issues and clunky visuals</li><li>polished layout with clear navigation and the addition of a "Hints" preference</li><li>hints moved to settings, clearer guidance and labels, additional features</li><li>the daily challenge, refined iconography, new game mode</li></ol><p>There\'s a fair bit going on here, but important to note, my work was holistic. As I made changes in certain areas of the UX, this impacted every part of the experience. These few home screen versions demonstrate UX, UI, layout, feature, gameplay, and even marketing adjustments. All of this was done with constant feedback from players and industry experts.</p>',
@@ -86,11 +88,8 @@ var Works = [
         image: 'work/casestudies/likeme/6.png',
       }),
       new CaseStudyObject({
-        html: '<ul><li>if the player hasn\'t selected any correct pieces, they get a one-time notification 7 seconds into their first game</li><li>if they haven\'t tapped the "Me" piece after 25 seconds, they get a one-time notification</li><li>two unsuccessful attempts to clear a level prompts both a notification and an animation of a relevant piece on the board (shakes for "don\'t pick me", bounces and rotates for "pick me!")</li><li>you can see the final resting place for the hints toggle, now named "Tips and Hints"</li></ul>',
+        html: '<ol><li>if the player hasn\'t selected any correct pieces, they get a one-time notification 7 seconds into their first game</li><li>if they haven\'t tapped the "Me" piece after 25 seconds, they get a one-time notification</li><li>two unsuccessful attempts to clear a level prompts both a notification and an animation of a relevant piece on the board (shakes for "don\'t pick me", bounces and rotates for "pick me!")</li><li>you can see the final resting place for the hints toggle, now named "Tips and Hints"</li></ol>',
         image: 'https://player.vimeo.com/video/874238162?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479',
-      }),
-      new CaseStudyObject({
-        html: "<p>The delivery of these hints and tips went through multiple versions. For me, seeing that settings screen introduces a set of features and improvements that I'm eager to go over, but first I want to talk about accessibility.</p>",
       }),
       new CaseStudyObject({
         darkBackground: true,
@@ -100,35 +99,33 @@ var Works = [
           '<ol><li>baseline - vision shared by most people</li><li>protanopia - vision in which the retina doesn\'t to respond to red or green</li><li>deuteranopia - vision that tends towards muted red and green colors</li><li>tritanopia - vision with a greenish/pink tone</li><li>grayscale</li></ol><p>These are all approximations and cannot replace an actual player\'s experience if they have a color vision deficiency. Support for PC gameplay with keyboard shortcuts opened "Like Me?" up to an even larger audience. That said, I wanted to make the game accessible to as many people as possible which is why personalization became a high priority.</p>',
       }),
       new CaseStudyObject({
-        html: '<h4>Process example: Personalization</h4><p>In keeping with a player-first mindset, I decided to extend the options for gameplay colors, patterns, and even shapes. Twelve color combinations in all were added, each named after a feeling. In addition, I added an alternate pattern to help those users who found the default set less distinguishable. Support for different shape sets was added which allowed me to provide Cat Mode. Doing that pushed me to consider rebranding the entire game to "Copycats!" but I personally find the cat outlines much more difficult to play with. Finally, I recognized my own need to play in the middle of the night and not disturb my partner, so I introduced Dark Mode. This makes for a total of 96 different combinations!</p>',
+        html: '<h4>Process example: Personalization</h4><p>In keeping with a player-first mindset, I decided to extend the options for gameplay colors, patterns, and even shapes. Twelve color combinations in all were added, each named after a feeling. In addition, I added an alternate pattern to help those users who found the default set less distinguishable. Finally, I recognized my own need to play in the middle of the night and not disturb my partner, so I introduced Dark Mode. This makes for a total of 96 different combinations!</p>',
         image: 'work/casestudies/likeme/8.png',
       }),
       new CaseStudyObject({
-        html: '<ol><li>"moody" color theme</li><li>alternate pattern, "awake" color theme</li><li>Cat Mode, alternate pattern, "awake" color theme</li><li>Dark Mode, alternate pattern, "keen" color theme</li></ol><p>These options were provided knowing that certain users struggled with the default colors, shapes, and patterns. By opening up the possiblity of user choice, I enabled those player to adjust the game to their preferences ensuring a higher rate of success when playing. I also included music and sound effects which the user can toggle independently.</p>',
+        html: '<ol><li>"moody" color theme</li><li>alternate pattern, "awake" color theme</li><li>Cat Mode, alternate pattern, "awake" color theme</li><li>Dark Mode, alternate pattern, "keen" color theme</li></ol><p>These options were provided knowing that certain users struggled with the default colors, shapes, and patterns. By opening up the possiblity of user choice, I enabled those player to adjust the game to their preferences ensuring a higher rate of success when playing. I also included music and sound effects which enable the user to toggle independently.</p>',
       }),
       new CaseStudyObject({
         darkBackground: true,
-        html: '<h4>Process example: Theme Music</h4><p>My undergraduate degree is in music composition and theory. So when it came time to create a theme song, my heart was filled with joy! As with every other aspect of this production, I still asked for and incorporated feedback from players.</p><p>As you move from the first to the fourth track, note the changes in melody, texture, style, color, percussion, and mixing. It evolved from a sci-fi jazz combo to a bubblegum pop, 8-bit nod with higher pitched notes, crisper tones and a reduction of overall noise. All changes were made with both player feedback and optimization for mobile gameplay in mind.</p><iframe style="max-height: 382px; min-height: 382px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1704507636&color=%2365657c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
+        html: '<h4>Process example: Theme Music</h4><p>My undergraduate degree is in music composition and theory. So when it came time to create a theme song, my heart was filled with joy! As you move from the first to the fourth track, note the changes in melody, texture, style, color, percussion, and mixing. It evolved from a sci-fi jazz combo to a bubblegum pop, 8-bit nod with higher pitched notes, crisper tones and a reduction of overall noise. All changes were made with both player feedback and optimization for mobile gameplay in mind.</p><iframe style="max-height: 382px; min-height: 382px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1704507636&color=%2365657c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>',
       }),
       new CaseStudyObject({
-        html: "<h2>A little developer context</h2><p>The \"Like Me?\" <a href='https://likeme.games' target='_blank'>prototype</a> is a progressive web app (PWA) that is built on the Vue.js framework. With a few recent exceptions, I engineered everything myself including the structure, format, html, css and javascript. I'm not a traditional developer as I have no formal education in computer science. I make code choices that are based on my experience, what I've learned from others, and what makes the most sense to me.</p>",
+        html: "<h2>A little developer context</h2><p>The \"Like Me?\" <a href='https://likeme.games' target='_blank'>prototype</a> is a progressive web app (PWA) that is built on the Vue.js framework. With a few recent exceptions, I engineered everything myself including the structure, format, html, css and javascript. I'm a self-taught developer and make code choices that are based on my experience, what I've learned from others, and what makes the most sense to me.</p>",
       }),
       new CaseStudyObject({
         html: "<p>Vue.js is my go-to framework of choice because it's lightweight, handles data-binding in an intuitive way for me, and speeds research, iteration and development dramatically. Where I had to slow down and learn an incredible amount was when I worked to make this a true PWA. This was not easy, but the results are phenomenal: the prototype runs like a native app with very few exceptions. In fact, it's so solid that I opted to use PWABuilder to package it up for the major app stores. As a result of my choices, I was able to write once and then deploy onto multiple platforms without writing ANY native code. That's incredibly satisfying.</p>",
       }),
       new CaseStudyObject({
-        html: '<p>When the game was just a proof-of-concept, there were so many functional engineering pieces missing that I spent a good portion of my time implementing basic features like restorable state, user preference support, different visual states like modals and notifications, score keeping, theme support, sound support, in-app updates - all things gamers take for granted in any well designed game. Even now, its not finished, but its certainly good enough to ship and improve based on real user feedback.</p>',
-      }),
-      new CaseStudyObject({
-        html: "<h3>Conclusion</h3><p>This game has been an absolute blast to envision, design, develop, test, improve, and ultimately release. Continous improvements based on user feedback as well as bug reporting are made regularly. The next big step for this product is a full marketing campaign which will leverage the branding and communications already established up to this point. It's hard to describe every piece of this project that I worked on, every skill I either leveraged or improved during this journey. Send me a message if you want to learn more.</p>",
+        darkBackground: true,
+        html: "<h2>Conclusion</h2><p>This game has been an absolute blast to envision, design, develop, test, improve, and ultimately release. Continous improvements based on user feedback as well as bug reporting are made regularly. The next big step for this product is a full marketing campaign which will leverage the branding and communications already established up to this point. It's hard to describe every piece of this project that I worked on, every skill I either leveraged or improved during this journey.</p>",
       }),
     ],
   }),
-
   new WorkObject({
     id: 2,
     isCaseStudy: true,
     name: 'Impira',
+    period: '2022',
     tileText: 'Impira Product Onboarding',
     readTime: '6 minute',
     description: 'Onboarding 2.0',
@@ -198,6 +195,7 @@ var Works = [
         imageZoomed: 'work/casestudies/impira/8z.png',
       }),
       new CaseStudyObject({
+        darkBackground: true,
         html: "<h3>Conclusion</h3><p>This project involved many people in the company, our users, and a strong focus on bringing a better experience, incrementally, to our customers with the intent of increasing our product growth. We did this with amazing results. Throughout, I worked personally with the UX content designer, the project manager, the head of product, both the backend and frontend engineering teams, and the actual engineers who implemented this work. Because onboarding doesn't have to end when a user stops working with the app for the first time, I worked with marketing to envision new onboarding opportunities for users who abandoned the app, but were drawn back through direct messaging. If you want to learn more about my work at Impira, please let me know.</p>",
       }),
     ],
@@ -261,14 +259,14 @@ var Works = [
     caseStudyObjects: [
       new CaseStudyObject({
         darkBackground: true,
-        html: '<h3>Summary</h3><p>Microsoft Band was a product ahead of its time. Before Apple Watch was even a thing, this Microsoft wearable was tracking health and fitness data while providing incredibly useful, elegant solutions for health buffs, dataheads, and even basic productivity users. Aside from prototyping the entire UI for Band 2, I played a critical role in the development of some of the features and apps that won hearts with our user base. Two of those concepts are shown below.</p>',
+        html: '<h3>Summary</h3><p>Microsoft Band was a product ahead of its time. Before Apple Watch was even a thing, this Microsoft wearable was tracking health and fitness data while providing incredibly useful, elegant solutions for health buffs, dataheads, and even basic productivity users. Aside from prototyping the entire UI for Band 2, I played a critical role in the development of some of the features and apps that won hearts with our user base. Two of those flows are shown below.</p>',
       }),
       new CaseStudyObject({
-        html: '<h4>Uber App</h4><p>Uber was announced as a Microsoft partner with Band team at a public event by senior leadership. We had two weeks to prove to Uber that our product was worth that partnership. This flow that I designed, along with the prototype I created, helped secure that partnership and determine the next feature to be built.</p>',
+        html: '<h3>Uber App</h3><p>Uber was announced as a Microsoft partner with Band team at a public event by senior leadership. We had two weeks to prove to Uber that our product was worth that partnership. This flow that I designed, along with the prototype I created, helped secure that partnership and determine the next feature to be built.</p>',
         image: 'work/casestudies/band/2.png',
       }),
       new CaseStudyObject({
-        html: '<h3>flows</h3><h4>Music controls</h4><p>After multiple failed attempts to implement this #1 rated user requested feature, I stepped in and drove the design process reboot which resulted in the release of one my proudest contributions to any product. This design was frought with many challenges, but the end result was both highly desired and well received.</p>',
+        html: '<h3>Music controls</h3><p>After multiple failed attempts to implement this #1 rated user requested feature, I stepped in and drove the design process reboot which resulted in the release of one my proudest contributions to any product. This design was frought with many challenges, but the end result was both highly desired and well received.</p>',
         image: 'work/casestudies/band/1.png',
       }),
     ],
@@ -357,7 +355,7 @@ var Works = [
     caseStudyObjects: [
       new CaseStudyObject({
         darkBackground: true,
-        html: "<h3>Summary</h3><p>Big Tent Games is a casual video game company that I created in 2022. Initially the website was a simple way to share my prototypes and free games, but over time it evolved into a real business digital front. The site is intended to feel like an app store with highlights and product pages complete with reviews, download links, and marketing materials. You can visit it directly at <a href='https://bigtentgames.com' target='_blank'>bigtentgames.com</a></p>",
+        html: "<h3>Summary</h3><p>Big Tent Games is a casual video game company that I created in 2022. Initially the website was a simple way to share my prototypes and free games, but over time it evolved into a real business digital store front. The site is intended to feel like an app store with highlights and product pages complete with ratings, reviews, download links, and marketing materials. You can visit it directly at <a href='https://bigtentgames.com' target='_blank'>bigtentgames.com</a></p>",
       }),
       new CaseStudyObject({
         html: '<h3>screenshot</h3>',

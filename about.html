@@ -32,16 +32,15 @@
       <wrapper>
         <article :style="{opacity: showArticle ? 1 : 0}">
           <section>
-            <p>Contact me through <a target="_blank" href="http://www.linkedin.com/in/wilvoss" title="LinkedIn">LinkedIn</a>.</p>
-            <p>Contracting for Bechtel/Parsons Brinckerhoff in Boston marks the beginning of my design career. Since then, I've worked in New Orleans, San Francisco, and Seattle, creating designs for clients like Microsoft, McGraw Hill, Charles Schwab, and Avanade. I also run my own video game company, <a href="https://bigtentgames.com" target="_blank">Big Tent Games</a>, where I do everything from game conception to design, development, publishing, and marketing.</p>
+            <p>Contracting for Bechtel/Parsons Brinckerhoff in Boston marks the beginning of my design career. Since then, I've worked in New Orleans, San Francisco, and Seattle, creating designs for clients like Microsoft, McGraw Hill, Charles Schwab, and Avanade. I also own and operate <a href="https://bigtentgames.com" target="_blank">Big Tent Games</a> where I do everything from game conception to design, development, publishing, and marketing.</p>
             <montage>
               <img v-for="image in personalImages" :src="'images/' + image" />
             </montage>
             <p>Outside of my professional and business efforts, my interests include gaming with friends and family, running, biking, making music, going on walks with my wife, hanging out with our cats, supporting local businesses, and coming up with new ideas that might eventually make their way into the world (check out <a href="https://wilvoss.com" target="_blank">wilvoss.com</a>). Occasionally, I've run design workshops with students at local schools.</p>
+            <p><img style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
           </section>
         </article>
       </wrapper>
-      <footer><button class="email" @click="EmailMe" title="Email">Email</button><button class="linkedIn" onclick="window.open('http://www.linkedin.com/in/wilvoss')" title="LinkedIn">LinkedIn</button><button class="accessibility" @click="ToggleContrast" title="Contrast">Contrast</button></footer>
     </app>
     <script src="models/CaseStudyObject.js" type="text/javascript"></script>
     <script src="models/WorkObject.js" type="text/javascript"></script>

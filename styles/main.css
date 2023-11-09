@@ -202,7 +202,7 @@ h1, h2, h3, h4, p, ul, ol, intro ul {
     /* max-width: 1024px; */
     font-weight: normal;
     width: 100%;
-    max-width: 650px;
+    /* max-width: 650px; */
     text-align: left;
 }
 
@@ -223,19 +223,13 @@ h1 span {
     /* transform: translateY(-5px); */
 }
 
-h1, h2 {
-    margin: var(--defaultGap) 0;
-
-}
-
-
-h3, h4 {
-    margin: 10px 0;
-
+h1, h2, h3, h4 {
+    margin: calc(var(--defaultGap)) 0;
 }
 
 ul, ol {
-    font-size: 75%;
+    font-size: 85%;
+    line-height: 170%;
     user-select: none;
     -webkit-user-select: none;
     cursor: default;
@@ -518,10 +512,11 @@ a:active {
 }
 
 p, blockquote {
-    padding: 0px 0px 20px 0;
-    margin: 0px 0px 10px 0px;
-    font-size: 75%;
-    max-width: 650px;
+    padding: 0px 0px 0px 0;
+    margin: 0px 0px var(--defaultGap) 0px;
+    font-size: 85%;
+    line-height: 170%;
+    /* max-width: 650px; */
 }
 
 p:last-of-type, blockquote:last-of-type {
@@ -532,7 +527,7 @@ article ul,
 article ol {
     padding: 0px;
     margin: 0px 0px 10px 0px;
-    font-size: 75%;
+    font-size: 85%;
     list-style: none;
 }
 
@@ -1018,6 +1013,7 @@ footer button:active {
         flex-direction: column;
         margin-bottom: var(--defaultGap);
     }
+
 
     modal close {
         top: 10px;

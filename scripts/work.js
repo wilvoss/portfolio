@@ -66,15 +66,15 @@ var app = new Vue({
     },
 
     PreviousWork() {
-      let currentIndex = this.activeWorks.indexOf(this.selectedWork);
-      if (currentIndex === 0) currentIndex = this.activeWorks.length;
-      this.SelectWork(this.activeWorks[currentIndex - 1], false);
+      let currentIndex = this.works.indexOf(this.selectedWork);
+      if (currentIndex === 0) currentIndex = this.works.length;
+      this.SelectWork(this.works[currentIndex - 1], false);
     },
 
     NextWork() {
-      let currentIndex = this.activeWorks.indexOf(this.selectedWork);
-      if (currentIndex === this.activeWorks.length - 1) currentIndex = -1;
-      this.SelectWork(this.activeWorks[currentIndex + 1], false);
+      let currentIndex = this.works.indexOf(this.selectedWork);
+      if (currentIndex === this.works.length - 1) currentIndex = -1;
+      this.SelectWork(this.works[currentIndex + 1], false);
     },
 
     CheckZoom() {
