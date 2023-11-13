@@ -4,13 +4,14 @@
 }
 
 :root {
-    --appBackgroundHSL: 240, 10%, 89%;
+    --appBackgroundHSL: 240, 10%, 91%;
     --appBackgroundDarkerHSL: 240, 10%, 84%;
     --appBackgroundDarkestHSL: 240, 10%, 44%;
     --appBackgroundAltHSL: 240, 10%, 34%;
     --appForegroundHSL: 240, 10%, 19%;
     --quoteHSL: 90, 100%, 80%;
     --linkColorHSL: 209, 79%, 40%;
+    --textTransform: none;
 
     --footerHeight: 40px;
     --defaultGap: 20px;
@@ -90,8 +91,7 @@ modal, onionskin {
     z-index: 200;
 }
 
-
-article::-webkit-scrollbar, modal::-webkit-scrollbar, onionskin::-webkit-scrollbar {
+article::-webkit-scrollbar, modal::-webkit-scrollbar {
     display: none;
 
     -ms-overflow-style: none;
@@ -124,7 +124,8 @@ onionskin.zoomfits {
 modal close, onionskin close {
     width: 40px;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 22px;
+    border: 1px solid hsl(var(--appBackgroundHSL));
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -135,7 +136,7 @@ modal close, onionskin close {
     position: fixed;
     top: 10px;
     margin-right: -4px;
-    box-shadow: 0px 1px 4px hsla(var(--appBackgroundDarkestHSL), .4);
+    box-shadow: 0px 2px 6px hsla(var(--appBackgroundDarkestHSL), .8);
     cursor: pointer;
     overflow: hidden;
     transition: 200ms ease-in-out all;
@@ -143,6 +144,10 @@ modal close, onionskin close {
     background-repeat: no-repeat;
     background-position: 13px center;
     background-size: 14px 14px;
+}
+
+modal close {
+    margin-right: calc(-5 * var(--defaultGap));
 }
 
 onionskin close {
@@ -190,8 +195,24 @@ modal close:hover:after, onionskin close:hover:after {
     opacity: 1;
 }
 
+label {
+    display: block;
+    width: 100%;
+    text-transform: var(----textTransform);
+    text-align: left;
+    max-width: 1024px;
+    color: hsla(var(--appForegroundHSL), 1);
+    font-style: italic;
+    font-size: 70%;
+    opacity: .7;
+}
+
+.dark label {
+    color: hsla(var(--appBackgroundHSL), 1);
+}
+
 h1, h2, h3, h4 {
-    text-transform: lowercase;
+    text-transform: var(----textTransform);
 
 }
 
@@ -237,7 +258,7 @@ ul, ol {
 
 intro ul {
     list-style: none;
-    font-size: 60%;
+    font-size: 75%;
     width: auto;
     margin-bottom: 0px;
 }
@@ -275,11 +296,11 @@ intro ul li span:first-of-type {
     border-color: hsla(var(--appBackgroundDarkestHSL), .3);
     border-width: 1px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
     text-wrap: nowrap;
     white-space: nowrap;
     flex-grow: 0;
-    width: 40px;
+    width: 58px;
     /* text-align: right; */
     /* border-right: 1px solid rgba(0, 0, 0, .2); */
     /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
@@ -337,7 +358,7 @@ modal container {
 }
 
 modal blockquote {
-    font-size: 75%;
+    /* font-size: 80%; */
     /* padding: 0; */
     font-style: italic;
     color: hsl(var(--quoteHSL));
@@ -350,6 +371,7 @@ modal blockquote span {
 }
 
 onionskin chrome {
+    position: fixed;
     max-width: unset;
 }
 
@@ -405,9 +427,11 @@ modal img, modal video, modal iframe {
     overflow: hidden;
 }
 
-modal img {
+modal img.zoomable {
     cursor: pointer;
 }
+
+
 
 onionskin img {
     height: 90%;
@@ -512,11 +536,15 @@ a:active {
 }
 
 p, blockquote {
-    padding: 0px 0px 0px 0;
+    padding: 0;
     margin: 0px 0px var(--defaultGap) 0px;
     font-size: 85%;
     line-height: 170%;
     /* max-width: 650px; */
+}
+
+blockquote {
+    padding: 0 var(--defaultGap) var(--defaultGap);
 }
 
 p:last-of-type, blockquote:last-of-type {
@@ -639,25 +667,28 @@ nav li {
     margin: 0px;
 }
 
-nav a {
+nav ul li a {
     display: inline-block;
     margin: 0px var(--defaultGap) 0px 0px;
-    border-top: 1px solid rgba(223, 223, 229, 0);
+    border-top: 1px solid hsla(var(--linkColorHSL), 0);
+    border-bottom: 1px solid hsla(var(--linkColorHSL), 1);
     text-transform: uppercase;
+    color: hsl(var(--linkColorHSL));
 }
 
-nav a:hover,
-nav a:active, nav a:focus {
+nav ul li a:hover,
+nav ul li a:active, nav ul li a:focus {
     outline: none;
-    color: #000;
-    border-bottom-color: #000;
-    border-top-color: rgba(223, 223, 229, 0);
+    color: hsl(var(--linkColorHSL));
+    border-bottom-color: hsla(var(--linkColorHSL), 1);
+    border-top-color: hsla(var(--linkColorHSL), 0);
 }
 
-nav a.on {
-    border-top: 1px solid #000;
+nav ul li a.on {
+    border-top-color: hsla(var(--linkColorHSL), 1);
+    border-bottom-color: hsla(var(--linkColorHSL), 0);
     padding-bottom: 0px;
-    border-bottom-color: rgba(223, 223, 229, 0);
+    pointer-events: none;
 }
 
 
@@ -776,21 +807,22 @@ work button:hover span {
 
 work span i {
     opacity: .6;
-    padding-top: 3px;
+    padding: 3px 4px 0px;
     display: block;
     font-weight: normal;
+
 }
 
 .attribution {
     margin: 5px 0px 0px 0px;
     display: block;
     text-indent: 0px;
-    text-transform: lowercase;
+    text-transform: var(----textTransform);
 }
 
 .attribution a {
     font-weight: 700;
-    text-transform: lowercase;
+    text-transform: var(----textTransform);
 }
 
 .clearBoth {
@@ -843,7 +875,7 @@ footer {
     text-align: right;
     color: #444;
     background: rgba(135, 135, 139, 1);
-    text-transform: lowercase;
+    text-transform: var(----textTransform);
     text-indent: -2px;
 }
 
@@ -889,6 +921,13 @@ footer button:active {
     background-color: hsl(var(--linkColorHSL));
     background-position: -26px 0px;
     opacity: 1;
+}
+
+@media screen and (max-width:1294px) {
+    modal close {
+        margin-right: 0px;
+        right: 10px;
+    }
 }
 
 @media screen and (max-width:640px) {
@@ -955,6 +994,10 @@ footer button:active {
     header.compact {
         display: block;
         gap: 0px;
+    }
+
+    blockquote {
+        padding: 0;
     }
 
     .compact nav {
@@ -1031,6 +1074,7 @@ footer button:active {
         /* margin-left: 40px; */
         width: calc(100% - 40px);
     }
+
 
     intro ul {
         width: 100%;

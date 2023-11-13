@@ -8,7 +8,7 @@
     <meta name="description" content="Select samples of the publicly viewable work of Wil Voss, Seattle-based Game Designer, UX Designer, Developer, Integrator." />
     <link rel="icon" type="image/png" sizes="48x48" href="favicon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="stylesheet" href="styles/main.css" media="screen" />
+    <link rel="stylesheet" href="styles/main-min.css" media="screen" />
   </head>
 
   <body>
@@ -18,32 +18,35 @@
         <chrome>
           <close></close>
         </chrome>
-        <img :key="zoomedImage" id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
+        <img alt="A zoomed in, more detailed version of the image you clicked." :key="zoomedImage" id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
       </onionskin>
       <modal :is-disabled="!showModal" v-if="selectedWork !== null" :class="{show: showModal}">
         <chrome>
           <close @click="ToggleShowModal"></close>
         </chrome>
-        <h1>{{selectedWork.category}} <span v-if="selectedWork.readTime !== ''">({{selectedWork.readTime}} read)</span></h1>
+        <label>{{selectedWork.category}}</label>
+        <h1>{{selectedWork.tileText}}</h1>
         <intro>
           <img :src="selectedWork.backgroundImage" />
           <ul>
-            <li><span>Title</span> <span>{{selectedWork.tileText}}</span></li>
+            <!-- <li><span>Title</span> <span>{{selectedWork.tileText}}</span></li> -->
             <!-- <li v-if="selectedWork.description !== ''"><span>What</span> <span>{{selectedWork.description}}</span></li> -->
             <!-- <li v-if="selectedWork.linkText !== ''">
               <span>Link</span><span> <a @click="OpenUrl(event, selectedWork.url)" target="_blank">{{selectedWork.linkText}}</a></span>
             </li> -->
-            <li v-if="selectedWork.roleText !== ''"><span>Skills</span> <span>{{selectedWork.roleText}}</span></li>
+            <li v-if="selectedWork.roleText !== ''"><span>Role</span> <span>{{selectedWork.roleText}}</span></li>
+            <li v-if="selectedWork.skillsText !== ''"><span>Skills</span> <span>{{selectedWork.skillsText}}</span></li>
             <li v-if="selectedWork.resultText !== ''"><span>Impact</span> <span>{{selectedWork.resultText}}</span></li>
-            <li><span>Who</span> <span>Wil Voss</span></li>
+            <!-- <li><span>Who</span> <span>Wil Voss</span></li> -->
             <li v-if="selectedWork.period !== ''"><span>When</span> <span>{{selectedWork.period}}</span></li>
             <!-- <li><span>Result</span> <span>7 to 10 minutes</span></li> -->
-            <!-- <li><span>Length</span> <span>{{selectedWork.readTime}}</span></li> -->
+            <!-- <li v-if="selectedWork.readTime !== ''"><span>Read time</span> <span>{{selectedWork.readTime}}</span></li> -->
           </ul>
         </intro>
         <container :class="{dark: object.darkBackground}" v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
           <lead v-if="object.html !== ''" v-html="object.html"></lead>
-          <img :is-disabled="!showModal" :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" @click="zoomedImage = object.imageZoomed != '' ? object.imageZoomed : object.image; ToggleShowOnionSkin()" />
+          <label @click="ZoomImage(object)" v-if="object.imageZoomed !== ''">(click image for detail)</label>
+          <img :class="{zoomable: object.imageZoomed !== ''}" :is-disabled="!showModal" :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" @click="ZoomImage(object)" />
 
           <iframe v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image + '?rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -53,7 +56,7 @@
         </container>
         <container>
           <p>If you want to learn more about my work on this project or any of my other work, please reach out!</p>
-          <p><img style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
+          <p><img alt="LinkedIn Icon" style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
         </container>
         <!-- <container>
           <montage v-if="selectedWork.feedbackImages.length >0">
@@ -81,7 +84,7 @@
       </wrapper>
       <wrapper>
         <article :style="{opacity: showArticle ? 1 : 0}">
-          <p>Game design, rapid prototyping, UX design &amp; integration, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking as well as strong collaboration, I've done it or something like it. My philosophy: each improvement you make in a design brings you both closer to and further from perfection - the very act of improving a product expands its potential.</p>
+          <p>Game design, rapid prototyping, UX/UI design &amp; integration, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking as well as strong collaboration, I've done it or something like it. My design philosophy: each improvement made to a product brings it both closer to and further from perfection - the very act of developing a product expands its potential.</p>
           <group v-for="(group, groupName) in workGroups" :key="groupName">
             <h2>{{groupName}}</h2>
             <work>
@@ -91,13 +94,13 @@
             </work>
           </group>
           <h2>Contact</h2>
-          <p><img style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
+          <p><img alt="LinkedIn Icon" style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
         </article>
       </wrapper>
     </app>
-    <script src="models/CaseStudyObject.js" type="text/javascript"></script>
-    <script src="models/WorkObject.js" type="text/javascript"></script>
+    <script src="models/CaseStudyObject-min.js" type="text/javascript"></script>
+    <script src="models/WorkObject-min.js" type="text/javascript"></script>
     <script src="helpers/vue.min.js" type="text/javascript"></script>
-    <script src="scripts/work.js" type="text/javascript"></script>
+    <script src="scripts/work-min.js" type="text/javascript"></script>
   </body>
 </html>

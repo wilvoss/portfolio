@@ -77,6 +77,13 @@ var app = new Vue({
       this.SelectWork(this.works[currentIndex + 1], false);
     },
 
+    ZoomImage(_casestudy) {
+      if (_casestudy.imageZoomed !== '') {
+        this.zoomedImage = _casestudy.imageZoomed;
+        this.ToggleShowOnionSkin();
+      }
+    },
+
     CheckZoom() {
       this.zoomedImageFits = document.getElementById('onionimage').offsetWidth < window.innerWidth;
     },
