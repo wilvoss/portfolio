@@ -11,7 +11,7 @@
     --appForegroundHSL: 240, 10%, 19%;
     --quoteHSL: 90, 100%, 80%;
     --linkColorHSL: 209, 79%, 40%;
-    --textTransform: none;
+    --textTransform: lowercase;
 
     --footerHeight: 40px;
     --defaultGap: 20px;
@@ -198,7 +198,7 @@ modal close:hover:after, onionskin close:hover:after {
 label {
     display: block;
     width: 100%;
-    text-transform: var(----textTransform);
+    text-transform: var(--textTransform);
     text-align: left;
     max-width: 1024px;
     color: hsla(var(--appForegroundHSL), 1);
@@ -212,7 +212,7 @@ label {
 }
 
 h1, h2, h3, h4 {
-    text-transform: var(----textTransform);
+    text-transform: var(--textTransform);
 
 }
 
@@ -817,12 +817,12 @@ work span i {
     margin: 5px 0px 0px 0px;
     display: block;
     text-indent: 0px;
-    text-transform: var(----textTransform);
+    text-transform: var(--textTransform);
 }
 
 .attribution a {
     font-weight: 700;
-    text-transform: var(----textTransform);
+    text-transform: var(--textTransform);
 }
 
 .clearBoth {
@@ -875,7 +875,7 @@ footer {
     text-align: right;
     color: #444;
     background: rgba(135, 135, 139, 1);
-    text-transform: var(----textTransform);
+    text-transform: var(--textTransform);
     text-indent: -2px;
 }
 
