@@ -38,7 +38,7 @@
             <li v-if="selectedWork.skillsText !== ''"><span>Skills</span> <span>{{selectedWork.skillsText}}</span></li>
             <li v-if="selectedWork.resultText !== ''"><span>Impact</span> <span>{{selectedWork.resultText}}</span></li>
             <!-- <li><span>Who</span> <span>Wil Voss</span></li> -->
-            <li v-if="selectedWork.period !== ''"><span>When</span> <span>{{selectedWork.period}}</span></li>
+            <!-- <li v-if="selectedWork.period !== ''"><span>When</span> <span>{{selectedWork.period}}</span></li> -->
             <!-- <li><span>Result</span> <span>7 to 10 minutes</span></li> -->
             <!-- <li v-if="selectedWork.readTime !== ''"><span>Read time</span> <span>{{selectedWork.readTime}}</span></li> -->
           </ul>
@@ -84,16 +84,20 @@
       </wrapper>
       <wrapper>
         <article :style="{opacity: showArticle ? 1 : 0}">
-          <p>Game design, rapid prototyping, UX/UI design &amp; integration, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking as well as strong collaboration, I've done it or something like it. My design philosophy: each improvement made to a product brings it both closer to and further from perfection - the very act of developing a product expands its potential.</p>
+          <p>Game design, rapid prototyping, UX design, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking as well as strong collaboration, I've done it or something like it. My design philosophy: each improvement made to a product brings it both closer to and further from perfection - the very act of developing a product expands its potential.</p>
           <group v-for="(group, groupName) in workGroups" :key="groupName">
             <h2>{{groupName}}</h2>
             <work>
-              <button :class="{casestudy: work.caseStudyObjects.length > 0}" v-for="work in group" @click="SelectWork(work)" :style="{backgroundImage: 'url(' + work.backgroundImage +')'}">
-                <span>{{work.caseStudyObjects.length > 0 ? work.tileText : work.name}}<i>{{work.caseStudyObjects.length > 0 ? work.roleText : work.type}}</i></span>
-              </button>
+              <item v-for="work in group" @click="SelectWork(work)">
+                <!-- <button :style="{backgroundImage: 'url(' + work.backgroundImage +')'}"></button> -->
+                <img :src="work.backgroundImage" />
+
+                <span><img class="logo" v-if="work.logo !== ''" :src="'./images/' + work.logo" />{{work.caseStudyObjects.length > 0 ? work.tileText : work.name}}<i>{{work.caseStudyObjects.length > 0 ? work.roleText : work.type}}</i></span>
+              </item>
             </work>
           </group>
           <h2>Contact</h2>
+          <p>If you want to learn more about my work experience, please reach out!</p>
           <p><img alt="LinkedIn Icon" style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
         </article>
       </wrapper>

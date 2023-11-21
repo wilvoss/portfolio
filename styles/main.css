@@ -4,18 +4,19 @@
 }
 
 :root {
-    --appBackgroundHSL: 240, 10%, 91%;
-    --appBackgroundDarkerHSL: 240, 10%, 84%;
+    --appBackgroundHSL: 240, 10%, 97%;
+    --appBackgroundDarkerHSL: 240, 10%, 94%;
     --appBackgroundDarkestHSL: 240, 10%, 44%;
     --appBackgroundAltHSL: 240, 10%, 34%;
     --appForegroundHSL: 240, 10%, 19%;
     --quoteHSL: 90, 100%, 80%;
     --linkColorHSL: 209, 79%, 40%;
-    --textTransform: lowercase;
+    --textTransform: none;
 
     --footerHeight: 40px;
     --defaultGap: 20px;
     --borderRadius: 6px;
+    --dropShadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -219,7 +220,7 @@ h1, h2, h3, h4 {
 h1, h2, h3, h4, p, ul, ol, intro ul {
     /* color: white; */
     padding: 0px 0 0 0;
-    margin: 0 0 var(--defaultGap) 0;
+    margin: 0 0 calc(var(--defaultGap) * 2) 0;
     /* max-width: 1024px; */
     font-weight: normal;
     width: 100%;
@@ -245,6 +246,14 @@ h1 span {
 }
 
 h1, h2, h3, h4 {
+    margin: calc(var(--defaultGap)) 0;
+}
+
+h2 {
+    margin: calc(var(--defaultGap) * 2) 0;
+}
+
+modal h2 {
     margin: calc(var(--defaultGap)) 0;
 }
 
@@ -278,7 +287,8 @@ intro ul li {
 }
 
 intro ul li span {
-    background: rgba(255, 255, 255, .2);
+    background: hsla(var(--appBackgroundDarkestHSL), .075);
+
     /* border: 1px solid rgba(0, 0, 0, .2); */
     /* border-width: 1px 1px 1px 0; */
     font-style: normal;
@@ -300,7 +310,7 @@ intro ul li span:first-of-type {
     text-wrap: nowrap;
     white-space: nowrap;
     flex-grow: 0;
-    width: 58px;
+    width: 48px;
     /* text-align: right; */
     /* border-right: 1px solid rgba(0, 0, 0, .2); */
     /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
@@ -419,7 +429,7 @@ modal.show, onionskin.show {
 
 modal img, modal video, modal iframe {
     width: 100%;
-    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--dropShadow);
     border: none;
     border-radius: var(--borderRadius);
     margin-top: 10px;
@@ -435,7 +445,7 @@ modal img.zoomable {
 
 onionskin img {
     height: 90%;
-    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0);
+    box-shadow: var(--dropShadow);
     border: none;
     border-radius: var(--borderRadius);
     overflow: auto;
@@ -455,9 +465,9 @@ modal intro {
 modal intro img {
     /* display: none; */
     width: 100%;
-    max-width: 328px;
+    /* max-width: 328px; */
     margin: 0px;
-    box-shadow: none;
+    /* box-shadow: none; */
 }
 
 modal iframe {
@@ -600,7 +610,7 @@ nav {
 article {
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
-    padding: 180px 50px 40px 50px;
+    padding: 40px 50px 40px 50px;
     margin: 0px;
     opacity: 0;
     clear: both;
@@ -612,7 +622,7 @@ header {
     width: 100%;
     max-width: 1024px;
     padding-top: 40px;
-    position: fixed;
+    /* position: fixed; */
     background: hsla(var(--appBackgroundHSL), .95);
     backdrop-filter: blur(15px);
 }
@@ -715,19 +725,41 @@ section.reference {
 
 section.reference p {
     line-height: 150%;
-    width: calc(33% - var(--defaultGap));
-    padding: 0px;
+    width: calc(33% - var(--defaultGap) * 3);
+    padding: var(--defaultGap);
+    font-style: italic;
     text-indent: -4px;
+    color: hsla(var(--appBackgroundHSL), 1);
     /* margin: 0px 20px 20px 0px; */
-    background: rgba(255, 255, 255, 0);
+    /* background: rgba(255, 255, 255, 0); */
+    background-color: hsla(var(--appBackgroundDarkestHSL), 1);
+    border-radius: var(--borderRadius);
+    margin: 0px;
+    /* text-align: center; */
+
+}
+
+section.reference p:nth-child(even) {
+    /* background-color: hsla(var(--linkColorHSL), 1); */
+
+}
+
+section.reference p span {
+    margin-top: 14px;
+    font-style: normal;
+}
+
+section.reference p em {
+    display: block;
 }
 
 section.reference a {
+    color: hsla(var(--appBackgroundHSL), 1);
     border-color: transparent;
 }
 
 section.reference a:hover {
-    border-color: #666;
+    border-color: hsla(var(--appBackgroundHSL), 1);
 }
 
 section.intro {
@@ -746,23 +778,33 @@ group work {
     flex-wrap: wrap;
 }
 
-work button {
-    outline: none;
+work item {
     overflow: hidden;
-    background-size: cover;
-    width: 328px;
-    height: 132px;
-    display: block;
     font-size: 80%;
-    float: left;
-    padding: 0px;
     line-height: 100%;
-    /* margin: 0px 20px 20px 0px; */
-    border: none;
-    text-align: center;
+    width: calc(33% - var(--defaultGap));
+    display: flex;
+    flex-direction: column;
+    /* height: 314px; */
+    /* border: 1px solid hsl(var(--appBackgroundAltHSL)); */
     border-radius: var(--borderRadius);
-    font-weight: 800;
     cursor: pointer;
+    box-shadow: var(--dropShadow);
+    transition: 250ms ease-in-out all;
+}
+
+work item:hover {
+    transform: scale(1.01);
+}
+
+work item:active {
+    transform: translateY(0px) scale(.99);
+}
+
+work img {
+    width: 100%;
+    /* max-width: 328px; */
+    margin: 0;
 }
 
 work button:focus {
@@ -775,9 +817,15 @@ button::-moz-focus-inner {
     padding: 0;
 }
 
+work item:hover button {
+    opacity: .9;
+    /* margin-bottom: 132px; */
+}
+
 work span {
     background: hsla(var(--appBackgroundHSL), .98);
     pointer-events: none;
+    text-align: center;
     font-family: 'Abel', 'Segoe UI', 'Helvetica Neue';
     display: flex;
     flex-direction: column;
@@ -786,27 +834,40 @@ work span {
     border: none;
     outline: none;
     font-size: 90%;
-    color: #000;
-    opacity: 0;
-    width: 100%;
+    opacity: 1;
+    width: calc(100% - 2 * var(--defaultGap));
     height: 100%;
-    margin-left: 0px;
-    /* transition-delay: 200ms; */
-    -webkit-transform: translate(0px, -75px) scale(1.05, 1.05);
-    transform: translate(0px, -75px) scale(1.05, 1.05);
+    margin-top: -1px;
+    margin-left: 0;
+    transition: 250ms ease-in-out all;
     font-weight: 700;
+    color: hsl(var(--appBackgroundHSL));
+    background-color: hsl(var(--appBackgroundAltHSL));
+    padding: calc(var(--defaultGap) * 1.5) var(--defaultGap);
 }
 
-work button:focus span,
-work button:hover span {
-    /* transition-delay: 0ms; */
-    -webkit-transform: translate(0px, 0px) scale(1, 1);
-    transform: translate(0px, 0px) scale(1, 1);
-    opacity: 1;
+work item span img {
+    display: block;
+    height: 18px;
+    width: unset;
+    margin: 0 10px 18px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    /* background-position: 10px 10px; */
+}
+
+work item.microsoft company {
+    background-image: url(../images/ms-icon.png);
+}
+
+work item:focus span,
+work item:hover span {
+    /* color: hsl(var(--appForegroundHSL)); */
+    background-color: hsl(var(--appBackgroundDarkestHSL));
 }
 
 work span i {
-    opacity: .6;
+    opacity: .8;
     padding: 3px 4px 0px;
     display: block;
     font-weight: normal;
@@ -817,12 +878,12 @@ work span i {
     margin: 5px 0px 0px 0px;
     display: block;
     text-indent: 0px;
-    text-transform: var(--textTransform);
+    /* text-transform: var(--textTransform); */
 }
 
 .attribution a {
     font-weight: 700;
-    text-transform: var(--textTransform);
+    /* text-transform: var(--textTransform); */
 }
 
 .clearBoth {
@@ -930,6 +991,12 @@ footer button:active {
     }
 }
 
+@media screen and (max-width:768px) {
+    work item {
+        width: calc(50% - var(--defaultGap));
+    }
+}
+
 @media screen and (max-width:640px) {
     body {
         font-size: 1.35em;
@@ -962,9 +1029,14 @@ footer button:active {
         margin-bottom: 60px;
     }
 
+    work item {
+        width: 100%;
+        /* height: 313px; */
+    }
+
     work button {
         width: 100%;
-        height: calc(100vw * .402 - 25px)
+        /* height: calc(100vw * .402 - 15px) */
     }
 
     section.reference {

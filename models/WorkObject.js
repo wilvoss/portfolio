@@ -25,10 +25,40 @@ class WorkObject {
     this.feedbackImages = spec.feedbackImages === undefined ? [] : spec.feedbackImages;
     this.isSelected = spec.isSelected === undefined ? false : spec.isSelected;
     this.period = spec.period === undefined ? '' : spec.period;
+    this.logo = spec.logo === undefined ? '' : spec.logo;
   }
 }
 
 var Works = [
+  //Fred Hutch Cancer Center
+  new WorkObject({
+    id: 4,
+    name: 'Fred Hutch Cancer Center',
+    logo: 'ms-logo-full.png',
+    tileText: 'Patient Monitoring App',
+    url: 'https://www.fredhutch.org/en.html',
+    skillsText: 'Design, prototyping, research',
+    resultText: 'Helped secure 3-year partnership',
+    backgroundImage: 'work/fredhutch_thumbnail.jpg',
+    group: 'Deep Dives',
+    category: 'Deep Dive',
+    caseStudyObjects: [
+      new CaseStudyObject({
+        darkBackground: true,
+        html: '<h3>Summary</h3><p>While working at Microsoft Health, I designed, prototyped, and helped deliver a remote patient monitoring app for our research partners at Fred Hutch Cancer Center. In addition to the core symptom tracking feature, the app required device management and bluetooth pairing with an armband monitor. The process I used involved evaluating patient feedback, incorporating stakeholder input, iteration, and testing. The designs I created helped convince Fred Hutch to sign a 3-year contract with our organization.</p><p><i>&ldquo;Wil helped my team at Microsoft Health by designing an awesome app for remote patient monitoring and handled a REALLY tricky stakeholder situation with tons of grace and patience.&rdquo;</i> — Jessica Glago, Product Manager</p>',
+      }),
+      new CaseStudyObject({
+        html: "<h3>Flows</h3><p>These images show the some of the UX flows patient's used on a daily basis.",
+        image: 'work/casestudies/fredhutch/1.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/fredhutch/2.png',
+      }),
+      new CaseStudyObject({
+        image: 'work/casestudies/fredhutch/3.png',
+      }),
+    ],
+  }),
   // Like Me?
   new WorkObject({
     id: 1,
@@ -43,7 +73,7 @@ var Works = [
     backgroundImage: 'work/likeme_thumbnail.jpg',
     resultText: '5-star rating in app store',
     linkText: 'https://bigtentgames.com/likeme.html',
-    roleText: 'Head of Product',
+    roleText: 'Lead Product Designer',
     skillsText: 'Concepting, design, code, research',
     group: 'Deep Dives',
     category: 'Deep Dive',
@@ -202,37 +232,12 @@ var Works = [
       }),
     ],
   }),
-  //Fred Hutch Cancer Center
-  new WorkObject({
-    id: 4,
-    name: 'Fred Hutch Cancer Center',
-    tileText: 'Remote Patient Monitoring App',
-    url: 'https://www.fredhutch.org/en.html',
-    skillsText: 'Design, prototyping, research',
-    resultText: 'Helped secure 3-year partnership',
-    backgroundImage: 'work/fredhutch_thumbnail.jpg',
-    caseStudyObjects: [
-      new CaseStudyObject({
-        darkBackground: true,
-        html: '<h3>Summary</h3><p>While working at Microsoft Health, I designed, prototyped, and helped deliver a remote patient monitoring app for our research partners at Fred Hutch Cancer Center. In addition to the core symptom tracking feature, the app required device management and bluetooth pairing with an armband monitor. The process I used involved evaluating patient feedback, incorporating stakeholder input, iteration, and testing. The designs I created helped convince Fred Hutch to sign a 3-year contract with our organization.</p><p><i>&ldquo;Wil helped my team at Microsoft Health by designing an awesome app for remote patient monitoring and handled a REALLY tricky stakeholder situation with tons of grace and patience.&rdquo;</i> — Jessica Glago, Product Manager</p>',
-      }),
-      new CaseStudyObject({
-        html: "<h3>Flows</h3><p>These images show the some of the UX flows patient's used on a daily basis.",
-        image: 'work/casestudies/fredhutch/1.png',
-      }),
-      new CaseStudyObject({
-        image: 'work/casestudies/fredhutch/2.png',
-      }),
-      new CaseStudyObject({
-        image: 'work/casestudies/fredhutch/3.png',
-      }),
-    ],
-  }),
   // Microsoft Health NExT
   new WorkObject({
     id: 5,
     name: 'Microsoft Health NExT',
-    tileText: 'Microsoft Health NExT Start App',
+    logo: 'ms-logo-full.png',
+    tileText: 'Health NExT Start App',
     resultText: 'Saved org over $500,000',
     url: 'https://www.microsoft.com/microsoft-health/en-us',
     skillsText: 'Design, prototyping, research, code',
@@ -256,10 +261,11 @@ var Works = [
   new WorkObject({
     id: 3,
     name: 'The Fight Is In Us',
-    tileText: 'The Fight Is In Us Donation Site',
+    logo: 'ms-logo-full.png',
+    tileText: 'Plasma Donation Site',
     url: 'https://www.geekwire.com/2020/fight-us-blood-plasma-campaign-deploys-microsoft-bot-search-covid-19-antibodies/',
     resultText: 'Helped drive COVID health solutions',
-    backgroundImage: 'work/tfiiu3_thumbnail.jpg',
+    backgroundImage: 'work/tfiiu_thumbnail.jpg',
     type: 'website',
     skillsText: 'UX design, concepting',
     caseStudyObjects: [
@@ -289,6 +295,7 @@ var Works = [
   new WorkObject({
     id: 6,
     name: 'Microsoft Band 2',
+    logo: 'ms-logo-full.png',
     tileText: 'Microsoft Band 2 Features',
     url: 'https://www.techradar.com/reviews/wearables/microsoft-band-2-1306006/review',
     resultText: 'Secured partnerships',
@@ -313,10 +320,11 @@ var Works = [
   new WorkObject({
     id: 7,
     name: 'Suplari',
-    tileText: 'Suplari App and Brand Concepts',
+    tileText: 'Suplari App Concepts',
     skillsText: 'UX design, ideation, branding',
     url: 'https://suplari.com',
     backgroundImage: 'work/suplari_thumbnail.jpg',
+    resultText: 'Job offer on the spot',
     caseStudyObjects: [
       new CaseStudyObject({
         darkBackground: true,
