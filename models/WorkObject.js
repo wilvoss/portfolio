@@ -35,7 +35,7 @@ var Works = [
     id: 4,
     name: 'Fred Hutch Cancer Center',
     logo: 'ms-logo-full.png',
-    tileText: 'Patient Monitoring App',
+    tileText: 'Remote Patient Monitoring',
     url: 'https://www.fredhutch.org/en.html',
     skillsText: 'Design, prototyping, research',
     resultText: 'Helped secure 3-year partnership',
@@ -44,7 +44,7 @@ var Works = [
     category: 'Case Study',
     caseStudyObjects: [
       new CaseStudyObject({
-        html: "<h3>The challenge</h3><p>Emergecy room visits during chemotherapy impact 1 in 2 cancer patients. Many of these visits are avoidable and generate added stress to a uniquely stressful healthcare environment as well as to patients who often don't need to travel and suffer for it. Microsoft Health partnered with the Fred Hutchinson Cancer Center on a remote patient monitoring project that involved both hardware driven biometrics tracking and daily symptom tracking. Fred Hutch researchers were trying to assess the viability of shifting the daily task of asking patients about their symptoms from actual paperwork to a digital format. They intended to use that information to assess the impact that could have on preventing unnecessary ER trips. Their goals aligned with our organization's desire to scale our Microsoft Health Platform offering to include large data sets, data ingestion, and data analytics. Fred Hutch had zero experience working in the digital application space and needed a complete solution in order to begin testing their hypothesis.</p>",
+        html: "<h3>The challenge</h3><p>Emergecy room visits during chemotherapy impact 1 in 2 cancer patients. Many of these visits are avoidable and generate added stress to a uniquely stressful healthcare environment as well as to patients who often don't need to make the trip and suffer for it. Microsoft Health partnered with the Fred Hutchinson Cancer Center on a remote patient monitoring project that involved both hardware driven biometrics tracking and daily symptom tracking. Fred Hutch researchers were trying to assess the viability of shifting the daily task of asking patients about their symptoms from actual paperwork to a digital format. They intended to use that information to assess the impact that could have on preventing unnecessary ER trips. Their goals aligned with our organization's desire to scale our Microsoft Health Platform offering to include large data sets, data ingestion, and data analytics. Fred Hutch had zero experience working in the digital application space and needed a complete solution in order to begin testing their hypothesis.</p>",
       }),
       new CaseStudyObject({
         darkBackground: true,
@@ -55,15 +55,20 @@ var Works = [
       new CaseStudyObject({
         html: "<h3>The story</h3><p>Our team was struggling with a gap in knowledge on Fred Hutch's team regarding user experience, user needs, and the digital format we were all trying to develop. Academic research is a tried and true process that traditionally doesn't allow for iteration, real-time adjustments during a study's run, or rapid protoptying. Our team was well-versed in how an application evolves over time through iteration and customer feedback - but that experience didn't move a critical stakeholder's view on how to approach the study.</p>",
         image: 'work/casestudies/fredhutch/1.png',
-      }),
-      new CaseStudyObject({
-        image: 'work/casestudies/fredhutch/2.png',
+        imageZoomed: 'work/casestudies/fredhutch/1z.png',
+        zoomImageOrientation: 'vertical',
         afterImageHtml:
           "<p>I was brought in to help convince the research team about the importance of the design process in developing a new experience for users. My tenure with Microsoft Health and the Microsoft Band team allowed me to provide concrete data and examples based on actual use cases. In addition, I prototyped multiple designs to help the group understand the possibilities and implications of different layouts and flows. This prototyping was critical in driving the discussion forward since the Fred Hutch researcher's had no idea how to build an application and weren't comfortable interpreting high-level concepts or wireframes.</p>",
       }),
       new CaseStudyObject({
         darkBackground: true,
         html: "<h4>The story: reducing friction</h4><p>The designs that I created and prototyped helped clarify the issues that end users, and in particular patients, have when working with technology. The paper forms that patient's typically filled out were dense, overwhelming, but also monolithic in that everything being presented was physically available at all times. The physical artifact was complete and, while tedious to fill out, familiar and therefore accepted. A large part of application design is spent removing friction for people as they work to achieve their goals within the UX flow. Fred Hutch initially wanted to simply recreate the paper form wholesale in the application. One long scrollable form with an inordinate ammount of copy.</p><p>Accessibility is a critical component in all hospital and healthcare settings. Often, a caregiver will help a patient with their daily tasks which might include medication adherance, symptom tracking, hospital visits, taking samples, as well as delivering medication like injectible fluids. During the course of chemotherapy, patients often complain of brain fog, reduced visual acuity, motor control issues, and exhaustion. </p>",
+      }),
+      new CaseStudyObject({
+        html: "<h4>The story: onboarding</h4><p>Microsoft recommended the use of the Biovation armband for data collection. Since the study included a small number of participants and successful device adoption was critical, the team landed on a white-glove experience which included a researcher guiding the patient through onboarding. This gave us a certain leeway in terms of content and step reduction. Still, the onboarding of a bluetooth device was vital and had to work well. In addition to connecting the device with the patient's ID, the team needed to provide them with the nearest clinic's phone number for support, and give the patient an opportunity to set a reminder for their daily symptom tracking.</p>",
+        image: 'work/casestudies/fredhutch/4.png',
+        imageZoomed: 'work/casestudies/fredhutch/4z.png',
+        zoomImageOrientation: 'vertical',
       }), // new CaseStudyObject({
       //   html: "<h3>Flows</h3><p>These images show the some of the UX flows patient's used on a daily basis.",
       //   image: 'work/casestudies/fredhutch/1.png',
@@ -313,7 +318,7 @@ var Works = [
     id: 6,
     name: 'Microsoft Band 2',
     logo: 'ms-logo-full.png',
-    tileText: 'Microsoft Band 2 Features',
+    tileText: 'Microsoft Band 2',
     url: 'https://www.techradar.com/reviews/wearables/microsoft-band-2-1306006/review',
     resultText: 'Secured partnerships',
     backgroundImage: 'work/msband_thumbnail.jpg',

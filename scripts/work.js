@@ -22,6 +22,7 @@ var app = new Vue({
     zoomedImageFits: false,
     showCompactHeader: false,
     zoomedImage: '',
+    zoomImageOrientation: 'horizontal',
     modalContainer: null,
     onionskinContainer: null,
     personalImages: ['family.jpg', 'gaming.jpg', 'run-hike.jpg', 'hazel-wolf-2.jpg', 'guitar.jpg', 'biking.jpg', 'cat2.jpg'],
@@ -80,6 +81,7 @@ var app = new Vue({
     ZoomImage(_casestudy) {
       if (_casestudy.imageZoomed !== '') {
         this.zoomedImage = _casestudy.imageZoomed;
+        this.zoomImageOrientation = _casestudy.zoomImageOrientation;
         this.ToggleShowOnionSkin();
       }
     },

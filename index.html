@@ -18,7 +18,9 @@
         <chrome>
           <close></close>
         </chrome>
-        <img alt="A zoomed in, more detailed version of the image you clicked." :key="zoomedImage" id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
+        <detail>
+          <img :class="[zoomImageOrientation]" alt="A zoomed in, more detailed version of the image you clicked." :key="zoomedImage" id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
+        </detail>
       </onionskin>
       <modal :is-disabled="!showModal" v-if="selectedWork !== null" :class="{show: showModal}">
         <chrome>

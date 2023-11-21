@@ -3,6 +3,7 @@ class CaseStudyObject {
     this.html = spec.html === undefined ? '' : spec.html;
     this.afterImageHtml = spec.afterImageHtml === undefined ? '' : spec.afterImageHtml;
     this.image = spec.image === undefined ? '' : spec.image;
+    this.zoomImageOrientation = spec.zoomImageOrientation === undefined ? 'horizontal' : spec.zoomImageOrientation;
     this.imageZoomed = spec.imageZoomed === undefined ? '' : spec.imageZoomed;
     this.images = spec.images === undefined ? [] : spec.images;
     this.imagesZoomed = spec.imagesZoomed === undefined ? [] : spec.imagesZoomed;

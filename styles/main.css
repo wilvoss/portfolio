@@ -92,6 +92,10 @@ modal, onionskin {
     z-index: 200;
 }
 
+onionskin {
+    overflow-y: hidden;
+}
+
 article::-webkit-scrollbar, modal::-webkit-scrollbar {
     display: none;
 
@@ -434,22 +438,32 @@ modal img, modal video, modal iframe {
     border-radius: var(--borderRadius);
     margin-top: 10px;
     margin-bottom: var(--defaultGap);
-    overflow: hidden;
 }
 
 modal img.zoomable {
     cursor: pointer;
 }
 
+onionskin detail {
+    display: block;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
 
+}
 
 onionskin img {
-    height: 90%;
+    height: 100%;
     box-shadow: var(--dropShadow);
     border: none;
     border-radius: var(--borderRadius);
     overflow: auto;
     margin: 0;
+}
+
+onionskin img.vertical {
+    height: auto;
+    width: 100%;
 }
 
 modal intro {
@@ -897,13 +911,44 @@ montage {
     margin: var(--defaultGap) 0 0;
     display: block;
     columns: 4;
-    /* column-fill: auto; */
-    /* grid-template-columns: repeat(2, 1fr); */
-    /* grid-auto-rows: minmax(auto, auto); */
     gap: var(--defaultGap);
-    /* filter: grayscale(); */
-    /* transition: 200ms ease-out all; */
 }
+
+logosoup {
+    margin: var(--defaultGap) 0;
+    display: flex;
+    padding: var(--defaultGap);
+    background: white;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--defaultGap);
+    border-radius: var(--borderRadius);
+}
+
+logosoup logo {
+    flex: 0 0 calc(18% - 2 * var(--defaultGap));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(var(--defaultGap) / 4) 0;
+    background: white;
+    height: 30px;
+    min-width: 120px;
+    background-repeat: no-repeat;
+    background-size: auto 30px;
+    background-position: center center;
+    border-radius: var(--borderRadius);
+}
+
+/* logosoup logo img {
+    border-radius: none;
+    width: unset;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+
+} */
 
 montage img {
     border-radius: var(--borderRadius);
