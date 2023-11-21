@@ -40,22 +40,118 @@ var Works = [
     skillsText: 'Design, prototyping, research',
     resultText: 'Helped secure 3-year partnership',
     backgroundImage: 'work/fredhutch_thumbnail.jpg',
-    group: 'Deep Dives',
-    category: 'Deep Dive',
+    group: 'Case Studies',
+    category: 'Case Study',
     caseStudyObjects: [
       new CaseStudyObject({
-        darkBackground: true,
-        html: '<h3>Summary</h3><p>While working at Microsoft Health, I designed, prototyped, and helped deliver a remote patient monitoring app for our research partners at Fred Hutch Cancer Center. In addition to the core symptom tracking feature, the app required device management and bluetooth pairing with an armband monitor. The process I used involved evaluating patient feedback, incorporating stakeholder input, iteration, and testing. The designs I created helped convince Fred Hutch to sign a 3-year contract with our organization.</p><p><i>&ldquo;Wil helped my team at Microsoft Health by designing an awesome app for remote patient monitoring and handled a REALLY tricky stakeholder situation with tons of grace and patience.&rdquo;</i> — Jessica Glago, Product Manager</p>',
+        html: "<h3>The challenge</h3><p>Emergecy room visits during chemotherapy impact 1 in 2 cancer patients. Many of these visits are avoidable and generate added stress to a uniquely stressful healthcare environment as well as to patients who often don't need to travel and suffer for it. Microsoft Health partnered with the Fred Hutchinson Cancer Center on a remote patient monitoring project that involved both hardware driven biometrics tracking and daily symptom tracking. Fred Hutch researchers were trying to assess the viability of shifting the daily task of asking patients about their symptoms from actual paperwork to a digital format. They intended to use that information to assess the impact that could have on preventing unnecessary ER trips. Their goals aligned with our organization's desire to scale our Microsoft Health Platform offering to include large data sets, data ingestion, and data analytics. Fred Hutch had zero experience working in the digital application space and needed a complete solution in order to begin testing their hypothesis.</p>",
       }),
       new CaseStudyObject({
-        html: "<h3>Flows</h3><p>These images show the some of the UX flows patient's used on a daily basis.",
+        darkBackground: true,
+        html: "<h3>The solution</h3><p>I designed, prototyped, and helped deliver a remote patient monitoring app for our research partners at Fred Hutch Cancer Center which would provide critical real-time data that Fred Hutch support staff could use to anticipate patient's needs before they ended up in a clinic. In addition to the core symptom tracking feature, the app required device management and bluetooth pairing with an armband monitor. The design process I used involved evaluating patient feedback, incorporating stakeholder input, whiteboarding, wireframing, prototyping, iteration, and testing. The designs I created helped convince Fred Hutch to sign a 3-year contract with our organization. In addition, the application was delivered quickly and gave both Fred Hutch and the Microsoft Health team tons of data and insight into real-time health data management.</p>",
+        image: 'work/casestudies/fredhutch/3.png',
+        afterImageHtml: '<blockquote> <i>&ldquo;Wil helped my team at Microsoft Health by designing an awesome app for remote patient monitoring and handled a REALLY tricky stakeholder situation with tons of grace and patience.&rdquo;</i> — Jessica Glago, Product Manager</blockquote> ',
+      }),
+      new CaseStudyObject({
+        html: "<h3>The story</h3><p>Our team was struggling with a gap in knowledge on Fred Hutch's team regarding user experience, user needs, and the digital format we were all trying to develop. Academic research is a tried and true process that traditionally doesn't allow for iteration, real-time adjustments during a study's run, or rapid protoptying. Our team was well-versed in how an application evolves over time through iteration and customer feedback - but that experience didn't move a critical stakeholder's view on how to approach the study.</p>",
         image: 'work/casestudies/fredhutch/1.png',
       }),
       new CaseStudyObject({
         image: 'work/casestudies/fredhutch/2.png',
+        afterImageHtml:
+          "<p>I was brought in to help convince the research team about the importance of the design process in developing a new experience for users. My tenure with Microsoft Health and the Microsoft Band team allowed me to provide concrete data and examples based on actual use cases. In addition, I prototyped multiple designs to help the group understand the possibilities and implications of different layouts and flows. This prototyping was critical in driving the discussion forward since the Fred Hutch researcher's had no idea how to build an application and weren't comfortable interpreting high-level concepts or wireframes.</p>",
       }),
       new CaseStudyObject({
-        image: 'work/casestudies/fredhutch/3.png',
+        darkBackground: true,
+        html: "<h4>The story: reducing friction</h4><p>The designs that I created and prototyped helped clarify the issues that end users, and in particular patients, have when working with technology. The paper forms that patient's typically filled out were dense, overwhelming, but also monolithic in that everything being presented was physically available at all times. The physical artifact was complete and, while tedious to fill out, familiar and therefore accepted. A large part of application design is spent removing friction for people as they work to achieve their goals within the UX flow. Fred Hutch initially wanted to simply recreate the paper form wholesale in the application. One long scrollable form with an inordinate ammount of copy.</p><p>Accessibility is a critical component in all hospital and healthcare settings. Often, a caregiver will help a patient with their daily tasks which might include medication adherance, symptom tracking, hospital visits, taking samples, as well as delivering medication like injectible fluids. During the course of chemotherapy, patients often complain of brain fog, reduced visual acuity, motor control issues, and exhaustion. </p>",
+      }), // new CaseStudyObject({
+      //   html: "<h3>Flows</h3><p>These images show the some of the UX flows patient's used on a daily basis.",
+      //   image: 'work/casestudies/fredhutch/1.png',
+      // }),
+      // new CaseStudyObject({
+      //   image: 'work/casestudies/fredhutch/2.png',
+      // }),
+      // new CaseStudyObject({
+      //   image: 'work/casestudies/fredhutch/3.png',
+      // }),
+    ],
+  }),
+  // Impira
+  new WorkObject({
+    id: 2,
+    isCaseStudy: true,
+    name: 'Impira',
+    period: '2022',
+    tileText: 'Impira Product Onboarding',
+    readTime: '6 minute',
+    description: 'Onboarding 2.0',
+    url: 'https://www.youtube.com/channel/UCDCBj9hI8mUphp-7Twc6_nA/videos',
+    alt: "Learn about the process I used as a staff product growth designer at Impira while improving their application's onboarding experience.",
+    backgroundImage: 'work/impira_thumbnail.jpg',
+    resultText: '15% increase account activation',
+    linkText: 'https://www.youtube.com/channel/UCDCBj9hI8mUphp-7Twc6_nA/videos',
+    roleText: 'Staff Product Designer',
+    skillsText: 'Ideation, design, prototyping, research',
+    group: 'Case Studies',
+    category: 'Case Study',
+    caseStudyObjects: [
+      new CaseStudyObject({
+        html: '<h2>The challenge</h2><p>Impira was a startup founded on machine learning technology that took unstructured data and automatically converted it to structured data with minimal effort from its users. The product, a complicated online web application, was logging higher occurances of falloff during key moments of the funnel. After engaging with users directly, watching online sessions of first time users, and running brainstorm sessions within the company, it became clear that the onboarding process was both confusing and too long for most users.</p><p>Here is the first screen of the original flow:',
+        image: 'work/casestudies/impira/1.png',
+        imageZoomed: 'work/casestudies/impira/1z.png',
+      }),
+      new CaseStudyObject({
+        darkBackground: true,
+        html: '<h2>The solution</h2><p>I\'m a firm believer in the idea that, together, we are stronger. Through many rounds of collaborative iteration, user research, prototyping, brainstorming, and incremental release scheduling, we deployed a new onboarding flow that improved both the "aha" and "success" moments by over 8% and also our early activation by 15%. Key improvements made in this UX include starting the user in the actual application, focusing the user on clearly defined tasks with strong feedback, removing unnecessary information and steps/pages, and adding new capability to remove friction.</p><p>Here is the first screen of the final flow.</p>',
+        image: 'work/casestudies/impira/2.png',
+        imageZoomed: 'work/casestudies/impira/2z.png',
+        afterImageHtml: "<blockquote>&ldquo;Wil helped us make cutting edge AI technology approachable for the average person. He iterated patiently and persistently on our onboarding, teaching our users to create Machine Learning models. He is technically savvy, quickly picking up new concepts, and making them approachable to new users. He's a pleasure to work with, creative, responsive and collaborative.&rdquo; <span>— Lorilyn McCue, Head of Product<span></blockquote>",
+      }),
+      new CaseStudyObject({
+        html: '<h3>Unpacking the process</h3><p>While at Impira, the general process for every feature and flow that I designed followed these basic steps:</p><ol><li>Gather information</li><li>Define problem and solution hypotheses</li><li>Ideate and generate artifacts</li><li>Test</li><li>Iterate (repeating steps 1-4)</li><li>Implement, observe, and adjust as needed</li></ol><p>Every single step above included some form of collaboration. The team had a number of theories about what might be challenging prospective customers during this experience: too many steps, unclear instruction, confusing nomenclature, etc. In terms of conversion, we knew based on user research and experience that two key moments during the funnel were critical:</p><ol><li>the "success" moment - when a user creates their first extractable field</li><li>the "aha" moment - when a user has seen an extracted field\'s value automatically identified on more than one document</li></ol><p>In order to keep the team on track, I created a simplified view of the golden path with clear requirements and expected results. Every design choice I made was filtered through this framework.',
+        image: 'work/casestudies/impira/3.png',
+      }),
+      new CaseStudyObject({
+        html: '<p>With this knowledge in mind, I generated a few hypotheses, generated rough wireframes, shared with the design and development team in multiple Figma sessions and tested some of those flows with users on UserZoom, an online UX research platform. The collaboration within the Impira team was always about striving for insight and feedback, iterating, and repeating until we had versions that felt strong enough to test with users. In that spirit, I encouraged all team members to add comments and even add their own design ideas directly in the Figma file.</p>',
+      }),
+      new CaseStudyObject({
+        darkBackground: true,
+        html: "<h4>Rough wireframe: Hero's Journey</h4><p>This flow reduced cognitive overload by removing competing visuals, adjusting confusing animations, and bringing the end product closer to the beginning of the user experience.</p>",
+        image: 'work/casestudies/impira/4.png',
+        imageZoomed: 'work/casestudies/impira/4z.png',
+      }),
+      new CaseStudyObject({
+        html: '<h4>Rough wireframe: Small But Mighty</h4><p>Small adjustments to the original flow, reduced content, and stronger visual cues.</p>',
+        image: 'work/casestudies/impira/5.png',
+        imageZoomed: 'work/casestudies/impira/5z.png',
+      }),
+      new CaseStudyObject({
+        darkBackground: true,
+        html: "<h4>Rough wireframe: Can't Miss It</h4><p>In this UX, very deliberate callouts were placed throughout the first run experience. </p>",
+        image: 'work/casestudies/impira/6.png',
+        imageZoomed: 'work/casestudies/impira/6z.png',
+      }),
+      new CaseStudyObject({
+        html: '<h4>Wirefames</h4><p>Typically, I worked on and presented many concepts and iterations. Some of these presentations were formal sessions with multiple teammates commenting live and asynchronously - always driving towards a stronger, more feasible solution. As I honed in on the final flow, I broke the implementation into smaller features for sequential rollout. This approach allowed us to help our users faster, generating strong and targeted feedback that didn\'t cause questions about "which feature was actually having an impact." Rollout features were tested against a control group, observed with real-time recording of user engagement, and measured in terms of actual impact on various parts of the funnel. </p>',
+        image: 'work/casestudies/impira/7.png',
+      }),
+      new CaseStudyObject({
+        html: '<h3>Rollouts</h3><p>Over the course of many months wireframing, collaborating, iterating, and prototyping through dozens of concepts and possibilities, we landed on the first of many incremental changes we considered ready for production. It\'s important to note that, as a startup, Impira built both a framework and culture around experimentation. This means that we spent engineering effort on implimenting and releasing this flow quickly while adding both telemetry and an a/b style approach to help us understand the results of this work in the real world. At no point did we think "one and done" - everything was subject to revisiting and iteration if the data supported it.</p>',
+      }),
+      new CaseStudyObject({
+        darkBackground: true,
+        html: "<h4>Rollouts example: sidebar upload</h4><p>Early on, I identified a serious problem for our users: even if they made it to the core application, they couldn't upload any more files without leaving that flow. All of my prototypes assumed we would provide uploading in the core app as an improved feature that would not only help users during OOBE, but throughout their experience. This is the first feature we implemented on the road towards a fully revamped onboarding experience. </p>",
+        image: 'work/casestudies/impira/sidebar.png',
+        imageZoomed: 'work/casestudies/impira/sidebarz.png',
+      }),
+      new CaseStudyObject({
+        html: "<h4>Rollouts example: Final flow</h4><p>My final flows included all of the details our developers needed to fully realize what's being presented. Of course, not all edge cases can be anticipated, so I worked closely with our engineers to accommodate new edge cases, clarify issues, provide assets, and even update the final flow based on feedback as needed. An expanded version of what was shown earlier in this case study, this is a bird's eye view of the entire final onboarding UX. </p>",
+        image: 'work/casestudies/impira/8.png',
+        imageZoomed: 'work/casestudies/impira/8z.png',
+      }),
+      new CaseStudyObject({
+        darkBackground: true,
+        html: "<h3>Conclusion</h3><p>This project involved many people in the company, our users, and a strong focus on incrementally bringing a better experience to our customers with the intent of increasing our product growth. We did this with amazing results. Throughout, I worked personally with the UX content designer, the project manager, the head of product, both the backend and frontend engineering teams, and the actual engineers who implemented this work. </p><p>Because onboarding doesn't have to end when a user stops working with the app for the first time, I worked with marketing to envision new onboarding opportunities for users who abandoned the app, but were drawn back through direct messaging. </p>",
       }),
     ],
   }),
@@ -75,8 +171,8 @@ var Works = [
     linkText: 'https://bigtentgames.com/likeme.html',
     roleText: 'Lead Product Designer',
     skillsText: 'Concepting, design, code, research',
-    group: 'Deep Dives',
-    category: 'Deep Dive',
+    group: 'Case Studies',
+    category: 'Case Study',
     feedbackImages: ['work/casestudies/likeme/feedback-1.png', 'work/casestudies/likeme/feedback-3.png', 'work/casestudies/likeme/feedback-8.png', 'work/casestudies/likeme/feedback-9.png', 'work/casestudies/likeme/feedback-4.png', 'work/casestudies/likeme/feedback-5.png', 'work/casestudies/likeme/feedback-6.png', 'work/casestudies/likeme/feedback-2.png', 'work/casestudies/likeme/feedback-7.png'],
     caseStudyObjects: [
       new CaseStudyObject({
@@ -150,85 +246,6 @@ var Works = [
       new CaseStudyObject({
         darkBackground: true,
         html: "<h2>Conclusion</h2><p>This game has been an absolute blast to envision, design, develop, test, improve, and ultimately release. Continous improvements based on user feedback as well as bug reporting are made regularly. The next big step for this product is a full marketing campaign which will leverage the branding and communications already established up to this point. It's hard to describe every piece of this project that I worked on, every skill I either leveraged or improved during this journey.</p>",
-      }),
-    ],
-  }),
-  // Impira
-  new WorkObject({
-    id: 2,
-    isCaseStudy: true,
-    name: 'Impira',
-    period: '2022',
-    tileText: 'Impira Product Onboarding',
-    readTime: '6 minute',
-    description: 'Onboarding 2.0',
-    url: 'https://www.youtube.com/channel/UCDCBj9hI8mUphp-7Twc6_nA/videos',
-    alt: "Learn about the process I used as a staff product growth designer at Impira while improving their application's onboarding experience.",
-    backgroundImage: 'work/impira_thumbnail.jpg',
-    resultText: '15% increase account activation',
-    linkText: 'https://www.youtube.com/channel/UCDCBj9hI8mUphp-7Twc6_nA/videos',
-    roleText: 'Staff Product Designer',
-    skillsText: 'Ideation, design, prototyping, research',
-    group: 'Deep Dives',
-    category: 'Deep Dive',
-    caseStudyObjects: [
-      new CaseStudyObject({
-        html: '<h2>The challenge</h2><p>Impira was a startup founded on machine learning technology that took unstructured data and automatically converted it to structured data with minimal effort from its users. The product, a complicated online web application, was logging higher occurances of falloff during key moments of the funnel. After engaging with users directly, watching online sessions of first time users, and running brainstorm sessions within the company, it became clear that the onboarding process was both confusing and too long for most users.</p><p>Here is the first screen of the original flow:',
-        image: 'work/casestudies/impira/1.png',
-        imageZoomed: 'work/casestudies/impira/1z.png',
-      }),
-      new CaseStudyObject({
-        darkBackground: true,
-        html: '<h2>The solution</h2><p>I\'m a firm believer in the idea that, together, we are stronger. Through many rounds of collaborative iteration, user research, prototyping, brainstorming, and incremental release scheduling, we deployed a new onboarding flow that improved both the "aha" and "success" moments by over 8% and also our early activation by 15%. Key improvements made in this UX include starting the user in the actual application, focusing the user on clearly defined tasks with strong feedback, removing unnecessary information and steps/pages, and adding new capability to remove friction.</p><p>Here is the first screen of the final flow.</p>',
-        image: 'work/casestudies/impira/2.png',
-        imageZoomed: 'work/casestudies/impira/2z.png',
-        afterImageHtml: "<blockquote>&ldquo;Wil helped us make cutting edge AI technology approachable for the average person. He iterated patiently and persistently on our onboarding, teaching our users to create Machine Learning models. He is technically savvy, quickly picking up new concepts, and making them approachable to new users. He's a pleasure to work with, creative, responsive and collaborative.&rdquo; <span>— Lorilyn McCue, Head of Product<span></blockquote>",
-      }),
-      new CaseStudyObject({
-        html: '<h3>Unpacking the process</h3><p>While at Impira, the general process for every feature and flow that I designed followed these basic steps:</p><ol><li>Gather information</li><li>Define problem and solution hypotheses</li><li>Ideate and generate artifacts</li><li>Test</li><li>Iterate (repeating steps 1-4)</li><li>Implement, observe, and adjust as needed</li></ol><p>Every single step above included some form of collaboration. The team had a number of theories about what might be challenging prospective customers during this experience: too many steps, unclear instruction, confusing nomenclature, etc. In terms of conversion, we knew based on user research and experience that two key moments during the funnel were critical:</p><ol><li>the "success" moment - when a user creates their first extractable field</li><li>the "aha" moment - when a user has seen an extracted field\'s value automatically identified on more than one document</li></ol><p>In order to keep the team on track, I created a simplified view of the golden path with clear requirements and expected results. Every design choice I made was filtered through this framework.',
-        image: 'work/casestudies/impira/3.png',
-      }),
-      new CaseStudyObject({
-        html: '<p>With this knowledge in mind, I generated a few hypotheses, generated rough wireframes, shared with the design and development team in multiple Figma sessions and tested some of those flows with users on UserZoom, an online UX research platform. The collaboration within the Impira team was always about striving for insight and feedback, iterating, and repeating until we had versions that felt strong enough to test with users. In that spirit, I encouraged all team members to add comments and even add their own design ideas directly in the Figma file.</p>',
-      }),
-      new CaseStudyObject({
-        darkBackground: true,
-        html: "<h4>Rough wireframe: Hero's Journey</h4><p>This flow reduced cognitive overload by removing competing visuals, adjusting confusing animations, and bringing the end product closer to the beginning of the user experience.</p>",
-        image: 'work/casestudies/impira/4.png',
-        imageZoomed: 'work/casestudies/impira/4z.png',
-      }),
-      new CaseStudyObject({
-        html: '<h4>Rough wireframe: Small But Mighty</h4><p>Small adjustments to the original flow, reduced content, and stronger visual cues.</p>',
-        image: 'work/casestudies/impira/5.png',
-        imageZoomed: 'work/casestudies/impira/5z.png',
-      }),
-      new CaseStudyObject({
-        darkBackground: true,
-        html: "<h4>Rough wireframe: Can't Miss It</h4><p>In this UX, very deliberate callouts were placed throughout the first run experience. </p>",
-        image: 'work/casestudies/impira/6.png',
-        imageZoomed: 'work/casestudies/impira/6z.png',
-      }),
-      new CaseStudyObject({
-        html: '<h4>Wirefames</h4><p>Typically, I worked on and presented many concepts and iterations. Some of these presentations were formal sessions with multiple teammates commenting live and asynchronously - always driving towards a stronger, more feasible solution. As I honed in on the final flow, I broke the implementation into smaller features for sequential rollout. This approach allowed us to help our users faster, generating strong and targeted feedback that didn\'t cause questions about "which feature was actually having an impact." Rollout features were tested against a control group, observed with real-time recording of user engagement, and measured in terms of actual impact on various parts of the funnel. </p>',
-        image: 'work/casestudies/impira/7.png',
-      }),
-      new CaseStudyObject({
-        html: '<h3>Rollouts</h3><p>Over the course of many months wireframing, collaborating, iterating, and prototyping through dozens of concepts and possibilities, we landed on the first of many incremental changes we considered ready for production. It\'s important to note that, as a startup, Impira built both a framework and culture around experimentation. This means that we spent engineering effort on implimenting and releasing this flow quickly while adding both telemetry and an a/b style approach to help us understand the results of this work in the real world. At no point did we think "one and done" - everything was subject to revisiting and iteration if the data supported it.</p>',
-      }),
-      new CaseStudyObject({
-        darkBackground: true,
-        html: "<h4>Rollouts example: sidebar upload</h4><p>Early on, I identified a serious problem for our users: even if they made it to the core application, they couldn't upload any more files without leaving that flow. All of my prototypes assumed we would provide uploading in the core app as an improved feature that would not only help users during OOBE, but throughout their experience. This is the first feature we implemented on the road towards a fully revamped onboarding experience. </p>",
-        image: 'work/casestudies/impira/sidebar.png',
-        imageZoomed: 'work/casestudies/impira/sidebarz.png',
-      }),
-      new CaseStudyObject({
-        html: "<h4>Rollouts example: Final flow</h4><p>My final flows included all of the details our developers needed to fully realize what's being presented. Of course, not all edge cases can be anticipated, so I worked closely with our engineers to accommodate new edge cases, clarify issues, provide assets, and even update the final flow based on feedback as needed. An expanded version of what was shown earlier in this case study, this is a bird's eye view of the entire final onboarding UX. </p>",
-        image: 'work/casestudies/impira/8.png',
-        imageZoomed: 'work/casestudies/impira/8z.png',
-      }),
-      new CaseStudyObject({
-        darkBackground: true,
-        html: "<h3>Conclusion</h3><p>This project involved many people in the company, our users, and a strong focus on incrementally bringing a better experience to our customers with the intent of increasing our product growth. We did this with amazing results. Throughout, I worked personally with the UX content designer, the project manager, the head of product, both the backend and frontend engineering teams, and the actual engineers who implemented this work. </p><p>Because onboarding doesn't have to end when a user stops working with the app for the first time, I worked with marketing to envision new onboarding opportunities for users who abandoned the app, but were drawn back through direct messaging. </p>",
       }),
     ],
   }),

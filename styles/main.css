@@ -465,7 +465,7 @@ modal intro {
 modal intro img {
     /* display: none; */
     width: 100%;
-    /* max-width: 328px; */
+    max-width: 400px;
     margin: 0px;
     /* box-shadow: none; */
 }
