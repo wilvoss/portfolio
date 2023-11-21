@@ -918,7 +918,7 @@ logosoup {
     margin: var(--defaultGap) 0;
     display: flex;
     padding: var(--defaultGap);
-    background: white;
+    /* background: white; */
     align-items: baseline;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -932,7 +932,7 @@ logosoup logo {
     justify-content: center;
     align-items: center;
     padding: calc(var(--defaultGap) / 4) 0;
-    background: white;
+    /* background: white; */
     height: 30px;
     min-width: 120px;
     background-repeat: no-repeat;

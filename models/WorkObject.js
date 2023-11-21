@@ -86,6 +86,7 @@ var Works = [
     id: 2,
     isCaseStudy: true,
     name: 'Impira',
+    logo: 'impira-logo-full.png',
     period: '2022',
     tileText: 'Impira Product Onboarding',
     readTime: '6 minute',
@@ -121,24 +122,13 @@ var Works = [
       }),
       new CaseStudyObject({
         darkBackground: true,
-        html: "<h4>Rough wireframe: Hero's Journey</h4><p>This flow reduced cognitive overload by removing competing visuals, adjusting confusing animations, and bringing the end product closer to the beginning of the user experience.</p>",
-        image: 'work/casestudies/impira/4.png',
-        imageZoomed: 'work/casestudies/impira/4z.png',
-      }),
-      new CaseStudyObject({
-        html: '<h4>Rough wireframe: Small But Mighty</h4><p>Small adjustments to the original flow, reduced content, and stronger visual cues.</p>',
-        image: 'work/casestudies/impira/5.png',
-        imageZoomed: 'work/casestudies/impira/5z.png',
-      }),
-      new CaseStudyObject({
-        darkBackground: true,
-        html: "<h4>Rough wireframe: Can't Miss It</h4><p>In this UX, very deliberate callouts were placed throughout the first run experience. </p>",
-        image: 'work/casestudies/impira/6.png',
-        imageZoomed: 'work/casestudies/impira/6z.png',
+        html: "<h4>Rough wireframes:</h4><p>Early and often I generated rough flows to facilitate conversation, stimulate brainstorming, and work out basic concepts. It was not uncommon for me to present four or more options to the team in a quick round table to elicit feedback. Typically I name each flow with a mind towards capturing the essence of that proposed flow. Some examples include:</p><ul><li>Hero's Journey - this flow reduced cognitive overload by removing competing visuals, adjusting confusing animations, and bringing the end product closer to the beginning of the user experience</li><li>Small But Mighty - small adjustments to the original flow, reduced content, and stronger visual cues</li><li>Can't Miss It - in this flow, very deliberate callouts were placed throughout the first run experience</li><li>Purple is the New Black - a deliberate pitch to associate one color with those moments when Impira has magically solved a problem</li><li>Can't Miss It - in this flow, very deliberate callouts were placed throughout the first run experience. </li><li>CBI Confirm/Break/Ignore - this flow was about letting the user edit out content that wasn't important, flipping the narrative on previous flows </li></ul>",
+        image: 'work/casestudies/impira/10.png',
+        afterImageHtml: '<p>This worked involved pages of iteration and exploration resulting in many abandoned but useful flows.</p>',
       }),
       new CaseStudyObject({
         html: '<h4>Wirefames</h4><p>Typically, I worked on and presented many concepts and iterations. Some of these presentations were formal sessions with multiple teammates commenting live and asynchronously - always driving towards a stronger, more feasible solution. As I honed in on the final flow, I broke the implementation into smaller features for sequential rollout. This approach allowed us to help our users faster, generating strong and targeted feedback that didn\'t cause questions about "which feature was actually having an impact." Rollout features were tested against a control group, observed with real-time recording of user engagement, and measured in terms of actual impact on various parts of the funnel. </p>',
-        image: 'work/casestudies/impira/7.png',
+        image: 'work/casestudies/impira/9z.png',
       }),
       new CaseStudyObject({
         html: '<h3>Rollouts</h3><p>Over the course of many months wireframing, collaborating, iterating, and prototyping through dozens of concepts and possibilities, we landed on the first of many incremental changes we considered ready for production. It\'s important to note that, as a startup, Impira built both a framework and culture around experimentation. This means that we spent engineering effort on implimenting and releasing this flow quickly while adding both telemetry and an a/b style approach to help us understand the results of this work in the real world. At no point did we think "one and done" - everything was subject to revisiting and iteration if the data supported it.</p>',
@@ -165,6 +155,7 @@ var Works = [
     id: 1,
     isCaseStudy: true,
     name: 'Like Me?',
+    logo: 'btg-logo-full.png',
     period: '2023',
     tileText: 'Like Me? Video Game',
     description: 'Casual, mobile-first, video game',
@@ -181,7 +172,7 @@ var Works = [
     feedbackImages: ['work/casestudies/likeme/feedback-1.png', 'work/casestudies/likeme/feedback-3.png', 'work/casestudies/likeme/feedback-8.png', 'work/casestudies/likeme/feedback-9.png', 'work/casestudies/likeme/feedback-4.png', 'work/casestudies/likeme/feedback-5.png', 'work/casestudies/likeme/feedback-6.png', 'work/casestudies/likeme/feedback-2.png', 'work/casestudies/likeme/feedback-7.png'],
     caseStudyObjects: [
       new CaseStudyObject({
-        html: '<h2>The challenge</h2><p>“Like Me?” initially debuted as a web-based proof-of-concept video game that I created for fun. I revitalized the project with the goal of bringing it to market as swiftly as possible. Despite the core gameplay being exceptional, the UX unfortunately fell short, as it was unintuitive, unhelpful, and somewhat unappealing. Specifically, users struggled to understand where to focus their attention, the meaning of certain visuals, and how to successfully play the game. There was also room for enhancements like score keeping and social sharing, as well as updated daily content. Here are what the four main screens (home, gameplay, game over, how to play) looked like at the start:</p>',
+        html: '<h2>The challenge</h2><p>“Like Me?” initially debuted as a web-based proof-of-concept video game. The project revitalized with the goal of bringing it to market as swiftly as possible. Despite the core gameplay being exceptional, the UX unfortunately fell short, as it was unintuitive, unhelpful, and somewhat unappealing. Specifically, users struggled to understand where to focus their attention, the meaning of certain visuals, and how to successfully play the game. There was also room for enhancements like score keeping and social sharing, as well as updated daily content. Here are what the four main screens (home, gameplay, game over, how to play) looked like at the start:</p>',
         image: 'work/casestudies/likeme/1.png',
         imageZoomed: 'work/casestudies/likeme/1.png',
       }),
@@ -342,6 +333,7 @@ var Works = [
   new WorkObject({
     id: 7,
     name: 'Suplari',
+    logo: 'suplari-logo-full.png',
     tileText: 'Suplari App Concepts',
     skillsText: 'UX design, ideation, branding',
     url: 'https://suplari.com',
