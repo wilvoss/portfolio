@@ -18,13 +18,14 @@
         <chrome>
           <close></close>
         </chrome>
-        <detail>
-          <img :class="[zoomImageOrientation]" alt="A zoomed in, more detailed version of the image you clicked." :key="zoomedImage" id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
+        <detail :class="[zoomImageOrientation]">
+          <img alt="A zoomed in, more detailed version of the image you clicked." :key="zoomedImage" id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
         </detail>
       </onionskin>
       <modal :is-disabled="!showModal" v-if="selectedWork !== null" :class="{show: showModal}">
         <chrome>
           <close @click="ToggleShowModal"></close>
+          <next @click="NextWork"></next>
         </chrome>
         <label>{{selectedWork.category}}</label>
         <h1>{{selectedWork.tileText}}</h1>
