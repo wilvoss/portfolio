@@ -44,7 +44,7 @@ var Works = [
     category: 'Case Study',
     caseStudyObjects: [
       new CaseStudyObject({
-        html: "<h3>The challenge</h3><p>Emergecy room visits during chemotherapy impact 1 in 2 cancer patients. Many of these visits are avoidable and generate added stress to a uniquely stressful healthcare environment as well as to patients who often don't need to make the trip and suffer for it. Microsoft Health partnered with the Fred Hutchinson Cancer Center on a remote patient monitoring project that involved both hardware driven biometrics tracking and daily symptom tracking. Fred Hutch researchers were trying to assess the viability of shifting the daily task of asking patients about their symptoms from actual paperwork to a digital format. They intended to use that information to assess the impact that could have on preventing unnecessary ER trips. Their goals aligned with our organization's desire to scale our Microsoft Health Platform offering to include large data sets, data ingestion, and data analytics. Fred Hutch had zero experience working in the digital application space and needed a complete solution in order to begin testing their hypothesis.</p>",
+        html: "<h3>The challenge</h3><p>Emergency room visits during chemotherapy impact 1 in 2 cancer patients. Many of these visits are avoidable and generate added stress to a uniquely stressful healthcare environment as well as to patients who often don't need to make the trip and suffer for it. Microsoft Health partnered with the Fred Hutchinson Cancer Center on a remote patient monitoring project that involved both hardware driven biometrics tracking and daily symptom tracking. Fred Hutch researchers were trying to assess the viability of shifting the daily task of asking patients about their symptoms from actual paperwork to a digital format. They intended to use that information to assess the impact that could have on preventing unnecessary ER trips. Their goals aligned with our organization's desire to scale our Microsoft Health Platform offering to include large data sets, data ingestion, and data analytics. Fred Hutch had zero experience working in the digital application space and needed a complete solution in order to begin testing their hypothesis.</p>",
       }),
       new CaseStudyObject({
         darkBackground: true,
@@ -88,7 +88,7 @@ var Works = [
     name: 'Impira',
     logo: 'impira-logo-full.png',
     period: '2022',
-    tileText: 'Impira Product Onboarding',
+    tileText: 'Product Onboarding',
     readTime: '6 minute',
     description: 'Onboarding 2.0',
     url: 'https://www.youtube.com/channel/UCDCBj9hI8mUphp-7Twc6_nA/videos',
@@ -248,9 +248,9 @@ var Works = [
   // Microsoft Health NExT
   new WorkObject({
     id: 5,
-    name: 'Microsoft Health NExT',
+    name: 'Microsoft AI+R Health NExT',
     logo: 'ms-logo-full.png',
-    tileText: 'Health NExT Start App',
+    tileText: 'Microsoft NExT Web App',
     resultText: 'Saved org over $500,000',
     url: 'https://www.microsoft.com/microsoft-health/en-us',
     skillsText: 'Design, prototyping, research, code',
@@ -275,7 +275,7 @@ var Works = [
     id: 3,
     name: 'The Fight Is In Us',
     logo: 'ms-logo-full.png',
-    tileText: 'Plasma Donation Site',
+    tileText: 'COVID Plasma Donation',
     url: 'https://www.geekwire.com/2020/fight-us-blood-plasma-campaign-deploys-microsoft-bot-search-covid-19-antibodies/',
     resultText: 'Helped drive COVID health solutions',
     backgroundImage: 'work/tfiiu_thumbnail.jpg',
@@ -310,6 +310,7 @@ var Works = [
     name: 'Microsoft Band 2',
     logo: 'ms-logo-full.png',
     tileText: 'Microsoft Band 2',
+    roleText: 'UX Designer',
     url: 'https://www.techradar.com/reviews/wearables/microsoft-band-2-1306006/review',
     resultText: 'Secured partnerships',
     backgroundImage: 'work/msband_thumbnail.jpg',
@@ -334,7 +335,7 @@ var Works = [
     id: 7,
     name: 'Suplari',
     logo: 'suplari-logo-full.png',
-    tileText: 'Suplari App Concepts',
+    tileText: 'Web App and Brand',
     skillsText: 'UX design, ideation, branding',
     url: 'https://suplari.com',
     backgroundImage: 'work/suplari_thumbnail.jpg',
