@@ -14,7 +14,7 @@
   <body>
     <app id="app" v-cloak>
       <link rel="stylesheet" :href="showContrast ? 'styles/accessibility.css' : ''" media="screen" />
-      <onionskin id="onionskin" :class="{show: showOnion, zoomfits: zoomedImageFits}" @click="ToggleShowOnionSkin">
+      <onionskin id="onionskin" v-if="showOnion" :class="{show: showOnion, zoomfits: zoomedImageFits}" @click="ToggleShowOnionSkin">
         <chrome>
           <close></close>
         </chrome>
@@ -22,7 +22,7 @@
           <img alt="A zoomed in, more detailed version of the image you clicked." :key="zoomedImage" id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
         </detail>
       </onionskin>
-      <modal :is-disabled="!showModal" v-if="selectedWork !== null" :class="{show: showModal}">
+      <modal v-if="selectedWork !== null && showModal" :class="{show: showModal}">
         <chrome>
           <close @click="ToggleShowModal"></close>
           <next @click="NextWork"></next>
@@ -32,18 +32,9 @@
         <intro>
           <img :src="selectedWork.backgroundImage" />
           <ul>
-            <!-- <li><span>Title</span> <span>{{selectedWork.tileText}}</span></li> -->
-            <!-- <li v-if="selectedWork.description !== ''"><span>What</span> <span>{{selectedWork.description}}</span></li> -->
-            <!-- <li v-if="selectedWork.linkText !== ''">
-              <span>Link</span><span> <a @click="OpenUrl(event, selectedWork.url)" target="_blank">{{selectedWork.linkText}}</a></span>
-            </li> -->
             <li v-if="selectedWork.roleText !== ''"><span>Role</span> <span>{{selectedWork.roleText}}</span></li>
             <li v-if="selectedWork.skillsText !== ''"><span>Skills</span> <span>{{selectedWork.skillsText}}</span></li>
             <li v-if="selectedWork.resultText !== ''"><span>Impact</span> <span>{{selectedWork.resultText}}</span></li>
-            <!-- <li><span>Who</span> <span>Wil Voss</span></li> -->
-            <!-- <li v-if="selectedWork.period !== ''"><span>When</span> <span>{{selectedWork.period}}</span></li> -->
-            <!-- <li><span>Result</span> <span>7 to 10 minutes</span></li> -->
-            <!-- <li v-if="selectedWork.readTime !== ''"><span>Read time</span> <span>{{selectedWork.readTime}}</span></li> -->
           </ul>
         </intro>
         <container :class="{dark: object.darkBackground}" v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
@@ -61,11 +52,6 @@
           <p>If you want to learn more about my work on this project or any of my other work, please reach out!</p>
           <p><img alt="LinkedIn Icon" style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
         </container>
-        <!-- <container>
-          <montage v-if="selectedWork.feedbackImages.length >0">
-            <img :src="src" v-for="src in selectedWork.feedbackImages" />
-          </montage>
-        </container> -->
         <controls v-if="activeWorks.length > 1">
           <button :class="{disabled: selectedWork === activeWorks[0] && activeWorks[0].group === 'Deep Dives'}" @click="PreviousWork">previous</button>
           <button @click="NextWork">next</button>
@@ -78,7 +64,7 @@
           </hgroup>
           <nav>
             <ul>
-              <li><a class="on" href="/" alt="A sample of Wil's work." title="A sample of Wil's work.">Work</a></li>
+              <li><a class="on" alt="A sample of Wil's work." title="A sample of Wil's work.">Work</a></li>
               <li><a href="why.html" alt="Why work with Wil?" title="Why work with Wil?">Why</a></li>
               <li><a href="about.html" alt="Read more about Wil Voss." title="Read more about Wil Voss.">About</a></li>
             </ul>
@@ -92,9 +78,7 @@
             <h2>{{groupName}}</h2>
             <work>
               <item v-for="work in group" @click="SelectWork(work)">
-                <!-- <button :style="{backgroundImage: 'url(' + work.backgroundImage +')'}"></button> -->
                 <img :src="work.backgroundImage" />
-
                 <span><img class="logo" v-if="work.logo !== ''" :src="'./images/' + work.logo" />{{work.caseStudyObjects.length > 0 ? work.tileText : work.name}}<i>{{work.caseStudyObjects.length > 0 ? work.roleText : work.type}}</i></span>
               </item>
             </work>

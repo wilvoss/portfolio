@@ -32,7 +32,7 @@ var app = new Vue({
     ToggleShowModal() {
       this.showModal = !this.showModal;
       if (!this.showModal) {
-        history.replaceState(null, null, window.location.origin);
+        history.replaceState(null, null, window.location.origin + window.location.pathname);
       }
     },
 
@@ -42,7 +42,9 @@ var app = new Vue({
       }
       if (this.showOnion) {
         this.onionskinContainer = document.getElementsByTagName('onionskin')[0];
-        this.onionskinContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        if (this.onionskinContainer) {
+          this.onionskinContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }
       }
     },
 
@@ -56,12 +58,14 @@ var app = new Vue({
       }
       this.selectedWork = _work;
       // if (_work.isCaseStudy && _work.caseStudyObjects.length > 0) {
-      history.replaceState(null, null, window.location.origin + '?csid=' + _work.id);
+      history.replaceState(null, null, window.location.origin + window.location.pathname + '?csid=' + _work.id);
       // }
       this.modalContainer = document.getElementsByTagName('modal')[0];
       if (this.modalContainer !== null) {
         window.setTimeout(function () {
-          app.modalContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+          if (app.modalContainer) {
+            app.modalContainer.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+          }
         }, 50);
       }
     },
