@@ -40,6 +40,8 @@
             <li v-if="selectedWork.roleText !== ''"><span>Role</span> <span>{{selectedWork.roleText}}</span></li>
             <li v-if="selectedWork.skillsText !== ''"><span>Skills</span> <span>{{selectedWork.skillsText}}</span></li>
             <li v-if="selectedWork.resultText !== ''"><span>Impact</span> <span>{{selectedWork.resultText}}</span></li>
+            <li v-if="selectedWork.url !== ''"><span>URL</span> <span><a :href="selectedWork.url"
+                  target="_blank">{{selectedWork.tileText}}</a></span></li>
           </ul>
         </intro>
         <container :class="{dark: object.darkBackground}" v-for="object in selectedWork.caseStudyObjects"

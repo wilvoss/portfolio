@@ -54,7 +54,7 @@ var Works = [
         darkBackground: true,
         html: `<h3>The solution</h3>
         <blockquote>&ldquo;I just used the Library app, I am coming in tomorrow with a group, and had no idea what we might want to play.  Now I have a few ideas to suggest. Thanks!&rdquo; <span> — Wendy, The Missing Piece Customer</span></blockquote>
-        <p>I designed, developed, and delivered an installable web app that assists customers in selecting a game from TMP's library based on various criteria, including available time, group size, game complexity, and more. This web app provides a fully branded, visually appealing user experience, brought to life through a cost-effective game management workflow. By leveraging WordPress plugins and the BoardGameGeek API, the app simplifies game management for the owners. They can easily add or remove games by modifying a single line of text within a file secured behind their WordPress administrative login.</p>`,
+        <p>I designed, developed, and delivered an <a href="https://themissingpiecegames.com/library" target="_blank">installable web app</a> that assists customers in selecting a game from TMP's library based on various criteria, including available time, group size, game complexity, and more. This web app provides a fully branded, visually appealing user experience, brought to life through a cost-effective game management workflow. By leveraging WordPress plugins and the BoardGameGeek API, the app simplifies game management for the owners. They can easily add or remove games by modifying a single line of text within a file secured behind their WordPress administrative login.</p>`,
         image: 'work/casestudies/tmp/2.png',
         imageZoomed: 'work/casestudies/tmp/2-big.png',
         zoomImageOrientation: 'horizontal',
@@ -98,7 +98,7 @@ var Works = [
     name: 'Fred Hutch Cancer Center',
     logo: 'ms-logo-full.png',
     tileText: 'Remote Patient Monitoring',
-    url: 'https://www.fredhutch.org/en.html',
+    url: '',
     skillsText: 'Design, prototyping, research',
     resultText: 'Helped secure 3-year partnership',
     backgroundImage: 'work/fredhutch_thumbnail.jpg',
@@ -153,7 +153,7 @@ var Works = [
     tileText: 'Product Onboarding',
     readTime: '6 minute',
     description: 'Onboarding 2.0',
-    url: 'https://www.youtube.com/channel/UCDCBj9hI8mUphp-7Twc6_nA/videos',
+    url: '',
     alt: "Learn about the process I used as a staff product growth designer at Impira while improving their application's onboarding experience.",
     backgroundImage: 'work/impira_thumbnail.jpg',
     resultText: '15% increase account activation',
