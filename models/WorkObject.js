@@ -67,7 +67,6 @@ var Works = [
         darkBackground: true,
         html: `<h3>The story: research</h3>
         <p>I visited numerous game shops in the region to learn how they promoted their library games to customers. Some shops had nothing more than a disorganized shelf of games, while others had a spreadsheet or printout listing the available games. A small number of shops offered a website or online spreadsheet to address the issue. Notably, the most robust solution was an on-premises website accessible via a QR code, allowing for basic filtering of the game list. Armed with this knowledge and my experience as a UX designer, game developer, and game player, I set out to create a superior experience that not only solved the problem but also elevated the UX well beyond anything I'd seen.</p>`,
-        image: 'work/casestudies/tmp/1.jpg',
       }),
       new CaseStudyObject({
         html: `<h3>The story: delivery</h3><p>Armed with this knowledge I quickly determined features that I wanted to incorporate. The first set were features we knew The Missing Piece needed: 
@@ -90,7 +89,6 @@ var Works = [
         <li>Dark and light themes</li>
         </ul>
         <p>These features were added over time as I worked with Alex and his team to understand what was possible, what was needed, and what was desired. The final product was a culmination of all of these features and more.</p>`,
-        image: 'work/casestudies/tmp/2.jpg',
       }),
     ],
   }),
