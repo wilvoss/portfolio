@@ -49,17 +49,11 @@ var app = new Vue({
     },
 
     SelectWork(_work, _toggleModal = true) {
-      // if ((!_work.isCaseStudy || _work.caseStudyObjects.length === 0) && _work.url !== '') {
-      //   window.open(_work.url);
-      // } else
       if (_toggleModal) {
-        // this.ZoomImage(_work.zoomImage);
         this.ToggleShowModal();
       }
       this.selectedWork = _work;
-      // if (_work.isCaseStudy && _work.caseStudyObjects.length > 0) {
       history.replaceState(null, null, window.location.origin + window.location.pathname + '?csid=' + _work.id);
-      // }
       this.modalContainer = document.getElementsByTagName('modal')[0];
       if (this.modalContainer !== null) {
         window.setTimeout(function () {

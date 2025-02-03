@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>Work (portfolio) - Wil Voss</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <meta name="keywords" content="Work, game design, game designer, portfolio, samples, prototyping, rapid prototyping, UX integration, application development and integration, websites, Wil Voss, Will Voss, Seattle UX Developer, Designer, and Integrator" />
-    <meta name="description" content="Select samples of the publicly viewable work of Wil Voss, Seattle-based Game Designer, UX Designer, Developer, Integrator." />
+    <meta name="keywords"
+      content="Work, game design, game designer, portfolio, samples, prototyping, rapid prototyping, UX integration, application development and integration, websites, Wil Voss, Will Voss, Seattle UX Developer, Designer, and Integrator" />
+    <meta name="description"
+      content="Select samples of the publicly viewable work of Wil Voss, Seattle-based Game Designer, UX Designer, Developer, Integrator." />
     <link rel="icon" type="image/png" sizes="48x48" href="favicon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="stylesheet" href="styles/main-min.css" media="screen" />
@@ -14,12 +17,14 @@
   <body>
     <app id="app" v-cloak>
       <link rel="stylesheet" :href="showContrast ? 'styles/accessibility.css' : ''" media="screen" />
-      <onionskin id="onionskin" v-if="showOnion" :class="{show: showOnion, zoomfits: zoomedImageFits}" @click="ToggleShowOnionSkin">
+      <onionskin id="onionskin" v-if="showOnion" :class="{show: showOnion, zoomfits: zoomedImageFits}"
+        @click="ToggleShowOnionSkin">
         <chrome>
           <close></close>
         </chrome>
         <detail :class="[zoomImageOrientation]">
-          <img alt="A zoomed in, more detailed version of the image you clicked." :key="zoomedImage" id="onionimage" @load="CheckZoom(event)" :src="zoomedImage" />
+          <img alt="A zoomed in, more detailed version of the image you clicked." :key="zoomedImage" id="onionimage"
+            @load="CheckZoom(event)" :src="zoomedImage" />
         </detail>
       </onionskin>
       <modal v-if="selectedWork !== null && showModal" :class="{show: showModal}">
@@ -37,23 +42,34 @@
             <li v-if="selectedWork.resultText !== ''"><span>Impact</span> <span>{{selectedWork.resultText}}</span></li>
           </ul>
         </intro>
-        <container :class="{dark: object.darkBackground}" v-for="object in selectedWork.caseStudyObjects" v-if="object.show">
+        <container :class="{dark: object.darkBackground}" v-for="object in selectedWork.caseStudyObjects"
+          v-if="object.show">
           <lead v-if="object.html !== ''" v-html="object.html"></lead>
           <label @click="ZoomImage(object)" v-if="object.imageZoomed !== ''">(click image for detail)</label>
-          <img :class="{zoomable: object.imageZoomed !== ''}" :is-disabled="!showModal" :key="object.image" v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1" :src="object.image" @click="ZoomImage(object)" />
+          <img :class="{zoomable: object.imageZoomed !== ''}" :is-disabled="!showModal" :key="object.image"
+            v-if="object.image !== '' && object.image.indexOf('youtube') === -1 && object.image.indexOf('player.vimeo') === -1"
+            :src="object.image" @click="ZoomImage(object)" />
 
-          <iframe v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image + '?rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe v-if="object.image !== '' && object.image.indexOf('youtube') != -1" :src="object.image + '?rel=0'"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
 
-          <iframe v-if="object.image !== '' && object.image.indexOf('player.vimeo') != -1" :src="object.image" frameborder="0" title="OOBE" allow="fullscreen"></iframe>
+          <iframe v-if="object.image !== '' && object.image.indexOf('player.vimeo') != -1" :src="object.image"
+            frameborder="0" title="OOBE" allow="fullscreen"></iframe>
           <lead v-if="object.afterImageHtml !== ''" v-html="object.afterImageHtml"></lead>
           <script src="https://player.vimeo.com/api/player.js"></script>
         </container>
         <container>
           <p>If you want to learn more about my work on this project or any of my other work, please reach out!</p>
-          <p><img alt="LinkedIn Icon" style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
+          <p><img alt="LinkedIn Icon"
+              style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)"
+              src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss"
+              target="_blank">Connect with me on LinkedIn</a>.</p>
         </container>
         <controls v-if="activeWorks.length > 1">
-          <button :class="{disabled: selectedWork === activeWorks[0] && activeWorks[0].group === 'Deep Dives'}" @click="PreviousWork">previous</button>
+          <button :class="{disabled: selectedWork === activeWorks[0] && activeWorks[0].group === 'Deep Dives'}"
+            @click="PreviousWork">previous</button>
           <button @click="NextWork">next</button>
         </controls>
       </modal>
@@ -73,25 +89,34 @@
       </wrapper>
       <wrapper>
         <article :style="{opacity: showArticle ? 1 : 0}">
-          <p>UX design, rapid prototyping, game design, user research, app development, websites of every stripe and scale: if it's interactive, requires strong conceptualization, demands independent thinking as well as strong collaboration, I've done it or something like it. My design philosophy: each improvement made to a product brings it both closer to and further from perfection - the very act of developing a product expands its potential.</p>
+          <p>UX design, rapid prototyping, game design, user research, app development, websites of every stripe and
+            scale: if it's interactive, requires strong conceptualization, demands independent thinking as well as
+            strong collaboration, I've done it or something like it. My design philosophy: each improvement made to a
+            product brings it both closer to and further from perfection - the very act of developing a product expands
+            its potential.</p>
           <group v-for="(group, groupName) in workGroups" :key="groupName">
             <h2>{{groupName}}</h2>
             <work>
               <item v-for="work in group" @click="SelectWork(work)">
                 <img :src="work.backgroundImage" />
-                <span><img class="logo" v-if="work.logo !== ''" :src="'./images/' + work.logo" />{{work.caseStudyObjects.length > 0 ? work.tileText : work.name}}<i>{{work.caseStudyObjects.length > 0 ? work.roleText : work.type}}</i></span>
+                <span><img class="logo" v-if="work.logo !== ''"
+                    :src="'./images/' + work.logo" />{{work.caseStudyObjects.length > 0 ? work.tileText : work.name}}<i>{{work.caseStudyObjects.length > 0 ? work.roleText : work.type}}</i></span>
               </item>
             </work>
           </group>
           <h2>Contact</h2>
           <p>If you want to learn more about my work experience, please reach out!</p>
-          <p><img alt="LinkedIn Icon" style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)" src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss" target="_blank">Connect with me on LinkedIn</a>.</p>
+          <p><img alt="LinkedIn Icon"
+              style="width: 20px; height: 20px; display: inline-block; box-shadow: none; border-radius: 0px; margin: 0 8px 0 0; padding: 0; transform: translateY(4px)"
+              src="./images/In-Blue-72.png" /><a class="linkedin" href="http://www.linkedin.com/in/wilvoss"
+              target="_blank">Connect with me on LinkedIn</a>.</p>
         </article>
       </wrapper>
     </app>
-    <script src="models/CaseStudyObject-min.js" type="text/javascript"></script>
-    <script src="models/WorkObject-min.js" type="text/javascript"></script>
+    <script src="models/CaseStudyObject.min.js" type="text/javascript"></script>
+    <script src="models/WorkObject.min.js" type="text/javascript"></script>
     <script src="helpers/vue.min.js" type="text/javascript"></script>
-    <script src="scripts/work-min.js" type="text/javascript"></script>
+    <script src="scripts/work.min.js" type="text/javascript"></script>
   </body>
+
 </html>

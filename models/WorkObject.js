@@ -30,6 +30,70 @@ class WorkObject {
 }
 
 var Works = [
+  //The Missing Piece Games Library App
+  new WorkObject({
+    id: 11,
+    name: 'The Missing Piece',
+    logo: 'tmp-logo.png',
+    tileText: 'Games Library App',
+    url: 'https://www.themissingpiecegames.com/library',
+    skillsText: 'Design, development, research',
+    resultText: 'Increased customer engagement',
+    backgroundImage: 'work/tmp_thumbnail.png',
+    group: 'Case Studies',
+    category: 'Case Study',
+    caseStudyObjects: [
+      new CaseStudyObject({
+        html: `<h3>The challenge</h3>
+        <p>The Missing Piece Games is a cozy café and game lounge located in West Seattle, offering an impressive selection of board games, card games, and role-playing games for sale. In addition to their retail offerings, the owners provide a free library of games for customers to enjoy on-site. This extensive collection covers a wide array of game types, ease of use, player counts, and complexity levels.</p>
+        <p>
+        However, discovering which games were available in the library and determining their suitability for you and your play group used to require a visit to the store, where you'd have to physically pick up each game and read about it in real time. Realizing the need for a more convenient solution, The Missing Piece ("TMP" as it's affectionately known) sought a better way for their customers to access, explore, and choose from the library's vast selection of games.</p>`,
+        image: 'work/casestudies/tmp/shelf-1.jpg',
+      }),
+      new CaseStudyObject({
+        darkBackground: true,
+        html: `<h3>The solution</h3>
+        <blockquote>&ldquo;I just used the Library app, I am coming in tomorrow with a group, and had no idea what we might want to play.  Now I have a few ideas to suggest. Thanks!&rdquo; <span> — Wendy, The Missing Piece Customer</span></blockquote>
+        <p>I designed, developed, and delivered an installable web app that assists customers in selecting a game from TMP's library based on various criteria, including available time, group size, game complexity, and more. This web app provides a fully branded, visually appealing user experience, brought to life through a cost-effective game management workflow. By leveraging WordPress plugins and the BoardGameGeek API, the app simplifies game management for the owners. They can easily add or remove games by modifying a single line of text within a file secured behind their WordPress administrative login.</p>`,
+        image: 'work/casestudies/tmp/2.png',
+        imageZoomed: 'work/casestudies/tmp/2-big.png',
+        zoomImageOrientation: 'horizontal',
+        afterImageHtml: ' ',
+      }),
+      new CaseStudyObject({
+        html: `<h3>The story</h3><p>At the end of 2024, The Missing Piece Games approached me with the goal of creating a unique and user-friendly application for their customers to easily access and choose games from their store's library. Alex, one of the owners, had observed similar applications in other stores and wanted to offer the same level of customer service to his patrons. The loyal and enthusiastic board game community at The Missing Piece Games Café & Game Lounge is always eager to expand their play groups and explore new games. An app like this would significantly enhance on-site visits, customer engagement, and unit sales.</p>`,
+      }),
+      new CaseStudyObject({
+        darkBackground: true,
+        html: `<h3>The story: research</h3>
+        <p>I visited numerous game shops in the region to learn how they promoted their library games to customers. Some shops had nothing more than a disorganized shelf of games, while others had a spreadsheet or printout listing the available games. A small number of shops offered a website or online spreadsheet to address the issue. Notably, the most robust solution was an on-premises website accessible via a QR code, allowing for basic filtering of the game list. Armed with this knowledge and my experience as a UX designer, game developer, and game player, I set out to create a superior experience that not only solved the problem but also elevated the UX well beyond anything I'd seen.</p>`,
+        image: 'work/casestudies/tmp/1.jpg',
+      }),
+      new CaseStudyObject({
+        html: `<h3>The story: delivery</h3><p>Armed with this knowledge I quickly determined features that I wanted to incorporate. The first set were features we knew The Missing Piece needed: 
+        <ul>
+        <li>Branded UX</li>
+        <li>Search and filter across multiple game dimensions</li>
+        <li>Accessible by phone</li>
+        <li>QR code for quick access</li>
+        <li>Easily edit and maintain</li>
+        </ul>
+        <p>Over the course of the project, I added a number of features that I felt would elevate the experience and make it more engaging for their customers. These included:
+        <ul>
+        <li>Available anywhere, on any device</li>
+        <li>Installable as an app</li>
+        <li>The ability to drill in on a single game and share it through social media</li>
+        <li>Badging games that are store favorites</li>
+        <li>Staff reviews</li>
+        <li>WordPress and Board Game Geek integration for easier and secure maintenance</li>
+        <li>Flexible summary cards</li>
+        <li>Dark and light themes</li>
+        </ul>
+        <p>These features were added over time as I worked with Alex and his team to understand what was possible, what was needed, and what was desired. The final product was a culmination of all of these features and more.</p>`,
+        image: 'work/casestudies/tmp/2.jpg',
+      }),
+    ],
+  }),
   //Fred Hutch Cancer Center
   new WorkObject({
     id: 4,
