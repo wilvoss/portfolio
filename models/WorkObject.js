@@ -55,7 +55,7 @@ var Works = [
         html: `<h3>The solution</h3>
         <blockquote>&ldquo;I just used the Library app, I am coming in tomorrow with a group, and had no idea what we might want to play.  Now I have a few ideas to suggest. Thanks!&rdquo; <span> — Wendy, The Missing Piece Customer</span></blockquote>
         <p>I designed, developed, and delivered an <a href="https://themissingpiecegames.com/library" target="_blank">installable web app</a> that assists customers in selecting a game from TMP's library based on various criteria, including available time, group size, game complexity, and more. This web app provides a fully branded, visually appealing user experience, brought to life through a cost-effective game management workflow. By leveraging WordPress plugins and the BoardGameGeek API, the app simplifies game management for the owners. They can easily add or remove games by modifying a single line of text within a file secured behind their WordPress administrative login.</p>`,
-        image: 'work/casestudies/tmp/2.png',
+        image: 'work/casestudies/tmp/2.jpg',
         imageZoomed: 'work/casestudies/tmp/2-big.png',
         zoomImageOrientation: 'horizontal',
         afterImageHtml: ' ',
@@ -89,6 +89,9 @@ var Works = [
         <li>Dark and light themes</li>
         </ul>
         <p>These features were added over time as I worked with Alex and his team to understand what was possible, what was needed, and what was desired. The final product was a culmination of all of these features and more.</p>`,
+        image: 'work/casestudies/tmp/mobile-screens.jpg',
+        imageZoomed: 'work/casestudies/tmp/mobile-screens.png',
+        zoomImageOrientation: 'horizontal',
       }),
     ],
   }),
