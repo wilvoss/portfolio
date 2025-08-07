@@ -140,12 +140,27 @@ var app = new Vue({
           break;
       }
     },
+    HandleKeyDownEvent(e) {
+      switch (e.key) {
+        case 'Enter':
+          if (e.target.tagName === 'CLOSE') {
+            this.ToggleShowModal();
+          } else if (e.target.tagName === 'NEXT') {
+            this.NextWork();
+          }
+          break;
+
+        default:
+          break;
+      }
+    },
   },
 
   mounted() {
     this.LoadPage();
     window.addEventListener('resize', this.CheckZoom);
     window.addEventListener('keyup', this.HandleKeyUpEvent);
+    window.addEventListener('keydown', this.HandleKeyDownEvent);
   },
 
   computed: {
