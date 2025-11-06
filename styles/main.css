@@ -308,7 +308,7 @@ h4 {
 }
 
 h2 {
-    margin: calc(var(--defaultGap) * 2) 0;
+    margin: calc(var(--defaultGap) * 2) 0 calc(var(--defaultGap)) 0;
 }
 
 modal h2 {
