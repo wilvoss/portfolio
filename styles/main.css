@@ -690,7 +690,7 @@ article {
     transition-duration: 0.5s;
     margin: 0px;
     margin-bottom: var(--footerHeight);
-    padding: 40px 50px 40px 50px;
+    padding: 20px 50px 40px 50px;
     overflow: auto;
 }
 
@@ -703,8 +703,15 @@ header {
     max-width: 1024px;
 }
 
+header hgroup p {
+    margin: 6px 0px 0px 0px;
+    padding: 0px;
+    font-size: 80%;
+    line-height: 130%;
+}
+
 header h1 {
-    margin: 0px 0px 25px 0px;
+    margin: 0px;
     padding: 0px;
     color: #000;
     font-weight: normal;
