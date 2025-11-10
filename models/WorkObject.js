@@ -35,7 +35,7 @@ var Works = [
     id: 1,
     isCaseStudy: true,
     name: 'Like Me?',
-    logo: 'btg-logo-full.png',
+    logo: 'btg-logo.svg',
     period: '2023',
     tileText: 'Like Me? Video Game',
     description: 'Casual, mobile-first, video game',
